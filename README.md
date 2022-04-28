@@ -14,8 +14,11 @@ Mon code est sûrement moche mais fonctionnel 😜
 ## Pour commencer
 
 vous pouvez telecharger le Package complet ici : [LuniiKit 2.1.1](https://github.com/Seph29/LuniiKit_App/releases/download/2.1.1/LuniiKit-v2.1.1.zip)
+
 Vous pouvez aussi générer la solution vous-même via le code source ou faire votre package en respectant la stucture
 ![screeenshot](https://i.imgur.com/wKJd5qn.png)
+La version SNAPSHOT est optionnelle, si elle existe le bouton s'active.
+
 ## Fabriqué avec
 
 Visual Studio 2022
