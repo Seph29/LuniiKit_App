@@ -1,0 +1,25 @@
+﻿<Window x:Class="LuniiKit.LuniiKit_Options"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LuniiKit"
+        xmlns:properties="clr-namespace:LuniiKit.Properties"
+        mc:Ignorable="d"
+        Title="Options" Height="167" Width="206" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/Images/icon.png" ShowInTaskbar="False" WindowStyle="SingleBorderWindow">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <CheckBox x:Name="isport" Content="STUdio version portable" HorizontalAlignment="Left" Height="16" Margin="11,6,0,0" VerticalAlignment="Top" Width="185" IsChecked="{Binding Path=studioportable,Source={x:Static properties:Settings.Default}}" Grid.ColumnSpan="2"/>
+        <Label Content="Host" HorizontalAlignment="Center" Height="30" VerticalAlignment="Top" Width="39" Margin="0,41,0,0"/>
+        <TextBox x:Name="chost" HorizontalAlignment="Left" Margin="56,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18" Text="{Binding Path=confhost,Source={x:Static properties:Settings.Default}}" Grid.ColumnSpan="2" />
+        <Label Content="Port" HorizontalAlignment="Center" Height="30" Margin="0,65,0,0" VerticalAlignment="Top" Width="39"/>
+        <TextBox x:Name="cport" HorizontalAlignment="Left" Margin="56,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18" Text="{Binding Path=confport,Source={x:Static properties:Settings.Default}}" Grid.ColumnSpan="2" />
+        <Button x:Name="ok" Grid.Column="1" Content="OK" Margin="32,94,70,0" VerticalAlignment="Center" Click="ook" HorizontalAlignment="Center" Width="40"/>
+        <CheckBox x:Name="autoopen" Content="Auto open browser" HorizontalAlignment="Left" Height="16" Margin="11,25,0,0" VerticalAlignment="Top" Width="185" IsChecked="{Binding autoopenweb, Source={x:Static properties:Settings.Default}}" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</Window>
