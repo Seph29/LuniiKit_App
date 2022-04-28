@@ -15,9 +15,23 @@ Mon code est sûrement moche mais fonctionnel 😜
 
 vous pouvez telecharger le Package complet ici : [LuniiKit 2.1.1](https://github.com/Seph29/LuniiKit_App/releases/download/2.1.1/LuniiKit-v2.1.1.zip)
 
-Vous pouvez aussi générer la solution vous-même via le code source ou faire votre package en respectant la stucture
+Vous pouvez aussi générer la solution vous-même via le code source et faire votre propre package en respectant la stucture
 ![screeenshot](https://i.imgur.com/wKJd5qn.png)
-La version SNAPSHOT est optionnelle, si elle existe le bouton s'active.
+
+* Folder
+  * agent (studio 0.3.1)
+  * driver (disponible avec le Luniistore ``C:\Program Files\Luniistore\app\driver``)
+  * jre11 (Java JRE 11)
+  * lib-0.3.1 (studio 0.3.1 : renomer le dossier lib en lib-0.3.1)
+  * lib-0.4.2 (studio 0.4.2 : renomer le dossier lib en lib-0.4.2)
+  * lib-0.4.3 (studio 0.4.3 : renomer le dossier lib en lib-0.4.3-SNAPSHOT)
+* Fichiers
+  * studio-web-ui-0.3.1.jar
+  * studio-web-ui-0.4.2.jar
+  * studio-web-ui-0.4.3-SNAPSHOT.jar
+
+
+La version SNAPSHOT est optionnelle (pas de différence avec la 0.4.2 à ce jour), si elle existe dans le dossier le bouton s'active.
 
 ## Fabriqué avec
 
