@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:LuniiKit"
         xmlns:properties="clr-namespace:LuniiKit.Properties"
         mc:Ignorable="d"
-        Title="Options" Height="167" Width="206" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/Images/icon.png" ShowInTaskbar="False" WindowStyle="SingleBorderWindow">
+        Title="Options" Height="167" Width="206" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/Images/icon.png" WindowStyle="SingleBorderWindow">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
