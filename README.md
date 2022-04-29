@@ -13,7 +13,7 @@ Mon code est sûrement moche mais fonctionnel 😜
 
 ## Pour commencer
 
-vous pouvez telecharger le Package complet ici : [LuniiKit 2.1.1](https://github.com/Seph29/LuniiKit_App/releases/download/2.1.1/LuniiKit-v2.1.1.zip)
+vous pouvez telecharger le Package complet ici : [LuniiKit 2.1.2](https://github.com/Seph29/LuniiKit_App/releases/download/2.1.1/LuniiKit-v2.1.2.zip)
 
 Vous pouvez aussi générer la solution vous-même via le code source et faire votre propre package en respectant la stucture
 ![screeenshot](https://i.imgur.com/wKJd5qn.png)
@@ -40,8 +40,8 @@ Visual Studio 2022
 
 ## Versions
 
-- **Dernière version stable :** 2.1.1.1
-- **Dernière version :** 2.1.1.1
+- **Dernière version stable :** 2.1.2
+- **Dernière version :** 2.1.2
 
 Liste des versions : [Cliquer pour afficher](https://github.com/Seph29/LuniiKit_App/tags)
 
