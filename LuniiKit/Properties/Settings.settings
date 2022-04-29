@@ -18,7 +18,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="appver" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">2.1.1</Value>
+      <Value Profile="(Default)">2.1.2</Value>
     </Setting>
     <Setting Name="autoopenweb" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

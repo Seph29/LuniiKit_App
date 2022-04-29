@@ -22,16 +22,17 @@ Vous pouvez aussi générer la solution vous-même via le code source et faire v
   * agent (studio 0.3.1)
   * driver (disponible avec le Luniistore ``C:\Program Files\Luniistore\app\driver``)
   * jre11 (Java JRE 11)
-  * lib-0.3.1 (studio 0.3.1 : renomer le dossier lib en lib-0.3.1)
-  * lib-0.4.2 (studio 0.4.2 : renomer le dossier lib en lib-0.4.2)
-  * lib-0.4.3 (studio 0.4.3 : renomer le dossier lib en lib-0.4.3-SNAPSHOT)
+  * lib-0.3.1 (studio 0.3.1 : renommer le dossier lib en lib-0.3.1)
+  * lib-0.4.2 (studio 0.4.2 : renommer le dossier lib en lib-0.4.2)
+  * lib-0.4.3 (studio 0.4.3 : renommer le dossier lib en lib-0.4.3-SNAPSHOT)
 * Fichiers
   * studio-web-ui-0.3.1.jar
   * studio-web-ui-0.4.2.jar
   * studio-web-ui-0.4.3-SNAPSHOT.jar
 
 
-La version SNAPSHOT est optionnelle (pas de différence avec la 0.4.2 à ce jour), si elle existe dans le dossier le bouton s'active.
+La version SNAPSHOT est optionnelle, si elle n'existe pas dans le dossier le bouton est desactivé.
+![screeenshot](https://i.imgur.com/fRQUiUW.png)
 
 ## Fabriqué avec
 
@@ -39,12 +40,11 @@ Visual Studio 2022
 
 ## Versions
 
-- **Dernière version stable :** 2.1.1
-- **Dernière version :** 2.1.1
+- **Dernière version stable :** 2.1.1.1
+- **Dernière version :** 2.1.1.1
 
 Liste des versions : [Cliquer pour afficher](https://github.com/Seph29/LuniiKit_App/tags)
 
 ## License
 
 Ce projet est sous licence ``GPL-3.0 License`` - voir le fichier [LICENSE.md](LICENSE.md) pour plus d'informations
-

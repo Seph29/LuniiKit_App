@@ -13,6 +13,7 @@ namespace LuniiKit
         public MainWindow()
         {
             InitializeComponent();
+
             if (IsConnectedToInternet())
             {
                 Checkver();
@@ -35,11 +36,9 @@ namespace LuniiKit
             {
                 studio3.Visibility = Visibility.Visible;
             }
-            
 
 
         }
-
         public bool IsConnectedToInternet()
         {
             string host = "8.8.8.8";
@@ -47,15 +46,13 @@ namespace LuniiKit
             Ping p = new Ping();
             try
             {
-                PingReply reply = p.Send(host, 3000);
+                PingReply reply = p.Send(host, 10000);
                 if (reply.Status == IPStatus.Success)
                     return true;
             }
             catch { }
             return result;
         }
-
-
         private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             e.Cancel = true;
@@ -87,6 +84,7 @@ namespace LuniiKit
         {
             using (WebClient client = new WebClient())
             {
+#pragma warning disable CS0168 // La variable 'ex' est déclarée, mais jamais utilisée
                 try
                 {
                     String cver = client.DownloadString(LuniiKit.Properties.Settings.Default.urlver);
@@ -117,7 +115,7 @@ namespace LuniiKit
                     vertext.Document.Blocks.Clear();
                     vertext.Document.Blocks.Add(new Paragraph(new Run("Version : " + LuniiKit.Properties.Settings.Default.appver + " - La recherche d'une mise à jour a échoué, car le site distant ne répond pas.")));
                 }
-
+#pragma warning restore CS0168 // La variable 'ex' est déclarée, mais jamais utilisée
             }
 
         }
@@ -205,7 +203,7 @@ copy %STUDIO_PATH%\agent\studio-metadata-%version_LUNII%-jar-with-dependencies.j
 
                 SW.Flush();
                 SW.Close();
-                SW.Dispose();
+
                 SW = null;
                 System.Diagnostics.Process.Start("STudio.bat");
             }
@@ -216,7 +214,6 @@ copy %STUDIO_PATH%\agent\studio-metadata-%version_LUNII%-jar-with-dependencies.j
             System.IO.StreamWriter SW = new System.IO.StreamWriter("STudio.bat");
 
             SW.WriteLine(@"@echo off");
-            LuniiKit.LuniiKit_Options objOptions = new LuniiKit.LuniiKit_Options();
             if (LuniiKit.Properties.Settings.Default.defhost == LuniiKit.Properties.Settings.Default.confhost)
             {
                 SW.WriteLine(@"set STUDIO_HOST=localhost");
@@ -287,7 +284,7 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
 
             SW.Flush();
             SW.Close();
-            SW.Dispose();
+
             SW = null;
             System.Diagnostics.Process.Start("STudio.bat");
         }
@@ -297,7 +294,6 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             System.IO.StreamWriter SW = new System.IO.StreamWriter("STudio.bat");
 
             SW.WriteLine(@"@echo off");
-            LuniiKit.LuniiKit_Options objOptions = new LuniiKit.LuniiKit_Options();
             if (LuniiKit.Properties.Settings.Default.defhost == LuniiKit.Properties.Settings.Default.confhost)
             {
                 SW.WriteLine(@"set STUDIO_HOST=localhost");
@@ -321,8 +317,8 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             SW.WriteLine(@"mode con cols=120 lines=30
 ""%__APPDIR__%chcp.com"" 850>nul
 color D");
-            SW.WriteLine(@"title STUdio " + Properties.Settings.Default.studio2ver);
-            SW.WriteLine(@"set version_LUNII=" + Properties.Settings.Default.studio2ver);
+            SW.WriteLine(@"title STUdio " + Properties.Settings.Default.studio3ver);
+            SW.WriteLine(@"set version_LUNII=" + Properties.Settings.Default.studio3ver);
 
             if (LuniiKit.Properties.Settings.Default.studioportable == true)
             {
@@ -369,7 +365,7 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
 
             SW.Flush();
             SW.Close();
-            SW.Dispose();
+
             SW = null;
             System.Diagnostics.Process.Start("STudio.bat");
         }
@@ -386,7 +382,7 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
 
         private void OpenWindow(object sender, RoutedEventArgs e)
         {
-            LuniiKit.LuniiKit_Options objOptions = new LuniiKit.LuniiKit_Options();
+            LuniiKit.LuniiKitOptions objOptions = new LuniiKit.LuniiKitOptions();
             objOptions.ShowDialog();
         }
     }

@@ -79,7 +79,7 @@ namespace LuniiKit.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2.1.1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2.1.2")]
         public string appver {
             get {
                 return ((string)(this["appver"]));
