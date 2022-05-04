@@ -8,8 +8,9 @@ LuniiKit est un launcher pour le logiciel STUdio, il permet aussi d'installer le
 
 Mon code est sûrement moche mais fonctionnel 😜
 
-![screeenshot](https://i.imgur.com/GfPdGrj.png)
-![screeenshot](https://i.imgur.com/UVKq12h.png)
+![screeenshot](https://i.imgur.com/uOhujL5.png)
+![screeenshot](https://i.imgur.com/CWbfr3Q.png)
+![screeenshot](https://i.imgur.com/jqKeFWG.png)
 
 ## Pour commencer
 
