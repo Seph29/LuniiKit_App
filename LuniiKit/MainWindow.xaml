@@ -6,6 +6,20 @@
         xmlns:local="clr-namespace:LuniiKit"
         mc:Ignorable="d"
         Title="LuniiKit" Height="300" Width="300" ResizeMode="NoResize" Icon="/Images/icon.png" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ContextMenu x:Key="javaInstallButton">
+            <MenuItem Click="jdk11_Click" Header="JDK 11">
+                <MenuItem.Icon>
+                    <Image Source="/Images/winget.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Click="jdk17_Click" Header="JDK 17">
+                <MenuItem.Icon>
+                    <Image Source="/Images/winget.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+        </ContextMenu>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0*"/>
