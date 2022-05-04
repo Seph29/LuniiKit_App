@@ -79,7 +79,7 @@ namespace LuniiKit.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2.1.2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2.1.3")]
         public string appver {
             get {
                 return ((string)(this["appver"]));
@@ -149,6 +149,30 @@ namespace LuniiKit.Properties {
         public string studio3ver {
             get {
                 return ((string)(this["studio3ver"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public int nlogs {
+            get {
+                return ((int)(this["nlogs"]));
+            }
+            set {
+                this["nlogs"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool skiptests {
+            get {
+                return ((bool)(this["skiptests"]));
+            }
+            set {
+                this["skiptests"] = value;
             }
         }
     }

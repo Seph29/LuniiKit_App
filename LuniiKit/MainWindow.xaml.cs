@@ -4,16 +4,18 @@ using System.IO;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Documents;
 
 namespace LuniiKit
 {
     public partial class MainWindow : Window
     {
+        private string skiptests;
+
         public MainWindow()
         {
             InitializeComponent();
-
             if (IsConnectedToInternet())
             {
                 Checkver();
@@ -36,10 +38,11 @@ namespace LuniiKit
             {
                 studio3.Visibility = Visibility.Visible;
             }
-
+            
+            
 
         }
-        public bool IsConnectedToInternet()
+            public bool IsConnectedToInternet()
         {
             string host = "8.8.8.8";
             bool result = false;
@@ -119,7 +122,21 @@ namespace LuniiKit
             }
 
         }
+
+
         private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ContextMenu cm = this.FindResource("javaInstallButton") as ContextMenu;
+            cm.PlacementTarget = sender as Button;
+            cm.IsOpen = true;
+        }
+        private void jdk11_Click(object sender, RoutedEventArgs e)
+        {
+            string strCmdText;
+            strCmdText = "/C winget install EclipseAdoptium.Temurin.11";
+            System.Diagnostics.Process.Start("CMD.exe", strCmdText);
+        }
+        private void jdk17_Click(object sender, RoutedEventArgs e)
         {
             string strCmdText;
             strCmdText = "/C winget install EclipseAdoptium.Temurin.17";
@@ -182,10 +199,11 @@ if %jver% LSS 110000 (
 )");
 
                 }
-                SW.WriteLine(@"echo Suppression des logs
-for /f ""skip=3 delims="" %%A in ('dir /a:-d /b /o:-d /t:c *.log ^2^>nul') do if exist ""%%~fA"" del ""%%~fA""
-
-if not exist %DOT_STUDIO%\db\* mkdir %DOT_STUDIO%\db
+                SW.WriteLine(@"echo Suppression des logs");
+                SW.Write(@"for /f ""skip=" + Properties.Settings.Default.nlogs);
+                SW.Write(@" delims="" %%A in ('dir /a:-d /b /o:-d /t:c *.log ^2^>nul') do if exist ""%%~fA"" del ""%%~fA""");
+                SW.WriteLine("");
+                SW.WriteLine(@"if not exist %DOT_STUDIO%\db\* mkdir %DOT_STUDIO%\db
 if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library
 if not exist %DOT_STUDIO%\agent\* mkdir %DOT_STUDIO%\agent
 
@@ -211,6 +229,10 @@ copy %STUDIO_PATH%\agent\studio-metadata-%version_LUNII%-jar-with-dependencies.j
 
         private void studio2_Click(object sender, RoutedEventArgs e)
         {
+            if (LuniiKit.Properties.Settings.Default.skiptests == true)
+            {
+                skiptests = " -DskipTests";
+            }
             System.IO.StreamWriter SW = new System.IO.StreamWriter("STudio.bat");
 
             SW.WriteLine(@"@echo off");
@@ -265,21 +287,23 @@ if %jver% LSS 110000 (
   exit /b 1
 )");
             }
-            SW.WriteLine(@"echo Suppression des logs
-for /f ""skip=3 delims="" %%A in ('dir /a:-d /b /o:-d /t:c *.log ^2^>nul') do if exist ""%%~fA"" del ""%%~fA""
-if not exist %DOT_STUDIO%\db\* mkdir %DOT_STUDIO%\db
+            SW.WriteLine(@"echo Suppression des logs");
+            SW.Write(@"for /f ""skip=" + Properties.Settings.Default.nlogs);
+            SW.Write(@" delims="" %%A in ('dir /a:-d /b /o:-d /t:c *.log ^2^>nul') do if exist ""%%~fA"" del ""%%~fA""");
+            SW.WriteLine("");
+            SW.WriteLine(@"if not exist %DOT_STUDIO%\db\* mkdir %DOT_STUDIO%\db
 if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             if (LuniiKit.Properties.Settings.Default.studioportable == true)
             {
                 SW.WriteLine(@"java -Duser.home=%STUDIO_PATH% -Dvertx.disableDnsResolver=true -Dfile.encoding=UTF-8 ^
  -cp ""%STUDIO_PATH%/studio-web-ui-%version_LUNII%.jar"";""%STUDIO_PATH%/lib-%version_LUNII%/*"";. ^
- io.vertx.core.Launcher run studio.webui.MainVerticle");
+ io.vertx.core.Launcher run studio.webui.MainVerticle" + skiptests);
             }
             else
             {
                 SW.WriteLine(@"java -Dvertx.disableDnsResolver=true -Dfile.encoding=UTF-8 ^
  -cp ""%STUDIO_PATH%/studio-web-ui-%version_LUNII%.jar"";""%STUDIO_PATH%/lib-%version_LUNII%/*"";. ^
- io.vertx.core.Launcher run studio.webui.MainVerticle");
+ io.vertx.core.Launcher run studio.webui.MainVerticle" + skiptests);
             }
 
             SW.Flush();
@@ -291,6 +315,10 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
 
         private void studio3_Click(object sender, RoutedEventArgs e)
         {
+            if (LuniiKit.Properties.Settings.Default.skiptests == true)
+            {
+                skiptests = " -DskipTests";
+            }
             System.IO.StreamWriter SW = new System.IO.StreamWriter("STudio.bat");
 
             SW.WriteLine(@"@echo off");
@@ -346,21 +374,23 @@ if %jver% LSS 110000 (
 )");
 
             }
-            SW.WriteLine(@"echo Suppression des logs
-for /f ""skip=3 delims="" %%A in ('dir /a:-d /b /o:-d /t:c *.log ^2^>nul') do if exist ""%%~fA"" del ""%%~fA""
-if not exist %DOT_STUDIO%\db\* mkdir %DOT_STUDIO%\db
+            SW.WriteLine(@"echo Suppression des logs");
+            SW.Write(@"for /f ""skip=" + Properties.Settings.Default.nlogs);
+            SW.Write(@" delims="" %%A in ('dir /a:-d /b /o:-d /t:c *.log ^2^>nul') do if exist ""%%~fA"" del ""%%~fA""");
+            SW.WriteLine("");
+            SW.WriteLine(@"if not exist %DOT_STUDIO%\db\* mkdir %DOT_STUDIO%\db
 if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             if (LuniiKit.Properties.Settings.Default.studioportable == true)
             {
                 SW.WriteLine(@"java -Duser.home=%STUDIO_PATH% -Dvertx.disableDnsResolver=true -Dfile.encoding=UTF-8 ^
  -cp ""%STUDIO_PATH%/studio-web-ui-%version_LUNII%.jar"";""%STUDIO_PATH%/lib-%version_LUNII%/*"";. ^
- io.vertx.core.Launcher run studio.webui.MainVerticle");
+ io.vertx.core.Launcher run studio.webui.MainVerticle" + skiptests);
             }
             else
             {
                 SW.WriteLine(@"java -Dvertx.disableDnsResolver=true -Dfile.encoding=UTF-8 ^
  -cp ""%STUDIO_PATH%/studio-web-ui-%version_LUNII%.jar"";""%STUDIO_PATH%/lib-%version_LUNII%/*"";. ^
- io.vertx.core.Launcher run studio.webui.MainVerticle");
+ io.vertx.core.Launcher run studio.webui.MainVerticle" + skiptests);
             }
 
             SW.Flush();

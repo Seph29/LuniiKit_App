@@ -1,5 +1,7 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Windows;
+using System.Windows.Input;
 
 namespace LuniiKit
 {
@@ -35,11 +37,25 @@ namespace LuniiKit
             Properties.Settings.Default.confport = cport.Text;
             Properties.Settings.Default.studioportable = isport.IsChecked.Value;
             Properties.Settings.Default.autoopenweb = autoopen.IsChecked.Value;
+            Properties.Settings.Default.skiptests = skip.IsChecked.Value;
+            Properties.Settings.Default.nlogs = Convert.ToInt16(nombrelogs.Text);
             Properties.Settings.Default.Save();
             objMainWindow.Hide();
             this.Hide();
 
         }
+        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !IsValid(e.Text);
+        }
+
+        public static bool IsValid(string str)
+        {
+            int i;
+            return int.TryParse(str, out i) && i >= 1 && i <= 99;
+        }
+
+
     }
 }
 
