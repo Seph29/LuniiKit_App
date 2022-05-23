@@ -2,49 +2,37 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="LuniiKit.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="confhost" Type="System.String" Scope="User">
+    <Setting Name="confhost" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="confport" Type="System.String" Scope="User">
+    <Setting Name="confport" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="defhost" Type="System.String" Scope="Application">
+    <Setting Name="defhost" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Type="System.String" Scope="Application">
       <Value Profile="(Default)">localhost</Value>
     </Setting>
-    <Setting Name="defport" Type="System.String" Scope="Application">
+    <Setting Name="defport" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Type="System.String" Scope="Application">
       <Value Profile="(Default)">8080</Value>
     </Setting>
-    <Setting Name="studioportable" Type="System.Boolean" Scope="User">
+    <Setting Name="studioportable" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="appver" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">2.1.3</Value>
-    </Setting>
-    <Setting Name="autoopenweb" Type="System.Boolean" Scope="User">
+    <Setting Name="autoopenweb" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="urlver" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">https://raw.githubusercontent.com/Seph29/LuniiKit_App/master/ver</Value>
-    </Setting>
-    <Setting Name="url" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">https://github.com/Seph29/LuniiKit_App</Value>
-    </Setting>
-    <Setting Name="urldownload" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">https://github.com/Seph29/LuniiKit_App/releases</Value>
-    </Setting>
-    <Setting Name="studio1ver" Type="System.String" Scope="Application">
+    <Setting Name="studio1ver" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Type="System.String" Scope="Application">
       <Value Profile="(Default)">0.3.1</Value>
     </Setting>
-    <Setting Name="studio2ver" Type="System.String" Scope="Application">
+    <Setting Name="studio2ver" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Type="System.String" Scope="Application">
       <Value Profile="(Default)">0.4.2</Value>
     </Setting>
-    <Setting Name="studio3ver" Type="System.String" Scope="Application">
+    <Setting Name="studio3ver" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Type="System.String" Scope="Application">
       <Value Profile="(Default)">0.4.3-SNAPSHOT</Value>
     </Setting>
-    <Setting Name="nlogs" Type="System.Int32" Scope="User">
+    <Setting Name="nlogs" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Roaming="true" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">3</Value>
     </Setting>
-    <Setting Name="skiptests" Type="System.Boolean" Scope="User">
+    <Setting Name="skiptests" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
