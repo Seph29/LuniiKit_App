@@ -19,8 +19,8 @@ namespace LuniiKit
         }
         private void StartApp()
         {
-            WinSparkle.win_sparkle_set_appcast_url("https://raw.githubusercontent.com/Seph29/LuniiKit_App/2.2.0/Update/update.ver");
-            WinSparkle.win_sparkle_init();
+//            WinSparkle.win_sparkle_set_appcast_url("https://raw.githubusercontent.com/Seph29/LuniiKit_App/2.2.0/docs/update.ver");
+//            WinSparkle.win_sparkle_init();
             Closing += MainWindow_Closing;
             vertext.IsDocumentEnabled = true;
             vertext.Document.Blocks.FirstBlock.Margin = new Thickness(0);
