@@ -8,13 +8,13 @@ LuniiKit est un launcher pour le logiciel STUdio, il permet aussi d'installer le
 
 Mon code est sûrement moche mais fonctionnel 😜
 
-![screeenshot](https://i.imgur.com/uOhujL5.png)
-![screeenshot](https://i.imgur.com/CWbfr3Q.png)
-![screeenshot](https://i.imgur.com/jqKeFWG.png)
+![screeenshot](https://i.imgur.com/xnt50Yv.png)
+![screeenshot](https://i.imgur.com/VR86bw5.png)
+![screeenshot](https://i.imgur.com/G1Vk3qf.png)
 
 ## Pour commencer
 
-vous pouvez telecharger le Package complet ici : [LuniiKit 2.1.3](https://github.com/Seph29/LuniiKit_App/releases/download/2.1.1/LuniiKit-v2.1.2.zip)
+vous pouvez telecharger le Package complet ici : [LuniiKit 2.2.0](https://github.com/Seph29/LuniiKit_App/releases/tag/2.2.0-beta1)
 
 Vous pouvez aussi générer la solution vous-même via le code source et faire votre propre package en respectant la stucture
 ![screeenshot](https://i.imgur.com/wKJd5qn.png)
@@ -42,7 +42,7 @@ Visual Studio 2022
 ## Versions
 
 - **Dernière version stable :** 2.1.3
-- **Dernière version :** 2.1.3
+- **Dernière version :** 2.2.0-beta1
 
 ## Changelog
 
