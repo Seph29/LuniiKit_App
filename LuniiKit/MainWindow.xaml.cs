@@ -30,6 +30,13 @@ namespace LuniiKit
             {
                 studio3.Visibility = Visibility.Visible;
             }
+            string nompartiel2 = "spg";
+            DirectoryInfo rechercherepertoire2 = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
+            FileSystemInfo[] fichieretrepertoire2 = rechercherepertoire2.GetFileSystemInfos(nompartiel2);
+            foreach (FileSystemInfo fichiertrouve2 in fichieretrepertoire2)
+            {
+                spg.IsEnabled = true;
+            }
             vertext.Document.Blocks.Clear();
             vertext.Document.Blocks.Add(new Paragraph(new Run("LuniiKit Version : " + FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location).FileVersion)));
         }
@@ -44,7 +51,7 @@ namespace LuniiKit
             WinSparkle.win_sparkle_cleanup();
             Environment.Exit(0);
         }
-         private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             ContextMenu cm = this.FindResource("javaInstallButton") as ContextMenu;
             cm.PlacementTarget = sender as Button;
@@ -316,10 +323,22 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             LuniiKitOptions objOptions = new LuniiKitOptions();
             objOptions.ShowDialog();
         }
+        private void FolderChoice(object sender, RoutedEventArgs e)
+        {
+            ContextMenu cm = this.FindResource("choixfolder") as ContextMenu;
+            cm.PlacementTarget = sender as Button;
+            cm.IsOpen = true;
+        }
         private void OpenFolder(object sender, RoutedEventArgs e)
         {
             string path = Directory.GetCurrentDirectory();
             Process.Start("explorer.exe", path);
+        }
+        private void OpenFolderSPG(object sender, RoutedEventArgs e)
+        {
+            string path = Directory.GetCurrentDirectory();
+            string spgfolder = path + "\\spg";
+            Process.Start("explorer.exe", spgfolder);
         }
         private void OpenSTUdioFolder(object sender, RoutedEventArgs e)
         {
@@ -341,7 +360,6 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             Directory.CreateDirectory(target.FullName);
             foreach (FileInfo fi in source.GetFiles())
             {
-                Console.WriteLine(@"Copying {0}\{1}", target.FullName, fi.Name);
                 fi.CopyTo(Path.Combine(target.FullName, fi.Name), true);
             }
             foreach (DirectoryInfo diSourceSubDir in source.GetDirectories())
@@ -354,24 +372,55 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
         private void USB_Copy(object sender, RoutedEventArgs e)
         {
             System.Windows.Forms.FolderBrowserDialog folderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            folderDialog.ShowDialog();
-            String spath = folderDialog.SelectedPath;
-            String appfolder = Directory.GetCurrentDirectory();
-            DirectoryInfo AppFolder = new DirectoryInfo(appfolder);
-            if (spath != null || spath.Length != 0)
+            if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
             {
-                DirectoryInfo sPath = new DirectoryInfo(spath);
+                //handle Cancel
+            }
+            else
+            {
+                String spath = folderDialog.SelectedPath;
+                String appfolder = Directory.GetCurrentDirectory();
+                DirectoryInfo AppFolder = new DirectoryInfo(appfolder);
+                if (spath != null || spath.Length != 0)
                 {
-                    try
+                    DirectoryInfo sPath = new DirectoryInfo(spath);
                     {
-                        CopyAll(AppFolder, sPath);
-                        MessageBox.Show("Copy OK !");
-                        Process.Start("explorer.exe", spath);
+                        try
+                        {
+                            CopyAll(AppFolder, sPath);
+                            MessageBox.Show("Copy OK !");
+                            Process.Start("explorer.exe", spath);
+                        }
+                        catch (System.IO.FileNotFoundException ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                     }
-                    catch (System.IO.FileNotFoundException ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
+                }
+            }
+        }
+        private void OpenSPG(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.FolderBrowserDialog folderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            string path = Directory.GetCurrentDirectory();
+            string spgfolder = path + "\\spg";
+            folderDialog.SelectedPath = spgfolder;
+            if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
+            {
+                //handle Cancel
+            }
+            else
+            {
+                string spath = folderDialog.SelectedPath;
+                var dialog = new InputBox();
+                if (dialog.ShowDialog() == true)
+                {
+                    Process process = new Process();
+                    process.StartInfo.FileName = "spg\\studio-pack-generator-x86_64-windows.exe";
+                    process.StartInfo.Arguments = dialog.ResponseText + " " + "\"" + spath + "";
+                    process.Start();
+                    process.WaitForExit();
+                    MessageBox.Show("Done !");
                 }
             }
         }

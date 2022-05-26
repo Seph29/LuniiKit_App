@@ -10,12 +10,29 @@
         <ContextMenu x:Key="javaInstallButton">
             <MenuItem Click="jdk11_Click" Header="JDK 11">
                 <MenuItem.Icon>
-                    <Image Source="/Images/winget.png" Width="16" Height="16" Stretch="Fill" />
+                    <Image Source="/Images/winget.png" Width="16" Height="16" />
                 </MenuItem.Icon>
             </MenuItem>
             <MenuItem Click="jdk17_Click" Header="JDK 17">
                 <MenuItem.Icon>
-                    <Image Source="/Images/winget.png" Stretch="UniformToFill" Width="16" Height="16" />
+                    <Image Source="/Images/winget.png" Width="16" Height="16" />
+                </MenuItem.Icon>
+            </MenuItem>
+        </ContextMenu>
+        <ContextMenu x:Key="choixfolder">
+            <MenuItem Click="OpenSTUdioFolder" Header="Ouvrir le dossier library de STUdio">
+                <MenuItem.Icon>
+                    <Image Source="/Images/lib.png" Width="16" Height="16" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Click="OpenFolder" Header="Ouvrir le dossier de l'application LuniiKit">
+                <MenuItem.Icon>
+                    <Image Source="/Images/folder.png" Width="16" Height="16" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Click="OpenFolderSPG" Header="Ouvrir le dossier de l'application Studio Pack Generator">
+                <MenuItem.Icon>
+                    <Image Source="/Images/spg.png" Width="16" Height="16" />
                 </MenuItem.Icon>
             </MenuItem>
         </ContextMenu>
@@ -61,21 +78,21 @@
                 <TextBlock VerticalAlignment="Center" />
             </StackPanel>
         </Button>
-        <Button x:Name="luniifolder" ToolTip="Ouvrir le dossier de l'application LuniiKit" Margin="0,183,47,0" Height="34" VerticalAlignment="Top" HorizontalAlignment="Right" Width="34" Grid.Column="2" Grid.Row="1" Click="OpenFolder">
+        <Button x:Name="luniifolder" ToolTip="Ouvrir le dossier de l'application LuniiKit" Margin="0,183,47,0" Height="34" VerticalAlignment="Top" HorizontalAlignment="Right" Width="34" Grid.Column="2" Grid.Row="1" Click="FolderChoice">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Images/folder.png" Stretch="UniformToFill"/>
                 <TextBlock VerticalAlignment="Center" />
             </StackPanel>
         </Button>
-        <Button x:Name="libfolder" ToolTip="Ouvrir le dossier library de STUdio" Margin="0,183,86,0" Height="34" VerticalAlignment="Top" HorizontalAlignment="Right" Width="34" Grid.Column="2" Grid.Row="1" Click="OpenSTUdioFolder">
+        <Button x:Name="USBCopy" ToolTip="Work in progress" Margin="0,183,86,0" Height="34" VerticalAlignment="Top" HorizontalAlignment="Right" Width="34" Grid.Column="2" Grid.Row="1" Click="USB_Copy" >
             <StackPanel Orientation="Horizontal">
-                <Image Source="/Images/lib.png" Stretch="UniformToFill"/>
+                <Image Source="/Images/usb.png" Stretch="UniformToFill"/>
                 <TextBlock VerticalAlignment="Center" />
             </StackPanel>
         </Button>
-        <Button x:Name="USBCopy" ToolTip="Work in progress" Margin="0,183,125,0" Height="34" VerticalAlignment="Top" HorizontalAlignment="Right" Width="34" Grid.Column="1" Grid.Row="1" Click="USB_Copy" Grid.ColumnSpan="2">
+        <Button x:Name="spg" ToolTip="Créer un pack avec Studio Pack Generator" Margin="0,183,125,0" Height="34" VerticalAlignment="Top" HorizontalAlignment="Right" Width="34" Grid.Column="1" Grid.Row="1" IsEnabled="False" Click="OpenSPG" Grid.ColumnSpan="2">
             <StackPanel Orientation="Horizontal">
-                <Image Source="/Images/usb.png" Stretch="UniformToFill" />
+                <Image Source="/Images/spg.png" Stretch="UniformToFill" />
                 <TextBlock VerticalAlignment="Center" />
             </StackPanel>
         </Button>
