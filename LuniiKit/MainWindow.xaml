@@ -73,7 +73,7 @@
                 <TextBlock VerticalAlignment="Center" />
             </StackPanel>
         </Button>
-        <Button x:Name="USBCopy" ToolTip="Work in progress" Margin="0,183,125,0" Height="34" VerticalAlignment="Top" HorizontalAlignment="Right" Width="34" Grid.Column="1" Grid.Row="1" Click="USB_Copy" Grid.ColumnSpan="2" IsEnabled="False">
+        <Button x:Name="USBCopy" ToolTip="Work in progress" Margin="0,183,125,0" Height="34" VerticalAlignment="Top" HorizontalAlignment="Right" Width="34" Grid.Column="1" Grid.Row="1" Click="USB_Copy" Grid.ColumnSpan="2">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Images/usb.png" Stretch="UniformToFill" />
                 <TextBlock VerticalAlignment="Center" />

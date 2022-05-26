@@ -23,7 +23,7 @@
         <CheckBox x:Name="autoopen" Content="Auto open browser" HorizontalAlignment="Left" Height="16" Margin="11,27,0,0" VerticalAlignment="Top" Width="185" IsChecked="{Binding autoopenweb, Source={x:Static properties:Settings.Default}}" Grid.ColumnSpan="2"/>
         <Button x:Name="ok" Grid.Column="1" Content="OK" Margin="32,160,70,0" VerticalAlignment="Center" Click="ook" HorizontalAlignment="Center" Width="40" Height="26"/>
         <CheckBox x:Name="skip" Content="Skip Tests (pour Java17)" HorizontalAlignment="Left" Height="16" Margin="11,48,0,0" VerticalAlignment="Top" Width="185" IsChecked="{Binding skiptests, Source={x:Static properties:Settings.Default}}" Grid.ColumnSpan="2"/>
-        <Button x:Name="Update" ToolTip="Work in progress" Content="Rechercher les mises à jour" Margin="20,170,0,0" VerticalAlignment="Top" Click="CheckUpdate" HorizontalAlignment="Left" Width="156" Grid.ColumnSpan="2" Height="26" IsEnabled="False"/>
+        <Button x:Name="Update" ToolTip="Work in progress" Content="Rechercher les mises à jour" Margin="20,170,0,0" VerticalAlignment="Top" Click="CheckUpdate" HorizontalAlignment="Left" Width="156" Grid.ColumnSpan="2" Height="26"/>
 
     </Grid>
 </Window>

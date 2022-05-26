@@ -7,7 +7,6 @@ using System.Windows.Controls;
 using System.Windows.Documents;
 using Updater;
 
-
 namespace LuniiKit
 {
     public partial class MainWindow : Window
@@ -19,8 +18,8 @@ namespace LuniiKit
         }
         private void StartApp()
         {
-//            WinSparkle.win_sparkle_set_appcast_url("https://raw.githubusercontent.com/Seph29/LuniiKit_App/2.2.0/docs/update.ver");
-//            WinSparkle.win_sparkle_init();
+            WinSparkle.win_sparkle_set_appcast_url("https://raw.githubusercontent.com/Seph29/LuniiKit_App/2.2.0/docs/update.ver");
+            WinSparkle.win_sparkle_init();
             Closing += MainWindow_Closing;
             vertext.IsDocumentEnabled = true;
             vertext.Document.Blocks.FirstBlock.Margin = new Thickness(0);
@@ -34,7 +33,6 @@ namespace LuniiKit
             vertext.Document.Blocks.Clear();
             vertext.Document.Blocks.Add(new Paragraph(new Run("LuniiKit Version : " + FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location).FileVersion)));
         }
-
         private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             e.Cancel = true;
@@ -64,7 +62,6 @@ namespace LuniiKit
             strCmdText = "/C winget install EclipseAdoptium.Temurin.17";
             Process.Start("CMD.exe", strCmdText);
         }
-
         private void idriver_Click(object sender, RoutedEventArgs e)
         {
             if (Environment.Is64BitOperatingSystem == true)
@@ -339,10 +336,44 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
                 Process.Start("explorer.exe", studiofolder);
             }
         }
-
+        public static void CopyAll(DirectoryInfo source, DirectoryInfo target)
+        {
+            Directory.CreateDirectory(target.FullName);
+            foreach (FileInfo fi in source.GetFiles())
+            {
+                Console.WriteLine(@"Copying {0}\{1}", target.FullName, fi.Name);
+                fi.CopyTo(Path.Combine(target.FullName, fi.Name), true);
+            }
+            foreach (DirectoryInfo diSourceSubDir in source.GetDirectories())
+            {
+                DirectoryInfo nextTargetSubDir =
+                target.CreateSubdirectory(diSourceSubDir.Name);
+                CopyAll(diSourceSubDir, nextTargetSubDir);
+            }
+        }
         private void USB_Copy(object sender, RoutedEventArgs e)
         {
-
+            System.Windows.Forms.FolderBrowserDialog folderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            folderDialog.ShowDialog();
+            String spath = folderDialog.SelectedPath;
+            String appfolder = Directory.GetCurrentDirectory();
+            DirectoryInfo AppFolder = new DirectoryInfo(appfolder);
+            if (spath != null || spath.Length != 0)
+            {
+                DirectoryInfo sPath = new DirectoryInfo(spath);
+                {
+                    try
+                    {
+                        CopyAll(AppFolder, sPath);
+                        MessageBox.Show("Copy OK !");
+                        Process.Start("explorer.exe", spath);
+                    }
+                    catch (System.IO.FileNotFoundException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
         }
     }
 }
