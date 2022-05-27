@@ -1,7 +1,6 @@
-﻿using System;
-using System.ComponentModel;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Input;
+
 
 namespace LuniiKit
 {
@@ -16,9 +15,20 @@ namespace LuniiKit
             get { return ResponseTextBox.Text; }
             set { ResponseTextBox.Text = value; }
         }
-        private void OKButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void OKButton_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
         }
+
+        private void OKButton_Click(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                DialogResult = true;
+                e.Handled = true;
+            }
+
+        }
     }
+
 }

@@ -12,7 +12,6 @@ namespace LuniiKit
         {
             InitializeComponent();
         }
-
         protected override void OnClosing(CancelEventArgs e)
         {
             this.Visibility = Visibility.Hidden;

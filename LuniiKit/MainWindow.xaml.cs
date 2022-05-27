@@ -25,10 +25,10 @@ namespace LuniiKit
             vertext.Document.Blocks.FirstBlock.Margin = new Thickness(0);
             string nompartiel = "SNAPSHOT";
             DirectoryInfo rechercherepertoire = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
-            FileSystemInfo[] fichieretrepertoire = rechercherepertoire.GetFileSystemInfos("*" + nompartiel + "*");
+            FileSystemInfo[] fichieretrepertoire = rechercherepertoire.GetFileSystemInfos("*" + nompartiel);
             foreach (FileSystemInfo fichiertrouve in fichieretrepertoire)
             {
-                studio3.Visibility = Visibility.Visible;
+                studio3.IsEnabled = true;
             }
             string nompartiel2 = "spg";
             DirectoryInfo rechercherepertoire2 = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
@@ -73,19 +73,19 @@ namespace LuniiKit
         {
             if (Environment.Is64BitOperatingSystem == true)
             {
-                ProcessStartInfo myProcess = new ProcessStartInfo("dpinst64.exe");
-                myProcess.WorkingDirectory = @"driver";
-                myProcess.UseShellExecute = true;
-                myProcess.Verb = "runas";
-                Process.Start(myProcess);
+                ProcessStartInfo process = new ProcessStartInfo("dpinst64.exe");
+                process.WorkingDirectory = @"driver";
+                process.UseShellExecute = true;
+                process.Verb = "runas";
+                Process.Start(process);
             }
             else
             {
-                ProcessStartInfo myProcess = new ProcessStartInfo("dpinst32.exe");
-                myProcess.WorkingDirectory = @"driver";
-                myProcess.UseShellExecute = true;
-                myProcess.Verb = "runas";
-                Process.Start(myProcess);
+                ProcessStartInfo process = new ProcessStartInfo("dpinst32.exe");
+                process.WorkingDirectory = @"driver";
+                process.UseShellExecute = true;
+                process.Verb = "runas";
+                Process.Start(process);
             }
         }
         private void studio1_Click(object sender, RoutedEventArgs e)
@@ -316,12 +316,30 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
         }
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            Process.Start("https://github.com/Seph29");
+            Process.Start("https://github.com/Seph29/LuniiKit_App");
+        }
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://github.com/marian-m12l/studio");
+        }
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://github.com/kairoh/studio");
+        }
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://github.com/jersou/studio-pack-generator");
         }
         private void OpenWindow(object sender, RoutedEventArgs e)
         {
             LuniiKitOptions objOptions = new LuniiKitOptions();
             objOptions.ShowDialog();
+        }
+        private void Githubchoix(object sender, RoutedEventArgs e)
+        {
+            ContextMenu cm = this.FindResource("Github") as ContextMenu;
+            cm.PlacementTarget = sender as Button;
+            cm.IsOpen = true;
         }
         private void FolderChoice(object sender, RoutedEventArgs e)
         {
@@ -374,12 +392,12 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             System.Windows.Forms.FolderBrowserDialog folderDialog = new System.Windows.Forms.FolderBrowserDialog();
             if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
             {
-                //handle Cancel
+                //Cancel
             }
             else
             {
-                String spath = folderDialog.SelectedPath;
-                String appfolder = Directory.GetCurrentDirectory();
+                string spath = folderDialog.SelectedPath;
+                string appfolder = Directory.GetCurrentDirectory();
                 DirectoryInfo AppFolder = new DirectoryInfo(appfolder);
                 if (spath != null || spath.Length != 0)
                 {
@@ -407,7 +425,7 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             folderDialog.SelectedPath = spgfolder;
             if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
             {
-                //handle Cancel
+                //Cancel
             }
             else
             {
@@ -416,7 +434,7 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
                 if (dialog.ShowDialog() == true)
                 {
                     Process process = new Process();
-                    process.StartInfo.FileName = "spg\\studio-pack-generator-x86_64-windows.exe";
+                    process.StartInfo.FileName = spgfolder + "\\studio-pack-generator-x86_64-windows.exe";
                     process.StartInfo.Arguments = dialog.ResponseText + " " + "\"" + spath + "";
                     process.Start();
                     process.WaitForExit();
