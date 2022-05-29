@@ -156,5 +156,33 @@ namespace LuniiKit.Properties {
                 this["skiptests"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(Bluegrams.Application.PortableJsonSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        public bool folderstudio {
+            get {
+                return ((bool)(this["folderstudio"]));
+            }
+            set {
+                this["folderstudio"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(Bluegrams.Application.PortableJsonSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        public bool folderspg {
+            get {
+                return ((bool)(this["folderspg"]));
+            }
+            set {
+                this["folderspg"] = value;
+            }
+        }
     }
 }

@@ -20,6 +20,8 @@ namespace LuniiKit
         {
             WinSparkle.win_sparkle_set_appcast_url("https://raw.githubusercontent.com/Seph29/LuniiKit_App/2.2.0/docs/update.ver");
             WinSparkle.win_sparkle_init();
+            Properties.Settings.Default.folderstudio = false;
+            Properties.Settings.Default.folderspg = false;
             Closing += MainWindow_Closing;
             vertext.IsDocumentEnabled = true;
             vertext.Document.Blocks.FirstBlock.Margin = new Thickness(0);
@@ -36,6 +38,7 @@ namespace LuniiKit
             foreach (FileSystemInfo fichiertrouve2 in fichieretrepertoire2)
             {
                 spg.IsEnabled = true;
+                Properties.Settings.Default.folderspg = true;
             }
             vertext.Document.Blocks.Clear();
             vertext.Document.Blocks.Add(new Paragraph(new Run("LuniiKit Version : " + FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location).FileVersion)));
@@ -343,6 +346,28 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
         }
         private void FolderChoice(object sender, RoutedEventArgs e)
         {
+            if (Properties.Settings.Default.studioportable == true)
+            {
+                string nompartiel = ".studio";
+                DirectoryInfo rechercherepertoire = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
+                FileSystemInfo[] fichieretrepertoire = rechercherepertoire.GetFileSystemInfos(nompartiel);
+                foreach (FileSystemInfo fichiertrouve in fichieretrepertoire)
+                {
+                    Properties.Settings.Default.folderstudio = true;
+                }
+            }
+            else
+            { 
+                string nompartiel = ".studio";
+                DirectoryInfo rechercherepertoire = new DirectoryInfo(Environment.GetEnvironmentVariable("USERPROFILE"));
+                FileSystemInfo[] fichieretrepertoire = rechercherepertoire.GetFileSystemInfos(nompartiel);
+                foreach (FileSystemInfo fichiertrouve in fichieretrepertoire)
+                {
+                    //openstudioportable.IsEnable = true;
+                    Properties.Settings.Default.folderstudio = true;
+                }
+            
+            }
             ContextMenu cm = this.FindResource("choixfolder") as ContextMenu;
             cm.PlacementTarget = sender as Button;
             cm.IsOpen = true;
@@ -390,6 +415,7 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
         private void USB_Copy(object sender, RoutedEventArgs e)
         {
             System.Windows.Forms.FolderBrowserDialog folderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            folderDialog.Description = "Choisir le dossier où copier LuniiKit";
             if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
             {
                 //Cancel
@@ -423,6 +449,7 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             string path = Directory.GetCurrentDirectory();
             string spgfolder = path + "\\spg";
             folderDialog.SelectedPath = spgfolder;
+            folderDialog.Description = "Choisir le dossier du pack à créer";
             if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
             {
                 //Cancel

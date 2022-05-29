@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LuniiKit"
+        xmlns:properties="clr-namespace:LuniiKit.Properties"        
         mc:Ignorable="d"
         Title="LuniiKit" Height="302" Width="300" ResizeMode="NoResize" Icon="/Images/icon.png" WindowStartupLocation="CenterScreen" RenderOptions.BitmapScalingMode="HighQuality" UseLayoutRounding="True" SnapsToDevicePixels="False">
     <Window.Resources>
@@ -20,24 +21,24 @@
             </MenuItem>
         </ContextMenu>
         <ContextMenu x:Key="choixfolder">
-            <MenuItem Click="OpenSTUdioFolder" Header="Ouvrir le dossier library de STUdio">
-                <MenuItem.Icon>
-                    <Image Source="/Images/lib.png" Width="16" Height="16" />
-                </MenuItem.Icon>
-            </MenuItem>
             <MenuItem Click="OpenFolder" Header="Ouvrir le dossier de l'application LuniiKit">
                 <MenuItem.Icon>
                     <Image Source="/Images/folder.png" Width="16" Height="16" />
                 </MenuItem.Icon>
             </MenuItem>
-            <MenuItem Click="OpenFolderSPG" Header="Ouvrir le dossier de l'application Studio Pack Generator">
+            <MenuItem Click="OpenSTUdioFolder" Header="Ouvrir le dossier library de STUdio" IsEnabled="{Binding Path=folderstudio,Source={x:Static properties:Settings.Default}}">
+                <MenuItem.Icon>
+                    <Image Source="/Images/lib.png" Width="16" Height="16" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Click="OpenFolderSPG" Header="Ouvrir le dossier de l'application Studio Pack Generator" IsEnabled="{Binding Path=folderspg,Source={x:Static properties:Settings.Default}}">
                 <MenuItem.Icon>
                     <Image Source="/Images/spg.png" Width="16" Height="16" />
                 </MenuItem.Icon>
             </MenuItem>
         </ContextMenu>
         <ContextMenu x:Key="Github">
-            <MenuItem Click="Button_Click_4" Header="Seph29/LuniiKit">
+            <MenuItem Click="Button_Click_4" Header="Seph29/LuniiKit__App">
                 <MenuItem.Icon>
                     <Image Source="/Images/logo_github.png" Width="16" Height="16" />
                 </MenuItem.Icon>
