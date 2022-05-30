@@ -33,7 +33,6 @@ namespace LuniiKit
             Properties.Settings.Default.confport = cport.Text;
             Properties.Settings.Default.studioportable = isport.IsChecked.Value;
             Properties.Settings.Default.autoopenweb = autoopen.IsChecked.Value;
-            Properties.Settings.Default.skiptests = skip.IsChecked.Value;
             Properties.Settings.Default.nlogs = Convert.ToInt16(nombrelogs.Text);
             Properties.Settings.Default.Save();
             objMainWindow.Hide();

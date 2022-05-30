@@ -150,13 +150,8 @@ copy %STUDIO_PATH%\agent\studio-metadata-%version_LUNII%-jar-with-dependencies.j
                 Process.Start("STudio.bat");
             }
         }
-        private string skiptests;
         private void studio2_Click(object sender, RoutedEventArgs e)
         {
-            if (Properties.Settings.Default.skiptests == true)
-            {
-                skiptests = " -DskipTests";
-            }
             StreamWriter SW = new StreamWriter("STudio.bat");
             SW.WriteLine(@"@echo off");
             if (Properties.Settings.Default.defhost == Properties.Settings.Default.confhost)
@@ -219,13 +214,13 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             {
                 SW.WriteLine(@"java -Duser.home=%STUDIO_PATH% -Dvertx.disableDnsResolver=true -Dfile.encoding=UTF-8 ^
  -cp ""%STUDIO_PATH%/studio-web-ui-%version_LUNII%.jar"";""%STUDIO_PATH%/lib-%version_LUNII%/*"";. ^
- io.vertx.core.Launcher run studio.webui.MainVerticle" + skiptests);
+ io.vertx.core.Launcher run studio.webui.MainVerticle");
             }
             else
             {
                 SW.WriteLine(@"java -Dvertx.disableDnsResolver=true -Dfile.encoding=UTF-8 ^
  -cp ""%STUDIO_PATH%/studio-web-ui-%version_LUNII%.jar"";""%STUDIO_PATH%/lib-%version_LUNII%/*"";. ^
- io.vertx.core.Launcher run studio.webui.MainVerticle" + skiptests);
+ io.vertx.core.Launcher run studio.webui.MainVerticle");
             }
             SW.Flush();
             SW.Close();
@@ -234,10 +229,6 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
         }
         private void studio3_Click(object sender, RoutedEventArgs e)
         {
-            if (Properties.Settings.Default.skiptests == true)
-            {
-                skiptests = " -DskipTests";
-            }
             StreamWriter SW = new StreamWriter("STudio.bat");
             SW.WriteLine(@"@echo off");
             if (Properties.Settings.Default.defhost == Properties.Settings.Default.confhost)
@@ -300,13 +291,13 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             {
                 SW.WriteLine(@"java -Duser.home=%STUDIO_PATH% -Dvertx.disableDnsResolver=true -Dfile.encoding=UTF-8 ^
  -cp ""%STUDIO_PATH%/studio-web-ui-%version_LUNII%.jar"";""%STUDIO_PATH%/lib-%version_LUNII%/*"";. ^
- io.vertx.core.Launcher run studio.webui.MainVerticle" + skiptests);
+ io.vertx.core.Launcher run studio.webui.MainVerticle");
             }
             else
             {
                 SW.WriteLine(@"java -Dvertx.disableDnsResolver=true -Dfile.encoding=UTF-8 ^
  -cp ""%STUDIO_PATH%/studio-web-ui-%version_LUNII%.jar"";""%STUDIO_PATH%/lib-%version_LUNII%/*"";. ^
- io.vertx.core.Launcher run studio.webui.MainVerticle" + skiptests);
+ io.vertx.core.Launcher run studio.webui.MainVerticle");
             }
             SW.Flush();
             SW.Close();
