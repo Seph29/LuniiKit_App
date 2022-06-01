@@ -27,6 +27,7 @@ Vous pouvez aussi générer la solution vous-même via le code source et faire v
   * lib-0.3.1 (studio 0.3.1 : renommer le dossier lib en lib-0.3.1)
   * lib-0.4.2 (studio 0.4.2 : renommer le dossier lib en lib-0.4.2)
   * lib-0.4.3 (studio 0.4.3 : renommer le dossier lib en lib-0.4.3-SNAPSHOT)
+  * spg (Studio-pack-generator)
 * Fichiers
   * studio-web-ui-0.3.1.jar
   * studio-web-ui-0.4.2.jar
@@ -42,14 +43,22 @@ Visual Studio 2022
 
 ## Versions
 
-- **Dernière version stable :** 2.1.3
+- **Dernière version stable :** 2.2.2
 - **Dernière version :** 2.2.0
 
 ## Changelog
 
-- Ajout du choix de la version Java à installer
-- Ajout option " -DskipTests"
-- Ajout option choix du nombre de logs conservés (entre 1 et 99)
+- Ajout de WinSparkle pour la gestion des mises à jour
+- Ajout de Studio Pack Generator
+- Création d'un installer avec NSIS
+- Sauvegarde des réglages au format JSON dans le dossier de l'application
+- Ajout d'un bouton raccourci vers le dossier de l'application
+- Ajout d'un bouton raccourci vers le dossier library de STUdio
+- Modification graphique des boutons
+- Ajout d'un bouton pour copier LuniiKit vers une clé USB (ou un autres dossier)
+- Nettoyage du code
+- Modification du bouton Github
+- Dernière version du SNAPSHOT Studio 0.4.3
 
 Liste des versions : [Cliquer pour afficher](https://github.com/Seph29/LuniiKit_App/tags)
 
