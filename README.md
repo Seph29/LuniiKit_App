@@ -43,7 +43,7 @@ Visual Studio 2022
 
 ## Versions
 
-- **Dernière version stable :** 2.2.2
+- **Dernière version stable :** 2.2.0
 - **Dernière version :** 2.2.0
 
 ## Changelog
