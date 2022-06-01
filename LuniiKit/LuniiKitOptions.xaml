@@ -6,22 +6,23 @@
         xmlns:local="clr-namespace:LuniiKit"
         xmlns:properties="clr-namespace:LuniiKit.Properties"
         mc:Ignorable="d"
-        Title="Options" Height="220" Width="206" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/Images/icon.png" WindowStyle="SingleBorderWindow">
-    <Grid>
+        Title="Options" Height="285" Width="206" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/Images/icon.png" WindowStyle="SingleBorderWindow">
+    <Grid Margin="0,0,0,-39">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
-        <CheckBox x:Name="isport" Content="STUdio version portable" HorizontalAlignment="Left" Height="16" Margin="11,6,0,0" VerticalAlignment="Top" Width="185" IsChecked="{Binding Path=studioportable,Source={x:Static properties:Settings.Default}}" Grid.ColumnSpan="2"/>
-        <Label Content="Host" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="39" Margin="6,66,0,0"/>
-        <TextBox x:Name="chost" HorizontalAlignment="Left" Margin="12,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18" Text="{Binding Path=confhost,Source={x:Static properties:Settings.Default}}" Grid.Column="1" />
-        <Label Content="Port" HorizontalAlignment="Left" Height="30" Margin="6,90,0,0" VerticalAlignment="Top" Width="39"/>
-        <TextBox x:Name="cport" HorizontalAlignment="Left" Margin="12,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18" Text="{Binding Path=confport,Source={x:Static properties:Settings.Default}}" Grid.Column="1" />
-        <Label Content="Nombre de logs conservés" HorizontalAlignment="Left" Height="30" Margin="6,114,0,0" VerticalAlignment="Top" Width="152" Grid.ColumnSpan="2" />
-        <TextBox x:Name="nombrelogs" HorizontalAlignment="Left" Margin="112,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="20" Height="18" Text="{Binding Path=nlogs,Source={x:Static properties:Settings.Default}}" Grid.Column="1" MaxLength="2" PreviewTextInput="TextBox_PreviewTextInput" />
-        <CheckBox x:Name="autoopen" Content="Auto open browser" HorizontalAlignment="Left" Height="16" Margin="11,27,0,0" VerticalAlignment="Top" Width="185" IsChecked="{Binding autoopenweb, Source={x:Static properties:Settings.Default}}" Grid.ColumnSpan="2"/>
-        <Button x:Name="ok" Grid.Column="1" Content="OK" Margin="32,130,70,0" VerticalAlignment="Center" Click="ook" HorizontalAlignment="Center" Width="40"/>
-        <CheckBox x:Name="skip" Content="Skip Tests (pour Java17)" HorizontalAlignment="Left" Height="16" Margin="11,48,0,0" VerticalAlignment="Top" Width="185" IsChecked="{Binding skiptests, Source={x:Static properties:Settings.Default}}" Grid.ColumnSpan="2"/>
+        <CheckBox x:Name="isport" Content="STUdio version portable" HorizontalAlignment="Left" Height="16" Margin="11,10,0,0" VerticalAlignment="Top" Width="185" IsChecked="{Binding Path=studioportable,Source={x:Static properties:Settings.Default}}" Grid.ColumnSpan="2"/>
+        <Label Content="Host" HorizontalAlignment="Center" Height="30" VerticalAlignment="Top" Width="39" Margin="0,63,0,0"/>
+        <TextBox x:Name="chost" HorizontalAlignment="Center" Margin="0,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" Text="{Binding Path=confhost,Source={x:Static properties:Settings.Default}}" Grid.Column="1" />
+        <Label Content="Port" HorizontalAlignment="Center" Height="30" Margin="0,98,0,0" VerticalAlignment="Top" Width="39"/>
+        <TextBox x:Name="cport" HorizontalAlignment="Center" Margin="0,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" Text="{Binding Path=confport,Source={x:Static properties:Settings.Default}}" Grid.Column="1" />
+        <Label Content="Nombre de logs conservés" HorizontalAlignment="Left" Height="30" Margin="4,128,0,0" VerticalAlignment="Top" Width="152" Grid.ColumnSpan="2" />
+        <TextBox x:Name="nombrelogs" HorizontalAlignment="Left" Margin="109,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" Height="22" Text="{Binding Path=nlogs,Source={x:Static properties:Settings.Default}}" Grid.Column="1" MaxLength="2" PreviewTextInput="TextBox_PreviewTextInput" />
+        <CheckBox x:Name="autoopen" Content="Auto open browser" HorizontalAlignment="Left" Height="16" Margin="11,35,0,0" VerticalAlignment="Top" Width="185" IsChecked="{Binding autoopenweb, Source={x:Static properties:Settings.Default}}" Grid.ColumnSpan="2"/>
+        <Button x:Name="ok" Grid.Column="1" Content="OK" Margin="32,160,70,0" VerticalAlignment="Center" Click="ook" HorizontalAlignment="Center" Width="40" Height="26"/>
+        <Button x:Name="Update" ToolTip="Work in progress" Content="Rechercher les mises à jour" Margin="20,170,0,0" VerticalAlignment="Top" Click="CheckUpdate" HorizontalAlignment="Left" Width="156" Grid.ColumnSpan="2" Height="26"/>
+
     </Grid>
 </Window>
