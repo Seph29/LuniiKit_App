@@ -103,13 +103,13 @@ color 9");
                 SW.WriteLine(@"set version_LUNII=" + Properties.Settings.Default.studio1ver);
                 if (Properties.Settings.Default.studioportable == true)
                 {
-                    SW.WriteLine(@"set STUDIO_PATH=%~dp0
-set DOT_STUDIO=%~dp0.studio
+                    SW.WriteLine(@"set STUDIO_PATH=%~dps0
+set DOT_STUDIO=%~dps0.studio
 set PATH=%STUDIO_PATH%jre11\bin;%PATH%");
                 }
                 else
                 {
-                    SW.WriteLine(@"set STUDIO_PATH=%~dp0
+                    SW.WriteLine(@"set STUDIO_PATH=%~dps0
 set DOT_STUDIO=""%UserProfile%\.studio""
 PATH %PATH%;%JAVA_HOME%\bin\
 java -version 1>nul 2>nul || (
@@ -181,13 +181,13 @@ color B");
             SW.WriteLine(@"set version_LUNII=" + Properties.Settings.Default.studio2ver);
             if (Properties.Settings.Default.studioportable == true)
             {
-                SW.WriteLine(@"set STUDIO_PATH=%~dp0
-set DOT_STUDIO=%~dp0.studio
+                SW.WriteLine(@"set STUDIO_PATH=%~dps0
+set DOT_STUDIO=%~dps0.studio
 set PATH=%STUDIO_PATH%jre11\bin;%PATH%");
             }
             else
             {
-                SW.WriteLine(@"set STUDIO_PATH=%~dp0
+                SW.WriteLine(@"set STUDIO_PATH=%~dps0
 set DOT_STUDIO=""%UserProfile%\.studio""
 PATH %PATH%;%JAVA_HOME%\bin\
 java -version 1>nul 2>nul || (
@@ -258,13 +258,13 @@ color D");
             SW.WriteLine(@"set version_LUNII=" + Properties.Settings.Default.studio3ver);
             if (Properties.Settings.Default.studioportable == true)
             {
-                SW.WriteLine(@"set STUDIO_PATH=%~dp0
-set DOT_STUDIO=%~dp0.studio
+                SW.WriteLine(@"set STUDIO_PATH=%~dps0
+set DOT_STUDIO=%~dps0.studio
 set PATH=%STUDIO_PATH%jre11\bin;%PATH%");
             }
             else
             {
-                SW.WriteLine(@"set STUDIO_PATH=%~dp0
+                SW.WriteLine(@"set STUDIO_PATH=%~dps0
 set DOT_STUDIO=""%UserProfile%\.studio""
 PATH %PATH%;%JAVA_HOME%\bin\
 java -version 1>nul 2>nul || (
