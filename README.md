@@ -15,7 +15,7 @@ Mon code est sûrement moche mais fonctionnel 😜
 
 ## Pour commencer
 
-vous pouvez telecharger le Package complet ici : [LuniiKit 2.2.0](https://github.com/Seph29/LuniiKit_App/releases/tag/2.2.0)
+vous pouvez telecharger le Package complet ici : [LuniiKit 2.2.2](https://github.com/Seph29/LuniiKit_App/releases/tag/2.2.2)
 
 Vous pouvez aussi générer la solution vous-même via le code source et faire votre propre package en respectant la stucture
 ![screeenshot](https://i.imgur.com/wKJd5qn.png)
@@ -43,22 +43,13 @@ Visual Studio 2022
 
 ## Versions
 
-- **Dernière version stable :** 2.2.0
-- **Dernière version :** 2.2.0
+- **Dernière version stable :** 2.2.2
+- **Dernière version :** 2.2.2
 
 ## Changelog
 
-- Ajout de WinSparkle pour la gestion des mises à jour
-- Ajout de Studio Pack Generator
-- Création d'un installer avec NSIS
-- Sauvegarde des réglages au format JSON dans le dossier de l'application
-- Ajout d'un bouton raccourci vers le dossier de l'application
-- Ajout d'un bouton raccourci vers le dossier library de STUdio
-- Modification graphique des boutons
-- Ajout d'un bouton pour copier LuniiKit vers une clé USB (ou un autres dossier)
-- Nettoyage du code
-- Modification du bouton Github
-- Dernière version du SNAPSHOT Studio 0.4.3
+- Améliorations et corrections de bugs
+- Ajout d'un choix entre un dossier et une Url pour Studio Pack Generator
 
 Liste des versions : [Cliquer pour afficher](https://github.com/Seph29/LuniiKit_App/tags)
 
