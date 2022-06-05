@@ -15,6 +15,11 @@ namespace LuniiKit
             get { return ResponseTextBox.Text; }
             set { ResponseTextBox.Text = value; }
         }
+        public string ResponseText2
+        {
+            get { return ResponseTextBox2.Text; }
+            set { ResponseTextBox2.Text = value; }
+        }
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = true;

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>changelog</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="changelog">
+    <meta name="keywords" content="changelog LuniiKit">
+    <style>
+        .check-list {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+        
+        .check-list li {
+            position: relative;
+            list-style-type: none;
+            padding-left: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .check-list li:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: -2px;
+            width: 5px;
+            height: 11px;
+            border-width: 0 2px 2px 0;
+            border-style: solid;
+            border-color: #00a8a8;
+            transform-origin: bottom left;
+            transform: rotate(45deg);
+        }
+        /* Boilerplate stuff */
+        
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
+        }
+        
+        html {
+            -webkit-font-smoothing: antialiased;
+            font-family: "Helvetica Neue", sans-serif;
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-size: 1.6rem;
+            /* 18px */
+            background-color: #efefef;
+            color: #324047
+        }
+        
+        html,
+        body,
+        section {
+            height: 100%;
+        }
+        
+        section {
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+        }
+        
+        div {
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div>
+            <h2>LuniiKit v2.2.1</h2>
+            <ul class="check-list">
+                <li>Correction d'un bug d'espace</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <div>
+            <h2>LuniiKit v2.2.0</h2>
+            <ul class="check-list">
+                <li>Ajout de WinSparkle pour la gestion des mises à jour</li>
+                <li>Ajout de Studio Pack Generator</li>                
+                <li>Création d'un installer avec NSIS</li>
+                <li>Sauvegarde des réglages au format JSON dans le dossier de l'application</li>
+                <li>Ajout d'un bouton raccourci vers le dossier de l'application</li>
+                <li>Ajout d'un bouton raccourci vers le dossier library de STUdio</li>
+                <li>Modification graphique des boutons</li>
+                <li>Ajout d'un bouton pour copier LuniiKit vers une clé USB (ou un autres dossier)</li>
+                <li>Nettoyage du code</li>
+                <li>Modification du bouton Github</li>
+                <li>Dernière version du SNAPSHOT Studio 0.4.3</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <div>
+            <h2>LuniiKit v2.1.3</h2>
+            <ul class="check-list">
+                <li>Ajout du choix de la version Java à installer</li>
+                <li>Ajout option choix du nombre de logs conservés (entre 1 et 99)</li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html>

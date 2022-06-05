@@ -1,8 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Input;
 using Newtonsoft.Json;
+using WPFCustomMessageBox;
 
 namespace LuniiKit
 {
@@ -11,18 +11,19 @@ namespace LuniiKit
         public LuniiKitOptions()
         {
             InitializeComponent();
+            
         }
         protected override void OnClosing(CancelEventArgs e)
         {
-            this.Visibility = Visibility.Hidden;
             string msg = "Voulez vous annuler ?";
-            MessageBoxResult result = MessageBox.Show(msg, "Warning", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            MessageBoxResult result = CustomMessageBox.ShowYesNo(Application.Current.MainWindow, msg, "Warning", "Oui", "Non", MessageBoxImage.Question);
             if (result == MessageBoxResult.No)
             {
                 e.Cancel = true;
             }
             else
             {
+                Properties.Settings.Default.Reload();
                 e.Cancel = false;
             }
         }
@@ -42,14 +43,14 @@ namespace LuniiKit
         {
             Updater.WinSparkle.win_sparkle_check_update_with_ui();
         }
-        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+
+        private void nombrelogs_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
-            e.Handled = !IsValid(e.Text);
-        }
-        public static bool IsValid(string str)
-        {
-            int i;
-            return int.TryParse(str, out i) && i >= 1 && i <= 99;
+            if (!System.Text.RegularExpressions.Regex.IsMatch(nombrelogs.Text, "^[1-9][0-9]?$"))
+            {
+                CustomMessageBox.ShowOK(Application.Current.MainWindow, "Vous devez choisir un nombre en 1 et 99", "Warning", "OK", MessageBoxImage.Error);
+                nombrelogs.Text = "3";
+            }
         }
     }
 }

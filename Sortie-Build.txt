@@ -1,0 +1,4 @@
+﻿L'opération de génération a démarré...
+1>------ Début de la génération : Projet : LuniiKit, Configuration : Debug Any CPU ------
+1>  LuniiKit -> C:\Users\Seph29\source\repos\LuniiKit\LuniiKit\bin\Debug\LuniiKit.exe
+========== Génération : 1 a réussi, 0 a échoué, 0 à jour, 0 a été ignoré ==========

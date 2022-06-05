@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using Updater;
+using WPFCustomMessageBox;
 
 namespace LuniiKit
 {
@@ -18,7 +19,7 @@ namespace LuniiKit
         }
         private void StartApp()
         {
-            WinSparkle.win_sparkle_set_appcast_url("https://raw.githubusercontent.com/Seph29/LuniiKit_App/master/docs/update.ver");
+            WinSparkle.win_sparkle_set_appcast_url("https://raw.githubusercontent.com/Seph29/LuniiKit_App/master/docs/update_zip.ver");
             WinSparkle.win_sparkle_init();
             Properties.Settings.Default.folderstudio = false;
             Properties.Settings.Default.folderspg = false;
@@ -46,13 +47,15 @@ namespace LuniiKit
         private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             e.Cancel = true;
-            if (MessageBox.Show("Voulez vous quitter LuniiKit?", "Quitter", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (CustomMessageBox.ShowYesNo(Application.Current.MainWindow, "Voulez vous quitter LuniiKit?", "Quitter", "Oui", "Non", MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
                 if (File.Exists("STUdio.bat"))
                 {
                     File.Delete("STUdio.bat");
                 }
-            WinSparkle.win_sparkle_cleanup();
-            Environment.Exit(0);
+                WinSparkle.win_sparkle_cleanup();
+                Environment.Exit(0);
+            }
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -354,7 +357,6 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
                 FileSystemInfo[] fichieretrepertoire = rechercherepertoire.GetFileSystemInfos(nompartiel);
                 foreach (FileSystemInfo fichiertrouve in fichieretrepertoire)
                 {
-                    //openstudioportable.IsEnable = true;
                     Properties.Settings.Default.folderstudio = true;
                 }
             
@@ -423,12 +425,12 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
                         try
                         {
                             CopyAll(AppFolder, sPath);
-                            MessageBox.Show("Copy OK !");
+                            CustomMessageBox.Show(Application.Current.MainWindow, "Copy OK !");
                             Process.Start("explorer.exe", spath);
                         }
                         catch (System.IO.FileNotFoundException ex)
                         {
-                            MessageBox.Show(ex.Message);
+                            CustomMessageBox.Show(Application.Current.MainWindow, ex.Message);
                         }
                     }
                 }
@@ -440,25 +442,50 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             string path = Directory.GetCurrentDirectory();
             string spgfolder = path + "\\spg";
             folderDialog.SelectedPath = spgfolder;
-            folderDialog.Description = "Choisir le dossier du pack à créer";
-            if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
+            MessageBoxResult result = CustomMessageBox.ShowYesNoCancel(Application.Current.MainWindow, "Vous voulez utiliser :", "Studio Pack Generator", "Un dossier", "Une URL", "Annuler", MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
             {
-                //Cancel
+                folderDialog.Description = "Choisir le dossier du pack à créer";
+                if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
+                {
+                    //Cancel
+                }
+                else
+                {
+                    string spath = folderDialog.SelectedPath;
+                    var dialog = new InputBox();
+                    dialog.LabelResponseTextBox2.Visibility = Visibility.Hidden;
+                    dialog.ResponseTextBox2.Visibility = Visibility.Hidden;
+                    dialog.ResponseTextBox2.Margin = new Thickness(5, 2, 5, 0);
+                    dialog.ResponseTextBox.Margin = new Thickness(5, 0, 5, 0);
+                    dialog.LabelResponseTextBox.Margin = new Thickness(0, 0, 0, 0);
+                    dialog.InputOk.Margin = new Thickness(0, -10, 0, 0);
+                    if (dialog.ShowDialog() == true)
+                    {
+                        Process process = new Process();
+                        process.StartInfo.FileName = spgfolder + "\\studio-pack-generator-x86_64-windows.exe";
+                        process.StartInfo.Arguments = dialog.ResponseText + " " + "\"" + spath + "";
+                        process.Start();
+                        process.WaitForExit();
+                        CustomMessageBox.Show(Application.Current.MainWindow, "Done !");
+                    }
+                }     
             }
-            else
+            else if (result == MessageBoxResult.No)
             {
-                string spath = folderDialog.SelectedPath;
                 var dialog = new InputBox();
                 if (dialog.ShowDialog() == true)
                 {
                     Process process = new Process();
                     process.StartInfo.FileName = spgfolder + "\\studio-pack-generator-x86_64-windows.exe";
-                    process.StartInfo.Arguments = dialog.ResponseText + " " + "\"" + spath + "";
+                    process.StartInfo.Arguments = dialog.ResponseText + " " + dialog.ResponseText2;
                     process.Start();
                     process.WaitForExit();
-                    MessageBox.Show("Done !");
+                    CustomMessageBox.Show(Application.Current.MainWindow, "Done !");
+                    
                 }
             }
+
         }
     }
 }

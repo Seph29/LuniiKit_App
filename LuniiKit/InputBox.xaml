@@ -5,11 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LuniiKit"
         mc:Ignorable="d"
-        Title="Options de lancement" Height="105" Width="300" Topmost="True" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="SingleBorderWindow" Icon="/Images/spg.png">
+        Title="Options de lancement" Height="129" Width="300" Topmost="True" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="SingleBorderWindow" Icon="/Images/spg.png">
     <Grid>
         <StackPanel>
-            <TextBox x:Name="ResponseTextBox" Margin="5,2,5,0" PreviewKeyDown="OKButton_Click" />
-            <Button Content="OK" Click="OKButton_Click" Width="200" Margin="0,10,0,0" />
+            <Label x:Name="LabelResponseTextBox" Content="Options:" Margin="0,2,230,0" FontSize="10" VerticalAlignment="Top" />
+            <Label x:Name="LabelResponseTextBox2" Content="Url:" Margin="80,-23,5,0" FontSize="10" VerticalAlignment="Top" />
+            <TextBox x:Name="ResponseTextBox" Margin="5,2,205,0" PreviewKeyDown="OKButton_Click" />
+            <TextBox x:Name="ResponseTextBox2" Margin="80,-22,5,0" PreviewKeyDown="OKButton_Click" />
+            <Button x:Name="InputOk" Content="OK" Click="OKButton_Click" Width="200" Margin="0,10,0,0" />
         </StackPanel>
     </Grid>
 </Window>
