@@ -369,17 +369,24 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
         }
         private void OpenSTUdioFolder(object sender, RoutedEventArgs e)
         {
-            if (Properties.Settings.Default.studioportable == true)
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.library))
             {
-                string path = Directory.GetCurrentDirectory();
-                string studiofolder = path + "\\.studio\\library";
-                Process.Start("explorer.exe", studiofolder);
+                Process.Start("explorer.exe", Properties.Settings.Default.library);
             }
             else
             {
-                string path = Environment.GetEnvironmentVariable("USERPROFILE");
-                string studiofolder = path + "\\.studio\\library";
-                Process.Start("explorer.exe", studiofolder);
+                if (Properties.Settings.Default.studioportable == true)
+                {
+                    string path = Directory.GetCurrentDirectory();
+                    string studiofolder = path + "\\.studio\\library";
+                    Process.Start("explorer.exe", studiofolder);
+                }
+                else
+                {
+                    string path = Environment.GetEnvironmentVariable("USERPROFILE");
+                    string studiofolder = path + "\\.studio\\library";
+                    Process.Start("explorer.exe", studiofolder);
+                }
             }
         }
         public static void CopyAll(DirectoryInfo source, DirectoryInfo target)
