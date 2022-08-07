@@ -15,34 +15,40 @@ namespace LuniiKit
         public MainWindow()
         {
             InitializeComponent();
+            WinSparkle.win_sparkle_set_appcast_url("https://raw.githubusercontent.com/Seph29/LuniiKit_App/master/docs/update_zip.ver");
+            WinSparkle.win_sparkle_init();
             StartApp();
         }
         private void StartApp()
         {
-            WinSparkle.win_sparkle_set_appcast_url("https://raw.githubusercontent.com/Seph29/LuniiKit_App/master/docs/update_zip.ver");
-            WinSparkle.win_sparkle_init();
             Properties.Settings.Default.folderstudio = false;
             Properties.Settings.Default.folderspg = false;
             Closing += MainWindow_Closing;
-            vertext.IsDocumentEnabled = true;
-            vertext.Document.Blocks.FirstBlock.Margin = new Thickness(0);
+            Vertext.IsDocumentEnabled = true;
+            Vertext.Document.Blocks.FirstBlock.Margin = new Thickness(0);
             string nompartiel = "SNAPSHOT";
             DirectoryInfo rechercherepertoire = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
             FileSystemInfo[] fichieretrepertoire = rechercherepertoire.GetFileSystemInfos("*" + nompartiel);
             foreach (FileSystemInfo fichiertrouve in fichieretrepertoire)
             {
-                studio3.IsEnabled = true;
+                Studio3.IsEnabled = true;
             }
             string nompartiel2 = "spg";
             DirectoryInfo rechercherepertoire2 = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
             FileSystemInfo[] fichieretrepertoire2 = rechercherepertoire2.GetFileSystemInfos(nompartiel2);
             foreach (FileSystemInfo fichiertrouve2 in fichieretrepertoire2)
             {
-                spg.IsEnabled = true;
+                Spg.IsEnabled = true;
                 Properties.Settings.Default.folderspg = true;
             }
-            vertext.Document.Blocks.Clear();
-            vertext.Document.Blocks.Add(new Paragraph(new Run("LuniiKit Version : " + FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location).FileVersion)));
+
+            string luniiadminPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lunii-admin_windows_amd64.exe");
+            if (File.Exists(luniiadminPath))
+            {
+                Luniiadmin.IsEnabled = true;
+            }
+            Vertext.Document.Blocks.Clear();
+            Vertext.Document.Blocks.Add(new Paragraph(new Run("LuniiKit Version : " + FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location).FileVersion)));
         }
         private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -59,42 +65,46 @@ namespace LuniiKit
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ContextMenu cm = this.FindResource("javaInstallButton") as ContextMenu;
+            ContextMenu cm = FindResource("JavaInstallButton") as ContextMenu;
             cm.PlacementTarget = sender as Button;
             cm.IsOpen = true;
         }
-        private void jdk11_Click(object sender, RoutedEventArgs e)
+        private void Jdk11_Click(object sender, RoutedEventArgs e)
         {
             string strCmdText;
             strCmdText = "/C winget install EclipseAdoptium.Temurin.11";
             Process.Start("CMD.exe", strCmdText);
         }
-        private void jdk17_Click(object sender, RoutedEventArgs e)
+        private void Jdk17_Click(object sender, RoutedEventArgs e)
         {
             string strCmdText;
             strCmdText = "/C winget install EclipseAdoptium.Temurin.17";
             Process.Start("CMD.exe", strCmdText);
         }
-        private void idriver_Click(object sender, RoutedEventArgs e)
+        private void Idriver_Click(object sender, RoutedEventArgs e)
         {
             if (Environment.Is64BitOperatingSystem == true)
             {
-                ProcessStartInfo process = new ProcessStartInfo("dpinst64.exe");
-                process.WorkingDirectory = @"driver";
-                process.UseShellExecute = true;
-                process.Verb = "runas";
+                ProcessStartInfo process = new ProcessStartInfo("dpinst64.exe")
+                {
+                    WorkingDirectory = @"driver",
+                    UseShellExecute = true,
+                    Verb = "runas"
+                };
                 Process.Start(process);
             }
             else
             {
-                ProcessStartInfo process = new ProcessStartInfo("dpinst32.exe");
-                process.WorkingDirectory = @"driver";
-                process.UseShellExecute = true;
-                process.Verb = "runas";
+                ProcessStartInfo process = new ProcessStartInfo("dpinst32.exe")
+                {
+                    WorkingDirectory = @"driver",
+                    UseShellExecute = true,
+                    Verb = "runas"
+                };
                 Process.Start(process);
             }
         }
-        private void studio1_Click(object sender, RoutedEventArgs e)
+        private void Studio1_Click(object sender, RoutedEventArgs e)
         {
             {
                 StreamWriter SW = new StreamWriter("STudio.bat");
@@ -129,6 +139,7 @@ if %jver% LSS 110000 (
   exit /b 1
 )");
                 }
+                SW.WriteLine(@"IF EXIST %DOT_STUDIO%\db\official.json del %DOT_STUDIO%\db\official.json");
                 SW.WriteLine(@"echo Suppression des logs");
                 SW.Write(@"for /f ""skip=" + Properties.Settings.Default.nlogs);
                 SW.Write(@" delims="" %%A in ('dir /a:-d /b /o:-d /t:c *.log ^2^>nul') do if exist ""%%~fA"" del ""%%~fA""");
@@ -149,34 +160,18 @@ copy %STUDIO_PATH%\agent\studio-metadata-%version_LUNII%-jar-with-dependencies.j
                 }
                 SW.Flush();
                 SW.Close();
-                SW = null;
                 Process.Start("STudio.bat");
             }
         }
-        private void studio2_Click(object sender, RoutedEventArgs e)
+        private void Studio2_Click(object sender, RoutedEventArgs e)
         {
             StreamWriter SW = new StreamWriter("STudio.bat");
             SW.WriteLine(@"@echo off");
-            if (Properties.Settings.Default.defhost == Properties.Settings.Default.confhost)
-            {
-                SW.WriteLine(@"set STUDIO_HOST=localhost");
-            }
-            else
-            {
-                SW.WriteLine(@"set STUDIO_HOST=" + Properties.Settings.Default.confhost);
-            }
-            if (Properties.Settings.Default.defport == Properties.Settings.Default.confport)
-            {
-                SW.WriteLine(@"set STUDIO_PORT=8080");
-            }
-            else
-            {
-                SW.WriteLine(@"set STUDIO_PORT=" + Properties.Settings.Default.confport);
-            }
-            if (Properties.Settings.Default.autoopenweb == false)
-            {
-                SW.WriteLine(@"set STUDIO_OPEN_BROWSER=false");
-            }
+            SW.WriteLine(@"set STUDIO_HOST=" + Properties.Settings.Default.confhost);
+            SW.WriteLine(@"set STUDIO_PORT=" + Properties.Settings.Default.confport);
+            SW.WriteLine(@"set STUDIO_DB_OFFICIAL=" + Properties.Settings.Default.offdb);
+            SW.WriteLine(@"set STUDIO_DB_UNOFFICIAL=" + Properties.Settings.Default.unoffdb);
+            SW.WriteLine(@"set STUDIO_LIBRARY=" + Properties.Settings.Default.library);
             SW.WriteLine(@"mode con cols=120 lines=30
 ""%__APPDIR__%chcp.com"" 850>nul
 color B");
@@ -207,6 +202,7 @@ if %jver% LSS 110000 (
   exit /b 1
 )");
             }
+            SW.WriteLine(@"IF EXIST %DOT_STUDIO%\db\official.json del %DOT_STUDIO%\db\official.json");
             SW.WriteLine(@"echo Suppression des logs");
             SW.Write(@"for /f ""skip=" + Properties.Settings.Default.nlogs);
             SW.Write(@" delims="" %%A in ('dir /a:-d /b /o:-d /t:c *.log ^2^>nul') do if exist ""%%~fA"" del ""%%~fA""");
@@ -227,33 +223,17 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             }
             SW.Flush();
             SW.Close();
-            SW = null;
             Process.Start("STudio.bat");
         }
-        private void studio3_Click(object sender, RoutedEventArgs e)
+        private void Studio3_Click(object sender, RoutedEventArgs e)
         {
             StreamWriter SW = new StreamWriter("STudio.bat");
             SW.WriteLine(@"@echo off");
-            if (Properties.Settings.Default.defhost == Properties.Settings.Default.confhost)
-            {
-                SW.WriteLine(@"set STUDIO_HOST=localhost");
-            }
-            else
-            {
-                SW.WriteLine(@"set STUDIO_HOST=" + Properties.Settings.Default.confhost);
-            }
-            if (Properties.Settings.Default.defport == Properties.Settings.Default.confport)
-            {
-                SW.WriteLine(@"set STUDIO_PORT=8080");
-            }
-            else
-            {
-                SW.WriteLine(@"set STUDIO_PORT=" + Properties.Settings.Default.confport);
-            }
-            if (Properties.Settings.Default.autoopenweb == false)
-            {
-                SW.WriteLine(@"set STUDIO_OPEN_BROWSER=false");
-            }
+            SW.WriteLine(@"set STUDIO_HOST=" + Properties.Settings.Default.confhost);
+            SW.WriteLine(@"set STUDIO_PORT=" + Properties.Settings.Default.confport);
+            SW.WriteLine(@"set STUDIO_DB_OFFICIAL=" + Properties.Settings.Default.offdb);
+            SW.WriteLine(@"set STUDIO_DB_UNOFFICIAL=" + Properties.Settings.Default.unoffdb);
+            SW.WriteLine(@"set STUDIO_LIBRARY=" + Properties.Settings.Default.library);
             SW.WriteLine(@"mode con cols=120 lines=30
 ""%__APPDIR__%chcp.com"" 850>nul
 color D");
@@ -284,6 +264,7 @@ if %jver% LSS 110000 (
   exit /b 1
 )");
             }
+            SW.WriteLine(@"IF EXIST %DOT_STUDIO%\db\official.json del %DOT_STUDIO%\db\official.json");
             SW.WriteLine(@"echo Suppression des logs");
             SW.Write(@"for /f ""skip=" + Properties.Settings.Default.nlogs);
             SW.Write(@" delims="" %%A in ('dir /a:-d /b /o:-d /t:c *.log ^2^>nul') do if exist ""%%~fA"" del ""%%~fA""");
@@ -304,7 +285,6 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             }
             SW.Flush();
             SW.Close();
-            SW = null;
             Process.Start("STudio.bat");
         }
         private void Button_Click_3(object sender, RoutedEventArgs e)
@@ -327,6 +307,10 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
         {
             Process.Start("https://github.com/jersou/studio-pack-generator");
         }
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://github.com/olup/lunii-admin");
+        }
         private void OpenWindow(object sender, RoutedEventArgs e)
         {
             LuniiKitOptions objOptions = new LuniiKitOptions();
@@ -334,7 +318,7 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
         }
         private void Githubchoix(object sender, RoutedEventArgs e)
         {
-            ContextMenu cm = this.FindResource("Github") as ContextMenu;
+            ContextMenu cm = FindResource("Github") as ContextMenu;
             cm.PlacementTarget = sender as Button;
             cm.IsOpen = true;
         }
@@ -361,9 +345,16 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
                 }
             
             }
-            ContextMenu cm = this.FindResource("choixfolder") as ContextMenu;
+            ContextMenu cm = FindResource("Choixfolder") as ContextMenu;
             cm.PlacementTarget = sender as Button;
             cm.IsOpen = true;
+        }
+        private void Luniiadmin_Click(object sender, RoutedEventArgs e)
+        {
+            Process process = new Process();
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.FileName = "lunii-admin_windows_amd64.exe";
+            process.Start();
         }
         private void OpenFolder(object sender, RoutedEventArgs e)
         {
@@ -428,7 +419,7 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
                             CustomMessageBox.Show(Application.Current.MainWindow, "Copy OK !");
                             Process.Start("explorer.exe", spath);
                         }
-                        catch (System.IO.FileNotFoundException ex)
+                        catch (FileNotFoundException ex)
                         {
                             CustomMessageBox.Show(Application.Current.MainWindow, ex.Message);
                         }
@@ -485,7 +476,6 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
                     
                 }
             }
-
         }
     }
 }

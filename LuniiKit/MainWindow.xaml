@@ -8,19 +8,19 @@
         mc:Ignorable="d"
         Title="LuniiKit" Height="302" Width="300" ResizeMode="NoResize" Icon="/Images/icon.png" WindowStartupLocation="CenterScreen" RenderOptions.BitmapScalingMode="HighQuality" UseLayoutRounding="True" SnapsToDevicePixels="False">
     <Window.Resources>
-        <ContextMenu x:Key="javaInstallButton">
-            <MenuItem Click="jdk11_Click" Header="JDK 11">
+        <ContextMenu x:Key="JavaInstallButton">
+            <MenuItem Click="Jdk11_Click" Header="JDK 11">
                 <MenuItem.Icon>
                     <Image Source="/Images/winget.png" Width="16" Height="16" />
                 </MenuItem.Icon>
             </MenuItem>
-            <MenuItem Click="jdk17_Click" Header="JDK 17">
+            <MenuItem Click="Jdk17_Click" Header="JDK 17">
                 <MenuItem.Icon>
                     <Image Source="/Images/winget.png" Width="16" Height="16" />
                 </MenuItem.Icon>
             </MenuItem>
         </ContextMenu>
-        <ContextMenu x:Key="choixfolder">
+        <ContextMenu x:Key="Choixfolder">
             <MenuItem Click="OpenFolder" Header="Ouvrir le dossier de l'application LuniiKit">
                 <MenuItem.Icon>
                     <Image Source="/Images/folder.png" Width="16" Height="16" />
@@ -56,9 +56,14 @@
             <MenuItem Click="Button_Click_7" Header="jersou/Studio-Pack-Generator">
                 <MenuItem.Icon>
                     <Image Source="/Images/logo_github.png" Width="16" Height="16" />
-                </MenuItem.Icon>               
+                </MenuItem.Icon>
             </MenuItem>
-        </ContextMenu>        
+            <MenuItem Click="Button_Click_8" Header="olup/lunii-admin">
+                <MenuItem.Icon>
+                    <Image Source="/Images/logo_github.png" Width="16" Height="16" />
+                </MenuItem.Icon>
+            </MenuItem>
+        </ContextMenu>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -71,12 +76,12 @@
             <ColumnDefinition Width="132*"/>
         </Grid.ColumnDefinitions>
         <Image HorizontalAlignment="Center" Height="213" Margin="0,11,0,0" VerticalAlignment="Top" Width="103" Source="/Images/logo.png" Grid.Row="1"/>
-        <Button x:Name="studio1" ToolTip="STUdio 0.3.1" Content="STUdio 0.3.1" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" Height="26" Width="152" FontFamily="Ubuntu" Grid.Column="1" Grid.ColumnSpan="2" Click="studio1_Click" Grid.Row="1" Panel.ZIndex="-3"/>
-        <Button x:Name="studio2" ToolTip="STUdio 0.4.2" Content="STUdio 0.4.2" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Height="26" Width="152" FontFamily="Ubuntu" Grid.Column="1" Grid.ColumnSpan="2" Click="studio2_Click" Grid.Row="1"/>
-        <Button x:Name="studio3" ToolTip="STUdio 0.4.3-SNAPSHOT" Content="STUdio 0.4.3-SNAPSHOT" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top" Height="26" Width="152" FontFamily="Ubuntu" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Click="studio3_Click" IsEnabled="False"/>
-        <Button x:Name="idriver" ToolTip="Installer le driver Lunii" Content="Installer le driver Lunii" HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top" Height="26" Width="152" FontFamily="Ubuntu" Grid.Column="1" Grid.ColumnSpan="2" Click="idriver_Click" Grid.Row="1"/>
-        <Button x:Name="ijava" ToolTip="Installer Java (via winget)" Content="Installer Java" HorizontalAlignment="Left" Margin="10,142,0,0" VerticalAlignment="Top" Height="26" Width="152" FontFamily="Ubuntu" Grid.Column="1" Grid.ColumnSpan="2" Click="Button_Click" Grid.Row="1"/>
-        <Button x:Name="discord" ToolTip="Rejoindre le Discord Lunii Créations" Margin="0,233,4,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Right" Width="32" Grid.Column="2" Grid.Row="1" Click="Button_Click_3">
+        <Button x:Name="Studio1" ToolTip="STUdio 0.3.1" Content="STUdio 0.3.1" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Height="25" Width="152" FontFamily="Ubuntu" Grid.Column="1" Grid.ColumnSpan="2" Click="Studio1_Click" Grid.Row="1" Panel.ZIndex="-3"/>
+        <Button x:Name="Studio2" ToolTip="STUdio 0.4.2" Content="STUdio 0.4.2" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Height="25" Width="152" FontFamily="Ubuntu" Grid.Column="1" Grid.ColumnSpan="2" Click="Studio2_Click" Grid.Row="1"/>
+        <Button x:Name="Studio3" ToolTip="STUdio 0.4.3-SNAPSHOT" Content="STUdio 0.4.3-SNAPSHOT" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Height="25" Width="152" FontFamily="Ubuntu" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Click="Studio3_Click" IsEnabled="False"/>
+        <Button x:Name="Idriver" ToolTip="Installer le driver Lunii" Content="Installer le driver Lunii" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Height="25" Width="152" FontFamily="Ubuntu" Grid.Column="1" Grid.ColumnSpan="2" Click="Idriver_Click" Grid.Row="1"/>
+        <Button x:Name="Ijava" ToolTip="Installer Java (via winget)" Content="Installer Java" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" Height="25" Width="152" FontFamily="Ubuntu" Grid.Column="1" Grid.ColumnSpan="2" Click="Button_Click" Grid.Row="1"/>
+        <Button x:Name="Discord" ToolTip="Rejoindre le Discord Lunii Créations" Margin="0,233,4,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Right" Width="32" Grid.Column="2" Grid.Row="1" Click="Button_Click_3">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Images/logo_discord.png" Width="20" Height="20"/>
                 <TextBlock VerticalAlignment="Center" />
@@ -88,36 +93,37 @@
                 <TextBlock VerticalAlignment="Center" />
             </StackPanel>
         </Button>
-        <RichTextBox x:Name="vertext" HorizontalAlignment="Left" Margin="8,233,0,0" VerticalAlignment="Top" FontSize="13" Grid.ColumnSpan="3" Width="197" Grid.Row="1" Height="26" IsDocumentEnabled="True" IsReadOnly="True" IsEnabled="False">
+        <RichTextBox x:Name="Vertext" HorizontalAlignment="Left" Margin="8,233,0,0" VerticalAlignment="Top" FontSize="13" Grid.ColumnSpan="3" Width="197" Grid.Row="1" Height="26" IsDocumentEnabled="True" IsReadOnly="True" IsEnabled="False">
             <FlowDocument>
                 <Paragraph>
                     <Run Text=""/>
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <Button x:Name="options" ToolTip="Options" Margin="0,183,8,0" Height="34" VerticalAlignment="Top" HorizontalAlignment="Right" Width="34" Grid.Column="2" Grid.Row="1" Click="OpenWindow">
+        <Button x:Name="Options" ToolTip="Options" Margin="0,190,8,0" Height="34" VerticalAlignment="Top" HorizontalAlignment="Right" Width="34" Grid.Column="2" Grid.Row="1" Click="OpenWindow">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Images/options.png" Stretch="UniformToFill" />
                 <TextBlock VerticalAlignment="Center" />
             </StackPanel>
         </Button>
-        <Button x:Name="luniifolder" ToolTip="Ouvrir le dossier ..." Margin="0,183,47,0" Height="34" VerticalAlignment="Top" HorizontalAlignment="Right" Width="34" Grid.Column="2" Grid.Row="1" Click="FolderChoice">
+        <Button x:Name="Luniifolder" ToolTip="Ouvrir le dossier ..." Margin="0,190,47,0" Height="34" VerticalAlignment="Top" HorizontalAlignment="Right" Width="34" Grid.Column="2" Grid.Row="1" Click="FolderChoice">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Images/folder.png" Stretch="UniformToFill"/>
                 <TextBlock VerticalAlignment="Center" />
             </StackPanel>
         </Button>
-        <Button x:Name="USBCopy" ToolTip="Copier LuniiKit vers une clé USB ou un autre dossier (Ne copie pas la librairie STUdio si vous êtes en mode non-portable.)" Margin="0,183,86,0" Height="34" VerticalAlignment="Top" HorizontalAlignment="Right" Width="34" Grid.Column="2" Grid.Row="1" Click="USB_Copy" >
+        <Button x:Name="USBCopy" ToolTip="Copier LuniiKit vers une clé USB ou un autre dossier (Ne copie pas la librairie STUdio si vous êtes en mode non-portable.)" Margin="0,190,86,0" Height="34" VerticalAlignment="Top" HorizontalAlignment="Right" Width="34" Grid.Column="2" Grid.Row="1" Click="USB_Copy" >
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Images/usb.png" Stretch="UniformToFill"/>
                 <TextBlock VerticalAlignment="Center" />
             </StackPanel>
         </Button>
-        <Button x:Name="spg" ToolTip="Créer un pack avec Studio Pack Generator" Margin="0,183,125,0" Height="34" VerticalAlignment="Top" HorizontalAlignment="Right" Width="34" Grid.Column="1" Grid.Row="1" IsEnabled="False" Click="OpenSPG" Grid.ColumnSpan="2">
+        <Button x:Name="Spg" ToolTip="Créer un pack avec Studio Pack Generator" Margin="0,190,125,0" Height="34" VerticalAlignment="Top" HorizontalAlignment="Right" Width="34" Grid.Column="1" Grid.Row="1" IsEnabled="False" Click="OpenSPG" Grid.ColumnSpan="2">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Images/spg.png" Stretch="UniformToFill" />
                 <TextBlock VerticalAlignment="Center" />
             </StackPanel>
         </Button>
+        <Button x:Name="Luniiadmin" ToolTip="Lunii-admin" Content="Lunii-admin" HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top" Height="25" Width="152" FontFamily="Ubuntu" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Click="Luniiadmin_Click" IsEnabled="False"/>
     </Grid>
 </Window>

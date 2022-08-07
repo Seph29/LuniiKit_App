@@ -8,12 +8,6 @@
     <Setting Name="confport" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="defhost" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">localhost</Value>
-    </Setting>
-    <Setting Name="defport" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">8080</Value>
-    </Setting>
     <Setting Name="studioportable" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
@@ -37,6 +31,15 @@
     </Setting>
     <Setting Name="folderspg" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="offdb" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="unoffdb" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="library" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>
