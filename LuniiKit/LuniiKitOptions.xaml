@@ -14,23 +14,24 @@
         <GroupBox Header="STUdio" HorizontalAlignment="Left"
                   VerticalAlignment="Top" Height="177" Width="387" Margin="5,0,0,0">
             <Grid HorizontalAlignment="Left" Height="159" VerticalAlignment="Top" Width="387">
-                <CheckBox x:Name="Isport" Content="STUdio version portable" HorizontalAlignment="Left" Height="16" Margin="6,6,0,0" VerticalAlignment="Top" Width="185" IsChecked="{Binding Path=studioportable,Source={x:Static properties:Settings.Default}}"/>
-                <CheckBox x:Name="Autoopen" Content="Auto open browser" HorizontalAlignment="Left" Height="16" Margin="6,30,0,0" VerticalAlignment="Top" Width="185" IsChecked="{Binding autoopenweb, Source={x:Static properties:Settings.Default}}"/>
+                <CheckBox x:Name="Isport" Content="STUdio version portable" HorizontalAlignment="Left" Height="16" Margin="6,6,0,0" VerticalAlignment="Top" Width="185" IsChecked="{Binding Path=studioportable,Source={x:Static properties:Settings.Default}}" Click="Isport_Click" ToolTip="Utiliser STUdio en mode portable ou non"/>
+                <CheckBox x:Name="Autoopen" Content="Auto open browser" HorizontalAlignment="Left" Height="16" Margin="6,30,0,0" VerticalAlignment="Top" Width="185" IsChecked="{Binding autoopenweb, Source={x:Static properties:Settings.Default}}" ToolTip="Ouverture automatique du navigateur au lancement de STUdio"/>
                 <Label Content="Host :" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="39" Margin="191,-1,0,0"/>
                 <TextBox x:Name="Chost" HorizontalAlignment="Left" Margin="238,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Height="22" Text="{Binding Path=confhost,Source={x:Static properties:Settings.Default}}" />
                 <Label Content="Port :" HorizontalAlignment="Left" Height="30" Margin="191,23,0,0" VerticalAlignment="Top" Width="40"/>
                 <TextBox x:Name="Cport" HorizontalAlignment="Left" Margin="238,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Height="22" Text="{Binding Path=confport,Source={x:Static properties:Settings.Default}}" />
-                <Label Content="Nombre de logs conservés" HorizontalAlignment="Left" Height="30" Margin="194,47,0,0" VerticalAlignment="Top" Width="152" />
-                <TextBox x:Name="Nombrelogs" HorizontalAlignment="Left" Margin="346,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" Height="22" Text="{Binding Path=nlogs,Source={x:Static properties:Settings.Default}}" MaxLength="2" TextChanged="Nombrelogs_TextChanged" />
+                <Label x:Name="Eraselogtext"  Content="Nombre de logs conservés" HorizontalAlignment="Left" Height="30" Margin="194,47,0,0" VerticalAlignment="Top" Width="152"/>
+                <TextBox x:Name="Nombrelogs" HorizontalAlignment="Left" Margin="346,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" Height="22" Text="{Binding Path=nlogs,Source={x:Static properties:Settings.Default}}" MaxLength="2" TextChanged="Nombrelogs_TextChanged"/>
                 <Label Content="Official Db :" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="92" Margin="1,73,0,0"/>
-                <TextBox x:Name="Offdb" HorizontalAlignment="Left" Margin="98,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" Height="22" Text="{Binding Path=offdb, Source={x:Static properties:Settings.Default}}" />
+                <TextBox x:Name="Offdb" HorizontalAlignment="Left" Margin="84,77,0,0" VerticalAlignment="Top" Width="262" Height="22" Text="{Binding Path=offdb, Source={x:Static properties:Settings.Default}}" ToolTip="{Binding Path=offdb, Source={x:Static properties:Settings.Default}}"/>
                 <Button x:Name="Offselect" Content="..." Margin="349,77,0,0" VerticalAlignment="Top" Click="offselect" HorizontalAlignment="Left" Width="25" Height="22"/>
                 <Label Content="Unofficial Db :" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="92" Margin="1,97,0,0"/>
-                <TextBox x:Name="Unoffdb" HorizontalAlignment="Left" Margin="98,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" Height="22" Text="{Binding Path=unoffdb, Source={x:Static properties:Settings.Default}}" />
+                <TextBox x:Name="Unoffdb" HorizontalAlignment="Left" Margin="84,101,0,0" VerticalAlignment="Top" Width="262" Height="22" Text="{Binding Path=unoffdb, Source={x:Static properties:Settings.Default}}" ToolTip="{Binding Path=unoffdb, Source={x:Static properties:Settings.Default}}"/>
                 <Button x:Name="Unoffselect" Content="..." Margin="349,101,0,0" VerticalAlignment="Top" Click="unoffselect" HorizontalAlignment="Left" Width="25" Height="22"/>
                 <Label Content="Library :" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="92" Margin="1,122,0,0"/>
-                <TextBox x:Name="Library" HorizontalAlignment="Left" Margin="98,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" Height="22" Text="{Binding Path=library, Source={x:Static properties:Settings.Default}}" />
+                <TextBox x:Name="Library" HorizontalAlignment="Left" Margin="84,126,0,0" VerticalAlignment="Top" Width="262" Height="22" Text="{Binding Path=library, Source={x:Static properties:Settings.Default}}" ToolTip="{Binding Path=library, Source={x:Static properties:Settings.Default}}"/>
                 <Button x:Name="Libraryselect" Content="..." Margin="349,126,0,0" VerticalAlignment="Top" Click="libraryselect" HorizontalAlignment="Left" Width="25" Height="22"/>
+                <CheckBox x:Name="Eraselog" Content="Suppresion auto des logs" HorizontalAlignment="Left" Height="16" Margin="6,53,0,0" VerticalAlignment="Top" Width="185" IsChecked="{Binding eraselog, Source={x:Static properties:Settings.Default}}" ToolTip="Active ou désactive la suppression automatique des logs" Click="Eraselog_Click"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="LuniiKit" HorizontalAlignment="Left" VerticalAlignment="Top" Height="46" Width="387" Margin="5,176,0,0">

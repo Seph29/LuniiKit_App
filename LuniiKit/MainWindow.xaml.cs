@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
@@ -140,10 +139,17 @@ if %jver% LSS 110000 (
 )");
                 }
                 SW.WriteLine(@"IF EXIST %DOT_STUDIO%\db\official.json del %DOT_STUDIO%\db\official.json");
-                SW.WriteLine(@"echo Suppression des logs");
-                SW.Write(@"for /f ""skip=" + Properties.Settings.Default.nlogs);
-                SW.Write(@" delims="" %%A in ('dir /a:-d /b /o:-d /t:c *.log ^2^>nul') do if exist ""%%~fA"" del ""%%~fA""");
-                SW.WriteLine("");
+                if (Properties.Settings.Default.eraselog == true)
+                {
+                    SW.WriteLine(@"echo Suppression des logs");
+                    SW.Write(@"for /f ""skip=" + Properties.Settings.Default.nlogs);
+                    SW.Write(@" delims="" %%A in ('dir /a:-d /b /o:-d /t:c *.log ^2^>nul') do if exist ""%%~fA"" del ""%%~fA""");
+                    SW.WriteLine("");
+                }
+                else
+                {
+                    SW.WriteLine("");
+                }
                 SW.WriteLine(@"if not exist %DOT_STUDIO%\db\* mkdir %DOT_STUDIO%\db
 if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library
 if not exist %DOT_STUDIO%\agent\* mkdir %DOT_STUDIO%\agent
@@ -203,10 +209,17 @@ if %jver% LSS 110000 (
 )");
             }
             SW.WriteLine(@"IF EXIST %DOT_STUDIO%\db\official.json del %DOT_STUDIO%\db\official.json");
-            SW.WriteLine(@"echo Suppression des logs");
-            SW.Write(@"for /f ""skip=" + Properties.Settings.Default.nlogs);
-            SW.Write(@" delims="" %%A in ('dir /a:-d /b /o:-d /t:c *.log ^2^>nul') do if exist ""%%~fA"" del ""%%~fA""");
-            SW.WriteLine("");
+            if (Properties.Settings.Default.eraselog == true)
+            {
+                SW.WriteLine(@"echo Suppression des logs");
+                SW.Write(@"for /f ""skip=" + Properties.Settings.Default.nlogs);
+                SW.Write(@" delims="" %%A in ('dir /a:-d /b /o:-d /t:c *.log ^2^>nul') do if exist ""%%~fA"" del ""%%~fA""");
+                SW.WriteLine("");
+            }
+            else
+            {
+                SW.WriteLine("");
+            }
             SW.WriteLine(@"if not exist %DOT_STUDIO%\db\* mkdir %DOT_STUDIO%\db
 if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             if (Properties.Settings.Default.studioportable == true)
@@ -265,10 +278,17 @@ if %jver% LSS 110000 (
 )");
             }
             SW.WriteLine(@"IF EXIST %DOT_STUDIO%\db\official.json del %DOT_STUDIO%\db\official.json");
-            SW.WriteLine(@"echo Suppression des logs");
-            SW.Write(@"for /f ""skip=" + Properties.Settings.Default.nlogs);
-            SW.Write(@" delims="" %%A in ('dir /a:-d /b /o:-d /t:c *.log ^2^>nul') do if exist ""%%~fA"" del ""%%~fA""");
-            SW.WriteLine("");
+            if (Properties.Settings.Default.eraselog == true)
+            {
+                SW.WriteLine(@"echo Suppression des logs");
+                SW.Write(@"for /f ""skip=" + Properties.Settings.Default.nlogs);
+                SW.Write(@" delims="" %%A in ('dir /a:-d /b /o:-d /t:c *.log ^2^>nul') do if exist ""%%~fA"" del ""%%~fA""");
+                SW.WriteLine("");
+            }
+            else
+            {
+                SW.WriteLine("");
+            }
             SW.WriteLine(@"if not exist %DOT_STUDIO%\db\* mkdir %DOT_STUDIO%\db
 if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             if (Properties.Settings.Default.studioportable == true)
@@ -335,7 +355,7 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
                 }
             }
             else
-            { 
+            {
                 string nompartiel = ".studio";
                 DirectoryInfo rechercherepertoire = new DirectoryInfo(Environment.GetEnvironmentVariable("USERPROFILE"));
                 FileSystemInfo[] fichieretrepertoire = rechercherepertoire.GetFileSystemInfos(nompartiel);
@@ -343,7 +363,7 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
                 {
                     Properties.Settings.Default.folderstudio = true;
                 }
-            
+
             }
             ContextMenu cm = FindResource("Choixfolder") as ContextMenu;
             cm.PlacementTarget = sender as Button;
@@ -467,7 +487,7 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
                         process.WaitForExit();
                         CustomMessageBox.Show(Application.Current.MainWindow, "Done !");
                     }
-                }     
+                }
             }
             else if (result == MessageBoxResult.No)
             {
@@ -480,7 +500,7 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
                     process.Start();
                     process.WaitForExit();
                     CustomMessageBox.Show(Application.Current.MainWindow, "Done !");
-                    
+
                 }
             }
         }

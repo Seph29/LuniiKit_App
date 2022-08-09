@@ -192,5 +192,17 @@ namespace LuniiKit.Properties {
                 this["library"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool eraselog {
+            get {
+                return ((bool)(this["eraselog"]));
+            }
+            set {
+                this["eraselog"] = value;
+            }
+        }
     }
 }

@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.ComponentModel;
+using System.IO;
 using System.Windows;
-using Microsoft.Win32;
-using Newtonsoft.Json;
 using WPFCustomMessageBox;
 
 namespace LuniiKit
@@ -12,7 +12,73 @@ namespace LuniiKit
         public LuniiKitOptions()
         {
             InitializeComponent();
-            
+            Checkconfig();
+        }
+        private void Checkconfig()
+        {
+            if (Properties.Settings.Default.eraselog == true)
+            {
+                Eraselogtext.IsEnabled = true;
+                Nombrelogs.IsEnabled = true;
+            }
+            else
+            {
+                Eraselogtext.IsEnabled = false;
+                Nombrelogs.IsEnabled = false;
+            }
+            if (string.IsNullOrEmpty(Properties.Settings.Default.confhost))
+            {
+                Chost.Text = "localhost";
+            }
+            if (string.IsNullOrEmpty(Properties.Settings.Default.confport))
+            {
+                Cport.Text = "8080";
+            }
+            if (string.IsNullOrEmpty(Properties.Settings.Default.offdb))
+            {
+                if (Properties.Settings.Default.studioportable == true)
+                {
+                    string path = Directory.GetCurrentDirectory();
+                    string offdbfolder = path + "\\.studio\\db\\official.json";
+                    Offdb.Text = offdbfolder;
+                }
+                else
+                {
+                    string path = Environment.GetEnvironmentVariable("USERPROFILE");
+                    string offdbfolder = path + "\\.studio\\db\\official.json";
+                    Offdb.Text = offdbfolder;
+                }
+            }
+            if (string.IsNullOrEmpty(Properties.Settings.Default.unoffdb))
+            {
+                if (Properties.Settings.Default.studioportable == true)
+                {
+                    string path = Directory.GetCurrentDirectory();
+                    string unoffdbfolder = path + "\\.studio\\db\\unofficial.json";
+                    Unoffdb.Text = unoffdbfolder;
+                }
+                else
+                {
+                    string path = Environment.GetEnvironmentVariable("USERPROFILE");
+                    string unoffdbfolder = path + "\\.studio\\db\\unofficial.json";
+                    Unoffdb.Text = unoffdbfolder;
+                }
+            }
+            if (string.IsNullOrEmpty(Properties.Settings.Default.library))
+            {
+                if (Properties.Settings.Default.studioportable == true)
+                {
+                    string path = Directory.GetCurrentDirectory();
+                    string libraryfolder = path + "\\.studio\\library";
+                    Library.Text = libraryfolder;
+                }
+                else
+                {
+                    string path = Environment.GetEnvironmentVariable("USERPROFILE");
+                    string libraryfolder = path + "\\.studio\\library";
+                    Library.Text = libraryfolder;
+                }
+            }
         }
         protected override void OnClosing(CancelEventArgs e)
         {
@@ -35,6 +101,7 @@ namespace LuniiKit
             Properties.Settings.Default.confport = Cport.Text;
             Properties.Settings.Default.studioportable = Isport.IsChecked.Value;
             Properties.Settings.Default.autoopenweb = Autoopen.IsChecked.Value;
+            Properties.Settings.Default.eraselog = Eraselog.IsChecked.Value;
             Properties.Settings.Default.nlogs = Convert.ToInt16(Nombrelogs.Text);
             Properties.Settings.Default.offdb = Offdb.Text;
             Properties.Settings.Default.unoffdb = Unoffdb.Text;
@@ -56,9 +123,6 @@ namespace LuniiKit
                 Nombrelogs.Text = "3";
             }
         }
-
-
-
         private void offselect(object sender, RoutedEventArgs e)
         {
             OpenFileDialog offselect = new OpenFileDialog();
@@ -81,7 +145,6 @@ namespace LuniiKit
                 Unoffdb.Text = unoffselect.FileName;
             }
         }
-
         private void libraryselect(object sender, RoutedEventArgs e)
         {
             System.Windows.Forms.FolderBrowserDialog folderDialog = new System.Windows.Forms.FolderBrowserDialog();
@@ -93,6 +156,71 @@ namespace LuniiKit
             else
             {
                 Library.Text = folderDialog.SelectedPath;
+            }
+        }
+        private void Isport_Click(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.offdb = null;
+            Properties.Settings.Default.unoffdb = null;
+            Properties.Settings.Default.library = null;
+
+            if (string.IsNullOrEmpty(Properties.Settings.Default.offdb))
+            {
+                if (Properties.Settings.Default.studioportable == true)
+                {
+                    string path = Directory.GetCurrentDirectory();
+                    string offdbfolder = path + "\\.studio\\db\\official.json";
+                    Offdb.Text = offdbfolder;
+                }
+                else
+                {
+                    string path = Environment.GetEnvironmentVariable("USERPROFILE");
+                    string offdbfolder = path + "\\.studio\\db\\official.json";
+                    Offdb.Text = offdbfolder;
+                }
+            }
+            if (string.IsNullOrEmpty(Properties.Settings.Default.unoffdb))
+            {
+                if (Properties.Settings.Default.studioportable == true)
+                {
+                    string path = Directory.GetCurrentDirectory();
+                    string unoffdbfolder = path + "\\.studio\\db\\unofficial.json";
+                    Unoffdb.Text = unoffdbfolder;
+                }
+                else
+                {
+                    string path = Environment.GetEnvironmentVariable("USERPROFILE");
+                    string unoffdbfolder = path + "\\.studio\\db\\unofficial.json";
+                    Unoffdb.Text = unoffdbfolder;
+                }
+            }
+            if (string.IsNullOrEmpty(Properties.Settings.Default.library))
+            {
+                if (Properties.Settings.Default.studioportable == true)
+                {
+                    string path = Directory.GetCurrentDirectory();
+                    string libraryfolder = path + "\\.studio\\library";
+                    Library.Text = libraryfolder;
+                }
+                else
+                {
+                    string path = Environment.GetEnvironmentVariable("USERPROFILE");
+                    string libraryfolder = path + "\\.studio\\library";
+                    Library.Text = libraryfolder;
+                }
+            }
+        }
+        private void Eraselog_Click(object sender, RoutedEventArgs e)
+        {
+            if (Properties.Settings.Default.eraselog == true)
+            {
+                Eraselogtext.IsEnabled = true;
+                Nombrelogs.IsEnabled = true;
+            }
+            else
+            {
+                Eraselogtext.IsEnabled = false;
+                Nombrelogs.IsEnabled = false;
             }
         }
     }
