@@ -40,7 +40,6 @@ namespace LuniiKit
                 Spg.IsEnabled = true;
                 Properties.Settings.Default.folderspg = true;
             }
-
             string luniiadminPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lunii-admin_windows_amd64.exe");
             if (File.Exists(luniiadminPath))
             {
@@ -48,6 +47,17 @@ namespace LuniiKit
             }
             Vertext.Document.Blocks.Clear();
             Vertext.Document.Blocks.Add(new Paragraph(new Run("LuniiKit Version : " + FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location).FileVersion)));
+
+            var fixoldfolder = "LuniiKit.exe_StrongName_";
+            var fixdirs = Directory.GetDirectories(AppDomain.CurrentDomain.BaseDirectory, $"{fixoldfolder}*");
+            foreach (string dirs in fixdirs)
+            {
+                if (Directory.Exists(dirs))
+
+                {
+                    Directory.Delete(dirs, true);
+                }
+            }
         }
         private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -178,6 +188,7 @@ copy %STUDIO_PATH%\agent\studio-metadata-%version_LUNII%-jar-with-dependencies.j
             SW.WriteLine(@"set STUDIO_DB_OFFICIAL=" + Properties.Settings.Default.offdb);
             SW.WriteLine(@"set STUDIO_DB_UNOFFICIAL=" + Properties.Settings.Default.unoffdb);
             SW.WriteLine(@"set STUDIO_LIBRARY=" + Properties.Settings.Default.library);
+            SW.WriteLine(@"set STUDIO_TMPDIR=" + Properties.Settings.Default.tmp);
             SW.WriteLine(@"mode con cols=120 lines=30
 ""%__APPDIR__%chcp.com"" 850>nul
 color B");
@@ -247,6 +258,7 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             SW.WriteLine(@"set STUDIO_DB_OFFICIAL=" + Properties.Settings.Default.offdb);
             SW.WriteLine(@"set STUDIO_DB_UNOFFICIAL=" + Properties.Settings.Default.unoffdb);
             SW.WriteLine(@"set STUDIO_LIBRARY=" + Properties.Settings.Default.library);
+            SW.WriteLine(@"set STUDIO_TMPDIR=" + Properties.Settings.Default.tmp);
             SW.WriteLine(@"mode con cols=120 lines=30
 ""%__APPDIR__%chcp.com"" 850>nul
 color D");

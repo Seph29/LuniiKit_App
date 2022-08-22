@@ -32,6 +32,7 @@ Vous pouvez aussi générer la solution vous-même via le code source et faire v
   * studio-web-ui-0.3.1.jar
   * studio-web-ui-0.4.2.jar
   * studio-web-ui-0.4.3-SNAPSHOT.jar
+  * Lunii-Admin
 
 
 La version SNAPSHOT est optionnelle, si elle n'existe pas dans le dossier le bouton est desactivé.
@@ -43,13 +44,13 @@ Visual Studio 2022
 
 ## Versions
 
-- **Dernière version stable :** 2.2.2
-- **Dernière version :** 2.2.2
+- **Dernière version stable :** 2.2.5
+- **Dernière version :** 2.2.5
 
 ## Changelog
 
 - Améliorations et corrections de bugs
-- Ajout d'un choix entre un dossier et une Url pour Studio Pack Generator
+- Ajout dans les options du choix de répertoire temporaire
 
 Liste des versions : [Cliquer pour afficher](https://github.com/Seph29/LuniiKit_App/tags)
 
