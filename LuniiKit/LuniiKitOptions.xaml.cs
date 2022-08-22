@@ -79,6 +79,21 @@ namespace LuniiKit
                     Library.Text = libraryfolder;
                 }
             }
+            if (string.IsNullOrEmpty(Properties.Settings.Default.tmp))
+            {
+                if (Properties.Settings.Default.studioportable == true)
+                {
+                    string path = Directory.GetCurrentDirectory();
+                    string tmpfolder = path + "\\.studio\\tmp";
+                    Tmpfolder.Text = tmpfolder;
+                }
+                else
+                {
+                    string path = Environment.GetEnvironmentVariable("USERPROFILE");
+                    string tmpfolder = path + "\\.studio\\tmp";
+                    Tmpfolder.Text = tmpfolder;
+                }
+            }
         }
         protected override void OnClosing(CancelEventArgs e)
         {
@@ -106,6 +121,7 @@ namespace LuniiKit
             Properties.Settings.Default.offdb = Offdb.Text;
             Properties.Settings.Default.unoffdb = Unoffdb.Text;
             Properties.Settings.Default.library = Library.Text;
+            Properties.Settings.Default.tmp = Tmpfolder.Text;
             Properties.Settings.Default.Save();
             objMainWindow.Hide();
             Hide();
@@ -158,11 +174,25 @@ namespace LuniiKit
                 Library.Text = folderDialog.SelectedPath;
             }
         }
+        private void tmpselect(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.FolderBrowserDialog folderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            folderDialog.Description = "Choisir le dossier temporaire";
+            if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
+            {
+                //Cancel
+            }
+            else
+            {
+                Tmpfolder.Text = folderDialog.SelectedPath;
+            }
+        }
         private void Isport_Click(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.offdb = null;
             Properties.Settings.Default.unoffdb = null;
             Properties.Settings.Default.library = null;
+            Properties.Settings.Default.tmp = null;
 
             if (string.IsNullOrEmpty(Properties.Settings.Default.offdb))
             {
@@ -207,6 +237,21 @@ namespace LuniiKit
                     string path = Environment.GetEnvironmentVariable("USERPROFILE");
                     string libraryfolder = path + "\\.studio\\library";
                     Library.Text = libraryfolder;
+                }
+            }
+            if (string.IsNullOrEmpty(Properties.Settings.Default.tmp))
+            {
+                if (Properties.Settings.Default.studioportable == true)
+                {
+                    string path = Directory.GetCurrentDirectory();
+                    string tmpfolder = path + "\\.studio\\tmp";
+                    Tmpfolder.Text = tmpfolder;
+                }
+                else
+                {
+                    string path = Environment.GetEnvironmentVariable("USERPROFILE");
+                    string tmpfolder = path + "\\.studio\\tmp";
+                    Tmpfolder.Text = tmpfolder;
                 }
             }
         }
