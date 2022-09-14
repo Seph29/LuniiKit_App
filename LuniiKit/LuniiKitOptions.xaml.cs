@@ -179,6 +179,7 @@ namespace LuniiKit
                 Tmpfolder.Text = folderDialog.SelectedPath;
             }
         }
+
         private void Isport_Click(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.offdb = null;
@@ -186,67 +187,14 @@ namespace LuniiKit
             Properties.Settings.Default.library = null;
             Properties.Settings.Default.tmp = null;
 
-            if (string.IsNullOrEmpty(Properties.Settings.Default.offdb))
-            {
-                if (Properties.Settings.Default.studioportable == true)
-                {
-                    string path = Directory.GetCurrentDirectory();
-                    string offdbfolder = path + "\\.studio\\db\\official.json";
-                    Offdb.Text = offdbfolder;
-                }
-                else
-                {
-                    string path = Environment.GetEnvironmentVariable("USERPROFILE");
-                    string offdbfolder = path + "\\.studio\\db\\official.json";
-                    Offdb.Text = offdbfolder;
-                }
-            }
-            if (string.IsNullOrEmpty(Properties.Settings.Default.unoffdb))
-            {
-                if (Properties.Settings.Default.studioportable == true)
-                {
-                    string path = Directory.GetCurrentDirectory();
-                    string unoffdbfolder = path + "\\.studio\\db\\unofficial.json";
-                    Unoffdb.Text = unoffdbfolder;
-                }
-                else
-                {
-                    string path = Environment.GetEnvironmentVariable("USERPROFILE");
-                    string unoffdbfolder = path + "\\.studio\\db\\unofficial.json";
-                    Unoffdb.Text = unoffdbfolder;
-                }
-            }
-            if (string.IsNullOrEmpty(Properties.Settings.Default.library))
-            {
-                if (Properties.Settings.Default.studioportable == true)
-                {
-                    string path = Directory.GetCurrentDirectory();
-                    string libraryfolder = path + "\\.studio\\library";
-                    Library.Text = libraryfolder;
-                }
-                else
-                {
-                    string path = Environment.GetEnvironmentVariable("USERPROFILE");
-                    string libraryfolder = path + "\\.studio\\library";
-                    Library.Text = libraryfolder;
-                }
-            }
-            if (string.IsNullOrEmpty(Properties.Settings.Default.tmp))
-            {
-                if (Properties.Settings.Default.studioportable == true)
-                {
-                    string path = Directory.GetCurrentDirectory();
-                    string tmpfolder = path + "\\.studio\\tmp";
-                    Tmpfolder.Text = tmpfolder;
-                }
-                else
-                {
-                    string path = Environment.GetEnvironmentVariable("USERPROFILE");
-                    string tmpfolder = path + "\\.studio\\tmp";
-                    Tmpfolder.Text = tmpfolder;
-                }
-            }
+			string path = Properties.Settings.Default.studioportable
+				? Directory.GetCurrentDirectory()
+				: Environment.GetEnvironmentVariable("USERPROFILE");
+
+			Offdb.Text = path + "\\.studio\\db\\official.json";
+			Unoffdb.Text = path + "\\.studio\\db\\unofficial.json"; ;
+			Library.Text = path + "\\.studio\\library";
+			Tmpfolder.Text = path + "\\.studio\\tmp";
         }
     }
 }
-
