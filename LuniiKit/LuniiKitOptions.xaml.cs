@@ -9,6 +9,8 @@ namespace LuniiKit
 {
     public partial class LuniiKitOptions : Window
     {
+		private const string DbFileModalFilter = "Db files (*.json)|*.json|All files (*.*)|*.*";
+
         public LuniiKitOptions()
         {
             InitializeComponent();
@@ -132,7 +134,7 @@ namespace LuniiKit
         private void offselect(object sender, RoutedEventArgs e)
         {
             OpenFileDialog offselect = new OpenFileDialog();
-            offselect.Filter = "Db files (*.json)|*.json|All files (*.*)|*.*";
+			offselect.Filter = DbFileModalFilter;
             offselect.FilterIndex = 1;
             Nullable<bool> result = offselect.ShowDialog();
             if (result == true)
@@ -143,7 +145,7 @@ namespace LuniiKit
         private void unoffselect(object sender, RoutedEventArgs e)
         {
             OpenFileDialog unoffselect = new OpenFileDialog();
-            unoffselect.Filter = "Db files (*.json)|*.json|All files (*.*)|*.*";
+			unoffselect.Filter = DbFileModalFilter;
             unoffselect.FilterIndex = 1;
             Nullable<bool> result = unoffselect.ShowDialog();
             if (result == true)
