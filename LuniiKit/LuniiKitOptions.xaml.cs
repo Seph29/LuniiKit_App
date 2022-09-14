@@ -16,16 +16,6 @@ namespace LuniiKit
         }
         private void Checkconfig()
         {
-            if (Properties.Settings.Default.eraselog == true)
-            {
-                Eraselogtext.IsEnabled = true;
-                Nombrelogs.IsEnabled = true;
-            }
-            else
-            {
-                Eraselogtext.IsEnabled = false;
-                Nombrelogs.IsEnabled = false;
-            }
             if (string.IsNullOrEmpty(Properties.Settings.Default.confhost))
             {
                 Chost.Text = "localhost";
@@ -253,19 +243,6 @@ namespace LuniiKit
                     string tmpfolder = path + "\\.studio\\tmp";
                     Tmpfolder.Text = tmpfolder;
                 }
-            }
-        }
-        private void Eraselog_Click(object sender, RoutedEventArgs e)
-        {
-            if (Properties.Settings.Default.eraselog == true)
-            {
-                Eraselogtext.IsEnabled = true;
-                Nombrelogs.IsEnabled = true;
-            }
-            else
-            {
-                Eraselogtext.IsEnabled = false;
-                Nombrelogs.IsEnabled = false;
             }
         }
     }
