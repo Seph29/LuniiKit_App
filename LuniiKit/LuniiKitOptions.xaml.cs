@@ -101,23 +101,13 @@ namespace LuniiKit
                 e.Cancel = false;
             }
         }
-        private void Ook(object sender, RoutedEventArgs e)
+
+		private void Ok_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow objMainWindow = new MainWindow();
-            Properties.Settings.Default.confhost = Chost.Text;
-            Properties.Settings.Default.confport = Cport.Text;
-            Properties.Settings.Default.studioportable = Isport.IsChecked.Value;
-            Properties.Settings.Default.autoopenweb = Autoopen.IsChecked.Value;
-            Properties.Settings.Default.eraselog = Eraselog.IsChecked.Value;
-            Properties.Settings.Default.nlogs = Convert.ToInt16(Nombrelogs.Text);
-            Properties.Settings.Default.offdb = Offdb.Text;
-            Properties.Settings.Default.unoffdb = Unoffdb.Text;
-            Properties.Settings.Default.library = Library.Text;
-            Properties.Settings.Default.tmp = Tmpfolder.Text;
-            Properties.Settings.Default.Save();
-            objMainWindow.Hide();
+			Properties.Settings.Default.Save();
             Hide();
         }
+
         private void CheckUpdate(object sender, RoutedEventArgs e)
         {
             Updater.WinSparkle.win_sparkle_check_update_with_ui();

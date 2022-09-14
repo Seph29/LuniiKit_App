@@ -49,7 +49,7 @@
             <Grid HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="387">
             </Grid>
         </GroupBox>
-        <Button x:Name="Ok" Content="OK" Margin="187,265,0,0" VerticalAlignment="Top" Click="Ook" HorizontalAlignment="Left" Width="40" Height="26"/>
+        <Button x:Name="Ok" Content="OK" Margin="187,265,0,0" VerticalAlignment="Top" Click="Ok_Click" HorizontalAlignment="Left" Width="40" Height="26"/>
         <Button x:Name="Update" ToolTip="Update" Content="Rechercher les mises à jour" Margin="129,227,0,0" VerticalAlignment="Top" Click="CheckUpdate" HorizontalAlignment="Left" Width="156" Height="26"/>
     </Grid>
 </Window>
