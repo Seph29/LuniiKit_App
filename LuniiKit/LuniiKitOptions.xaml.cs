@@ -136,19 +136,14 @@ namespace LuniiKit
 
 		private void Isport_Click(object sender, RoutedEventArgs e)
 		{
-			Settings.offdb = null;
-			Settings.unoffdb = null;
-			Settings.library = null;
-			Settings.tmp = null;
-
 			string path = Settings.studioportable
 				? Directory.GetCurrentDirectory()
 				: Environment.GetEnvironmentVariable("USERPROFILE");
 
-			Offdb.Text = path + "\\.studio\\db\\official.json";
-			Unoffdb.Text = path + "\\.studio\\db\\unofficial.json"; ;
-			Library.Text = path + "\\.studio\\library";
-			Tmpfolder.Text = path + "\\.studio\\tmp";
+			Settings.offdb = path + "\\.studio\\db\\official.json";
+			Settings.unoffdb = path + "\\.studio\\db\\unofficial.json";
+			Settings.library = path + "\\.studio\\library";
+			Settings.tmp = path + "\\.studio\\tmp";
 		}
 	}
 }
