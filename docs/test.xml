@@ -1,0 +1,450 @@
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:pa="http://podcastaddict.com" xmlns:podcastRF="http://radiofrance.fr/Lancelot/Podcast#" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0" version="2.0">
+  <channel>
+    <title>Olma</title>
+    <link>https://www.radiofrance.fr/franceinter/podcasts/olma</link>
+    <description>France Inter invite les enfants de 8 à 12 ans à partir à la découverte des sciences... Rendez-vous sur l'application Radio France pour découvrir tous les autres épisodes.</description>
+    <language>fr</language>
+    <copyright>Radio France</copyright>
+    <lastBuildDate>Thu, 08 Sep 2022 13:02:37 +0200</lastBuildDate>
+    <generator>Radio France</generator>
+    <image>
+      <url>https://www.radiofrance.fr/s3/cruiser-production/2021/12/e7359854-3251-490e-9aa8-f9f67b2da73a/1400x1400_rf_omm_0000032592_ite.jpg</url>
+      <title>Olma</title>
+      <link>https://www.radiofrance.fr/franceinter/podcasts/olma</link>
+    </image>
+    <itunes:author>France Inter</itunes:author>
+    <itunes:category text="Kids & Family"/>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:image href="https://www.radiofrance.fr/s3/cruiser-production/2021/12/e7359854-3251-490e-9aa8-f9f67b2da73a/1400x1400_rf_omm_0000032592_ite.jpg"/>
+    <itunes:owner>
+      <itunes:email>podcast@radiofrance.com</itunes:email>
+      <itunes:name>Radio France</itunes:name>
+    </itunes:owner>
+    <itunes:subtitle>Olma</itunes:subtitle>
+    <itunes:summary>France Inter invite les enfants de 8 à 12 ans à partir à la découverte des sciences... Rendez-vous sur l'application Radio France pour découvrir tous les autres épisodes.</itunes:summary>
+    <itunes:new-feed-url>https://radiofrance-podcast.net/podcast09/35099478-7c72-4f9e-a6de-1b928400e9e5/rss_21770.xml</itunes:new-feed-url>
+    <pa:new-feed-url>https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_21770.xml</pa:new-feed-url>
+    <podcastRF:originStation>1</podcastRF:originStation>
+    <googleplay:block>yes</googleplay:block>
+    <item>
+      <title>Episode 20 :  L’arbre de vie (Epilogue)</title>
+      <link>https://www.radiofrance.fr/franceinter/podcasts/olma/episode-20-l-arbre-de-vie-epilogue-7366106</link>
+      <description>durée : 00:12:32 - Olma - Fin de la mission d’Olma et Mathieu dans la forêt du Congo…</description>
+      <author>podcast@radiofrance.com (Radio France)</author>
+      <category>Kids & Family</category>
+      <enclosure url="https://rf.proxycast.org/1440917b-b648-444f-b25a-825b17a582c1/21770-22.06.2022-ITEMA_23025708-2022F41789E0020-21.mp3" length="12071773" type="audio/mpeg"/>
+      <guid isPermaLink="false">1e850fa2-9daf-4ee5-a68a-3fe6b356b246</guid>
+      <pubDate>Wed, 22 Jun 2022 10:00:04 +0200</pubDate>
+      <podcastRF:businessReference>41789</podcastRF:businessReference>
+      <podcastRF:magnetothequeID>2022F41789E0020</podcastRF:magnetothequeID>
+      <itunes:title>Episode 20 :  L’arbre de vie (Epilogue)</itunes:title>
+      <itunes:image href="https://www.radiofrance.fr/s3/cruiser-production/2022/04/f1ebbf7d-2c11-4eca-a291-42e7a5a4738e/1400x1400_olma.jpg"/>
+      <itunes:author>France Inter</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>Episode,20 :,,L’arbre,de,vie,(Epilogue)</itunes:keywords>
+      <itunes:subtitle>Episode 20 :  L’arbre de vie (Epilogue)</itunes:subtitle>
+      <itunes:summary>durée : 00:12:32 - Olma - Fin de la mission d’Olma et Mathieu dans la forêt du Congo…</itunes:summary>
+      <itunes:duration>00:12:32</itunes:duration>
+      <googleplay:block>yes</googleplay:block>
+    </item>
+    <item>
+      <title>Episode 19 : Paysans et guerriers </title>
+      <link>https://www.radiofrance.fr/franceinter/podcasts/olma/episode-19-paysans-et-guerriers-2648231</link>
+      <description>durée : 00:12:30 - Olma - Pourquoi est-ce qu’on parle de « révolution » Néolithique ? Anne Lehoërff, spécialiste de la protohistoire.</description>
+      <author>podcast@radiofrance.com (Radio France)</author>
+      <category>Kids & Family</category>
+      <enclosure url="https://rf.proxycast.org/663e3148-2b33-43ab-8f34-4c6d7ba5c2be/21770-22.06.2022-ITEMA_23025708-2022F41789E0019-21.mp3" length="12036330" type="audio/mpeg"/>
+      <guid isPermaLink="false">cac9c25b-5b47-403e-8e16-fbad4a68c002</guid>
+      <pubDate>Wed, 22 Jun 2022 10:00:03 +0200</pubDate>
+      <podcastRF:businessReference>41789</podcastRF:businessReference>
+      <podcastRF:magnetothequeID>2022F41789E0019</podcastRF:magnetothequeID>
+      <itunes:title>Episode 19 : Paysans et guerriers </itunes:title>
+      <itunes:image href="https://www.radiofrance.fr/s3/cruiser-production/2022/04/f1ebbf7d-2c11-4eca-a291-42e7a5a4738e/1400x1400_olma.jpg"/>
+      <itunes:author>France Inter</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>Episode,19 :,Paysans,et,guerriers,</itunes:keywords>
+      <itunes:subtitle>Episode 19 : Paysans et guerriers </itunes:subtitle>
+      <itunes:summary>durée : 00:12:30 - Olma - Pourquoi est-ce qu’on parle de « révolution » Néolithique ? Anne Lehoërff, spécialiste de la protohistoire.</itunes:summary>
+      <itunes:duration>00:12:30</itunes:duration>
+      <googleplay:block>yes</googleplay:block>
+    </item>
+    <item>
+      <title>Episode 18 : L’art dans les grottes préhistoriques</title>
+      <link>https://www.radiofrance.fr/franceinter/podcasts/olma/episode-18-l-art-dans-les-grottes-prehistoriques-8910633</link>
+      <description>durée : 00:12:30 - Olma - Que faisaient les hommes préhistoriques dans la grotte, à part dessiner sur les parois? Avec l'archéologue Carole Fritz.</description>
+      <author>podcast@radiofrance.com (Radio France)</author>
+      <category>Kids & Family</category>
+      <enclosure url="https://rf.proxycast.org/92b583a9-dd0e-47a6-90c1-b176f784b1b3/21770-22.06.2022-ITEMA_23025708-2022F41789E0018-21.mp3" length="12041404" type="audio/mpeg"/>
+      <guid isPermaLink="false">e8c45504-fa75-4a9c-9ecd-260fbb74a5b5</guid>
+      <pubDate>Wed, 22 Jun 2022 10:00:02 +0200</pubDate>
+      <podcastRF:businessReference>41789</podcastRF:businessReference>
+      <podcastRF:magnetothequeID>2022F41789E0018</podcastRF:magnetothequeID>
+      <itunes:title>Episode 18 : L’art dans les grottes préhistoriques</itunes:title>
+      <itunes:image href="https://www.radiofrance.fr/s3/cruiser-production/2022/04/f1ebbf7d-2c11-4eca-a291-42e7a5a4738e/1400x1400_olma.jpg"/>
+      <itunes:author>France Inter</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>Episode,18 :,L’art,dans,les,grottes,préhistoriques</itunes:keywords>
+      <itunes:subtitle>Episode 18 : L’art dans les grottes préhistoriques</itunes:subtitle>
+      <itunes:summary>durée : 00:12:30 - Olma - Que faisaient les hommes préhistoriques dans la grotte, à part dessiner sur les parois? Avec l'archéologue Carole Fritz.</itunes:summary>
+      <itunes:duration>00:12:30</itunes:duration>
+      <googleplay:block>yes</googleplay:block>
+    </item>
+    <item>
+      <title>Episode 17: Les chasseurs cueilleurs</title>
+      <link>https://www.radiofrance.fr/franceinter/podcasts/olma/episode-17-les-chasseurs-cueilleurs-9084654</link>
+      <description>durée : 00:11:19 - Olma - Un peuple de chasseurs cueilleurs, ça veut dire qu’ils se nourrissaient des animaux qu’ils chassaient et de ce qu’ils pouvaient cueillir ? Avec le professeur Nicolas Valdeyron</description>
+      <author>podcast@radiofrance.com (Radio France)</author>
+      <category>Kids & Family</category>
+      <enclosure url="https://rf.proxycast.org/91f5e5e1-de73-4327-8ac8-492b49be1570/21770-22.06.2022-ITEMA_23025708-2022F41789E0017-21.mp3" length="10898744" type="audio/mpeg"/>
+      <guid isPermaLink="false">49ce4887-0214-4cbc-b020-6998988edc20</guid>
+      <pubDate>Wed, 22 Jun 2022 10:00:01 +0200</pubDate>
+      <podcastRF:businessReference>41789</podcastRF:businessReference>
+      <podcastRF:magnetothequeID>2022F41789E0017</podcastRF:magnetothequeID>
+      <itunes:title>Episode 17: Les chasseurs cueilleurs</itunes:title>
+      <itunes:image href="https://www.radiofrance.fr/s3/cruiser-production/2022/04/f1ebbf7d-2c11-4eca-a291-42e7a5a4738e/1400x1400_olma.jpg"/>
+      <itunes:author>France Inter</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>Episode,17:,Les,chasseurs,cueilleurs</itunes:keywords>
+      <itunes:subtitle>Episode 17: Les chasseurs cueilleurs</itunes:subtitle>
+      <itunes:summary>durée : 00:11:19 - Olma - Un peuple de chasseurs cueilleurs, ça veut dire qu’ils se nourrissaient des animaux qu’ils chassaient et de ce qu’ils pouvaient cueillir ? Avec le professeur Nicolas Valdeyron</itunes:summary>
+      <itunes:duration>00:11:19</itunes:duration>
+      <googleplay:block>yes</googleplay:block>
+    </item>
+    <item>
+      <title>Episode 16 : La Préhistoire qu’est-ce que c’est ? </title>
+      <link>https://www.radiofrance.fr/franceinter/podcasts/olma/episode-16-la-prehistoire-qu-est-ce-que-c-est-5876732</link>
+      <description>durée : 00:12:14 - Olma - Quelles sont les grandes périodes de la Préhistoire?  Avec la préhistorienne Sophie de Beaune.</description>
+      <author>podcast@radiofrance.com (Radio France)</author>
+      <category>Kids & Family</category>
+      <enclosure url="https://rf.proxycast.org/0d9fd296-87ad-4e4f-9790-c1aafb945891/21770-22.06.2022-ITEMA_23025708-2022F41789E0016-21.mp3" length="11780127" type="audio/mpeg"/>
+      <guid isPermaLink="false">79be2d3b-ab32-4b6b-8d7f-5edac975b611</guid>
+      <pubDate>Wed, 22 Jun 2022 10:00:00 +0200</pubDate>
+      <podcastRF:businessReference>41789</podcastRF:businessReference>
+      <podcastRF:magnetothequeID>2022F41789E0016</podcastRF:magnetothequeID>
+      <itunes:title>Episode 16 : La Préhistoire qu’est-ce que c’est ? </itunes:title>
+      <itunes:image href="https://www.radiofrance.fr/s3/cruiser-production/2022/04/f1ebbf7d-2c11-4eca-a291-42e7a5a4738e/1400x1400_olma.jpg"/>
+      <itunes:author>France Inter</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>Episode,16 :,La,Préhistoire,qu’est-ce,que,c’est ?,</itunes:keywords>
+      <itunes:subtitle>Episode 16 : La Préhistoire qu’est-ce que c’est ? </itunes:subtitle>
+      <itunes:summary>durée : 00:12:14 - Olma - Quelles sont les grandes périodes de la Préhistoire?  Avec la préhistorienne Sophie de Beaune.</itunes:summary>
+      <itunes:duration>00:12:14</itunes:duration>
+      <googleplay:block>yes</googleplay:block>
+    </item>
+    <item>
+      <title>Episode 15 : Homo Sapiens</title>
+      <link>https://www.radiofrance.fr/franceinter/podcasts/olma/episode-15-homo-sapiens-1044734</link>
+      <description>durée : 00:11:31 - Olma - A quoi ressemblaient les premiers représentants de notre espèce humaine ? Comment Homo Sapiens a-t-il évolué ?  Avec le paléoanthropologue Jean-Jacques Hublin.</description>
+      <author>podcast@radiofrance.com (Radio France)</author>
+      <category>Kids & Family</category>
+      <enclosure url="https://rf.proxycast.org/784177d4-d0a0-42a9-9bf7-5d5b71dd17b6/21770-06.04.2022-ITEMA_22977412-2022F41789E0015-21.mp3" length="11096816" type="audio/mpeg"/>
+      <guid isPermaLink="false">25c3201e-a268-46af-b54f-0185734ca99c</guid>
+      <pubDate>Wed, 06 Apr 2022 10:04:00 +0200</pubDate>
+      <podcastRF:businessReference>41789</podcastRF:businessReference>
+      <podcastRF:magnetothequeID>2022F41789E0015</podcastRF:magnetothequeID>
+      <itunes:title>Episode 15 : Homo Sapiens</itunes:title>
+      <itunes:image href="https://www.radiofrance.fr/s3/cruiser-production/2021/11/3efbb026-1cd4-4c30-a234-12bdcaa41f25/1400x1400_fi-olma-s2-1400.jpg"/>
+      <itunes:author>France Inter</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>Episode,15,:,Homo,Sapiens</itunes:keywords>
+      <itunes:subtitle>Episode 15 : Homo Sapiens</itunes:subtitle>
+      <itunes:summary>durée : 00:11:31 - Olma - A quoi ressemblaient les premiers représentants de notre espèce humaine ? Comment Homo Sapiens a-t-il évolué ?  Avec le paléoanthropologue Jean-Jacques Hublin.</itunes:summary>
+      <itunes:duration>00:11:31</itunes:duration>
+      <googleplay:block>yes</googleplay:block>
+    </item>
+    <item>
+      <title>Episode 14 : Neandertal</title>
+      <link>https://www.radiofrance.fr/franceinter/podcasts/olma/episode-14-neandertal-9210626</link>
+      <description>durée : 00:12:46 - Olma - Pourquoi Neandertal est-il aussi mal aimé ? Avec la préhistorienne Marylène Patou-Mathis.</description>
+      <author>podcast@radiofrance.com (Radio France)</author>
+      <category>Kids & Family</category>
+      <enclosure url="https://rf.proxycast.org/f1406d05-9463-4c2c-bfa0-3ac7ad0fb5f8/21770-06.04.2022-ITEMA_22977412-2022F41789E0014-21.mp3" length="12287858" type="audio/mpeg"/>
+      <guid isPermaLink="false">10ada530-15ee-4d42-8d4e-134feb6f7db9</guid>
+      <pubDate>Wed, 06 Apr 2022 10:02:00 +0200</pubDate>
+      <podcastRF:businessReference>41789</podcastRF:businessReference>
+      <podcastRF:magnetothequeID>2022F41789E0014</podcastRF:magnetothequeID>
+      <itunes:title>Episode 14 : Neandertal</itunes:title>
+      <itunes:image href="https://www.radiofrance.fr/s3/cruiser-production/2021/11/3efbb026-1cd4-4c30-a234-12bdcaa41f25/1400x1400_fi-olma-s2-1400.jpg"/>
+      <itunes:author>France Inter</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>Episode,14,:,Neandertal</itunes:keywords>
+      <itunes:subtitle>Episode 14 : Neandertal</itunes:subtitle>
+      <itunes:summary>durée : 00:12:46 - Olma - Pourquoi Neandertal est-il aussi mal aimé ? Avec la préhistorienne Marylène Patou-Mathis.</itunes:summary>
+      <itunes:duration>00:12:46</itunes:duration>
+      <googleplay:block>yes</googleplay:block>
+    </item>
+    <item>
+      <title>Episode 13 : Les premiers hommes à la conquête du monde</title>
+      <link>https://www.radiofrance.fr/franceinter/podcasts/olma/episode-13-les-premiers-hommes-a-la-conquete-du-monde-1357856</link>
+      <description>durée : 00:11:30 - Olma - Saviez-vous qu’il avait existé au moins 25 espèces humaines différentes ? Avec le paléoanthropologue Antoine Balzeau.</description>
+      <author>podcast@radiofrance.com (Radio France)</author>
+      <category>Kids & Family</category>
+      <enclosure url="https://rf.proxycast.org/827fc2f8-a106-4058-b934-0c12e14a648c/21770-06.04.2022-ITEMA_22977412-2022F41789E0013-21.mp3" length="11083865" type="audio/mpeg"/>
+      <guid isPermaLink="false">eab81618-f9aa-4fe8-a3ea-11685860a96e</guid>
+      <pubDate>Wed, 06 Apr 2022 10:00:00 +0200</pubDate>
+      <podcastRF:businessReference>41789</podcastRF:businessReference>
+      <podcastRF:magnetothequeID>2022F41789E0013</podcastRF:magnetothequeID>
+      <itunes:title>Episode 13 : Les premiers hommes à la conquête du monde</itunes:title>
+      <itunes:image href="https://www.radiofrance.fr/s3/cruiser-production/2021/11/3efbb026-1cd4-4c30-a234-12bdcaa41f25/1400x1400_fi-olma-s2-1400.jpg"/>
+      <itunes:author>France Inter</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>Episode,13,:,Les,premiers,hommes,à,la,conquête,du,monde</itunes:keywords>
+      <itunes:subtitle>Episode 13 : Les premiers hommes à la conquête du monde</itunes:subtitle>
+      <itunes:summary>durée : 00:11:30 - Olma - Saviez-vous qu’il avait existé au moins 25 espèces humaines différentes ? Avec le paléoanthropologue Antoine Balzeau.</itunes:summary>
+      <itunes:duration>00:11:30</itunes:duration>
+      <googleplay:block>yes</googleplay:block>
+    </item>
+    <item>
+      <title>Episode 12 : Lucy, la star des australopithèques</title>
+      <link>https://www.radiofrance.fr/franceinter/podcasts/olma/episode-12-lucy-la-star-des-australopitheques-6547019</link>
+      <description>durée : 00:11:54 - Olma - Est-ce qu’un australopithèque, c’est un être humain ? Avec le paléontologue Yves Coppens.</description>
+      <author>podcast@radiofrance.com (Radio France)</author>
+      <category>Kids & Family</category>
+      <enclosure url="https://rf.proxycast.org/60866021-d9fc-4063-8e03-d382a4727bd5/21770-06.04.2022-ITEMA_22977412-2022F41789E0012-21.mp3" length="11465390" type="audio/mpeg"/>
+      <guid isPermaLink="false">425aba17-eea2-4ea0-89af-8353a8a41e40</guid>
+      <pubDate>Wed, 06 Apr 2022 09:58:00 +0200</pubDate>
+      <podcastRF:businessReference>41789</podcastRF:businessReference>
+      <podcastRF:magnetothequeID>2022F41789E0012</podcastRF:magnetothequeID>
+      <itunes:title>Episode 12 : Lucy, la star des australopithèques</itunes:title>
+      <itunes:image href="https://www.radiofrance.fr/s3/cruiser-production/2021/11/3efbb026-1cd4-4c30-a234-12bdcaa41f25/1400x1400_fi-olma-s2-1400.jpg"/>
+      <itunes:author>France Inter</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>Episode,12,:,Lucy,,la,star,des,australopithèques</itunes:keywords>
+      <itunes:subtitle>Episode 12 : Lucy, la star des australopithèques</itunes:subtitle>
+      <itunes:summary>durée : 00:11:54 - Olma - Est-ce qu’un australopithèque, c’est un être humain ? Avec le paléontologue Yves Coppens.</itunes:summary>
+      <itunes:duration>00:11:54</itunes:duration>
+      <googleplay:block>yes</googleplay:block>
+    </item>
+    <item>
+      <title>Episode 11 : Sur les traces des premiers ancêtres humains </title>
+      <link>https://www.radiofrance.fr/franceinter/podcasts/olma/episode-11-sur-les-traces-des-premiers-ancetres-humains-3780857</link>
+      <description>durée : 00:11:12 - Olma - A quoi ressemblaient les premiers hommes qui ont peuplé la planète ? Avec la paléontologue Brigitte Senut.</description>
+      <author>podcast@radiofrance.com (Radio France)</author>
+      <category>Kids & Family</category>
+      <enclosure url="https://rf.proxycast.org/56ca4781-6a38-4fec-8837-5855dcc2eb2c/21770-06.04.2022-ITEMA_22977412-2022F41789E0011-21.mp3" length="10792948" type="audio/mpeg"/>
+      <guid isPermaLink="false">38a1697c-913a-421b-af99-74cbce1e4975</guid>
+      <pubDate>Wed, 06 Apr 2022 09:56:00 +0200</pubDate>
+      <podcastRF:businessReference>41789</podcastRF:businessReference>
+      <podcastRF:magnetothequeID>2022F41789E0011</podcastRF:magnetothequeID>
+      <itunes:title>Episode 11 : Sur les traces des premiers ancêtres humains </itunes:title>
+      <itunes:image href="https://www.radiofrance.fr/s3/cruiser-production/2021/11/3efbb026-1cd4-4c30-a234-12bdcaa41f25/1400x1400_fi-olma-s2-1400.jpg"/>
+      <itunes:author>France Inter</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>Episode,11,:,Sur,les,traces,des,premiers,ancêtres,humains,</itunes:keywords>
+      <itunes:subtitle>Episode 11 : Sur les traces des premiers ancêtres humains </itunes:subtitle>
+      <itunes:summary>durée : 00:11:12 - Olma - A quoi ressemblaient les premiers hommes qui ont peuplé la planète ? Avec la paléontologue Brigitte Senut.</itunes:summary>
+      <itunes:duration>00:11:12</itunes:duration>
+      <googleplay:block>yes</googleplay:block>
+    </item>
+    <item>
+      <title>Episode 6 : Nos cousins les grands singes</title>
+      <link>https://www.radiofrance.fr/franceinter/podcasts/olma/episode-6-nos-cousins-les-grands-singes-8194810</link>
+      <description>durée : 00:12:08 - Olma - On dit souvent que les grands singes sont nos cousins, mais en quoi les grands singes sont-ils proches de nous ?</description>
+      <author>podcast@radiofrance.com (Radio France)</author>
+      <category>Kids & Family</category>
+      <enclosure url="https://rf.proxycast.org/74afd9f3-a409-46fb-98ad-7b3e91a4037d/21770-02.02.2022-ITEMA_22910678-2022F41789E0006-21.mp3" length="11686355" type="audio/mpeg"/>
+      <guid isPermaLink="false">907bb4c4-52f3-4b5d-b2e9-e59a77b6d1df</guid>
+      <pubDate>Wed, 02 Feb 2022 09:00:04 +0100</pubDate>
+      <podcastRF:businessReference>41789</podcastRF:businessReference>
+      <podcastRF:magnetothequeID>2022F41789E0006</podcastRF:magnetothequeID>
+      <itunes:title>Episode 6 : Nos cousins les grands singes</itunes:title>
+      <itunes:image href="https://www.radiofrance.fr/s3/cruiser-production/2021/11/3efbb026-1cd4-4c30-a234-12bdcaa41f25/1400x1400_fi-olma-s2-1400.jpg"/>
+      <itunes:author>France Inter</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>Episode,6,:,Nos,cousins,les,grands,singes</itunes:keywords>
+      <itunes:subtitle>Episode 6 : Nos cousins les grands singes</itunes:subtitle>
+      <itunes:summary>durée : 00:12:08 - Olma - On dit souvent que les grands singes sont nos cousins, mais en quoi les grands singes sont-ils proches de nous ?</itunes:summary>
+      <itunes:duration>00:12:08</itunes:duration>
+      <googleplay:block>yes</googleplay:block>
+    </item>
+    <item>
+      <title>Episode 7 : Les chimpanzés</title>
+      <link>https://www.radiofrance.fr/franceinter/podcasts/olma/episode-7-les-chimpanzes-5873382</link>
+      <description>durée : 00:12:29 - Olma - Comment vivent les chimpanzés ici dans la forêt ?</description>
+      <author>podcast@radiofrance.com (Radio France)</author>
+      <category>Kids & Family</category>
+      <enclosure url="https://rf.proxycast.org/fc3fa550-1376-40e6-bf1d-14f513e725eb/21770-02.02.2022-ITEMA_22910678-2022F41789E0007-21.mp3" length="12028257" type="audio/mpeg"/>
+      <guid isPermaLink="false">e1f03ec6-335c-4549-ba25-1a551a842309</guid>
+      <pubDate>Wed, 02 Feb 2022 09:00:03 +0100</pubDate>
+      <podcastRF:businessReference>41789</podcastRF:businessReference>
+      <podcastRF:magnetothequeID>2022F41789E0007</podcastRF:magnetothequeID>
+      <itunes:title>Episode 7 : Les chimpanzés</itunes:title>
+      <itunes:image href="https://www.radiofrance.fr/s3/cruiser-production/2021/11/3efbb026-1cd4-4c30-a234-12bdcaa41f25/1400x1400_fi-olma-s2-1400.jpg"/>
+      <itunes:author>France Inter</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>Episode,7,:,Les,chimpanzés</itunes:keywords>
+      <itunes:subtitle>Episode 7 : Les chimpanzés</itunes:subtitle>
+      <itunes:summary>durée : 00:12:29 - Olma - Comment vivent les chimpanzés ici dans la forêt ?</itunes:summary>
+      <itunes:duration>00:12:29</itunes:duration>
+      <googleplay:block>yes</googleplay:block>
+    </item>
+    <item>
+      <title>Episode 8 : Les gorilles</title>
+      <link>https://www.radiofrance.fr/franceinter/podcasts/olma/episode-8-les-gorilles-6339607</link>
+      <description>durée : 00:13:32 - Olma - Comment bien se comporter face à un gorille?</description>
+      <author>podcast@radiofrance.com (Radio France)</author>
+      <category>Kids & Family</category>
+      <enclosure url="https://rf.proxycast.org/6ec07b22-412e-4c29-967e-04304a33e7fe/21770-02.02.2022-ITEMA_22910678-2022F41789E0008-21.mp3" length="13036333" type="audio/mpeg"/>
+      <guid isPermaLink="false">5ca38cd6-b3a0-457f-8f5e-8509f1c9007d</guid>
+      <pubDate>Wed, 02 Feb 2022 09:00:02 +0100</pubDate>
+      <podcastRF:businessReference>41789</podcastRF:businessReference>
+      <podcastRF:magnetothequeID>2022F41789E0008</podcastRF:magnetothequeID>
+      <itunes:title>Episode 8 : Les gorilles</itunes:title>
+      <itunes:image href="https://www.radiofrance.fr/s3/cruiser-production/2021/11/3efbb026-1cd4-4c30-a234-12bdcaa41f25/1400x1400_fi-olma-s2-1400.jpg"/>
+      <itunes:author>France Inter</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>Episode,8,:,Les,gorilles</itunes:keywords>
+      <itunes:subtitle>Episode 8 : Les gorilles</itunes:subtitle>
+      <itunes:summary>durée : 00:13:32 - Olma - Comment bien se comporter face à un gorille?</itunes:summary>
+      <itunes:duration>00:13:32</itunes:duration>
+      <googleplay:block>yes</googleplay:block>
+    </item>
+    <item>
+      <title>Episode 9 : Les bonobos</title>
+      <link>https://www.radiofrance.fr/franceinter/podcasts/olma/episode-9-les-bonobos-6436277</link>
+      <description>durée : 00:10:58 - Olma - Saviez-vous qu’avant les bonobos et les chimpanzés ne formaient qu'une seule et même espèce ?</description>
+      <author>podcast@radiofrance.com (Radio France)</author>
+      <category>Kids & Family</category>
+      <enclosure url="https://rf.proxycast.org/c125b90f-c970-4797-a44f-3a58b2a02ad8/21770-02.02.2022-ITEMA_22910678-2022F41789E0009-21.mp3" length="10568799" type="audio/mpeg"/>
+      <guid isPermaLink="false">110eb94c-b283-4100-8e99-92f643485b3c</guid>
+      <pubDate>Wed, 02 Feb 2022 09:00:01 +0100</pubDate>
+      <podcastRF:businessReference>41789</podcastRF:businessReference>
+      <podcastRF:magnetothequeID>2022F41789E0009</podcastRF:magnetothequeID>
+      <itunes:title>Episode 9 : Les bonobos</itunes:title>
+      <itunes:image href="https://www.radiofrance.fr/s3/cruiser-production/2021/11/3efbb026-1cd4-4c30-a234-12bdcaa41f25/1400x1400_fi-olma-s2-1400.jpg"/>
+      <itunes:author>France Inter</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>Episode,9,:,Les,bonobos</itunes:keywords>
+      <itunes:subtitle>Episode 9 : Les bonobos</itunes:subtitle>
+      <itunes:summary>durée : 00:10:58 - Olma - Saviez-vous qu’avant les bonobos et les chimpanzés ne formaient qu'une seule et même espèce ?</itunes:summary>
+      <itunes:duration>00:10:58</itunes:duration>
+      <googleplay:block>yes</googleplay:block>
+    </item>
+    <item>
+      <title>Episode 10 : La communication chez les grands singes</title>
+      <link>https://www.radiofrance.fr/franceinter/podcasts/olma/episode-10-la-communication-chez-les-grands-singes-4833773</link>
+      <description>durée : 00:10:49 - Olma - Vous êtes-vous déjà demandé ce que se racontent les singes entre eux ?</description>
+      <author>podcast@radiofrance.com (Radio France)</author>
+      <category>Kids & Family</category>
+      <enclosure url="https://rf.proxycast.org/68dc5dc4-2deb-4df9-9891-84796e023162/21770-02.02.2022-ITEMA_22910678-2022F41789E0010-21.mp3" length="10428348" type="audio/mpeg"/>
+      <guid isPermaLink="false">84330c66-513f-4fde-8a3d-938f0eb4b735</guid>
+      <pubDate>Wed, 02 Feb 2022 09:00:00 +0100</pubDate>
+      <podcastRF:businessReference>41789</podcastRF:businessReference>
+      <podcastRF:magnetothequeID>2022F41789E0010</podcastRF:magnetothequeID>
+      <itunes:title>Episode 10 : La communication chez les grands singes</itunes:title>
+      <itunes:image href="https://www.radiofrance.fr/s3/cruiser-production/2021/11/3efbb026-1cd4-4c30-a234-12bdcaa41f25/1400x1400_fi-olma-s2-1400.jpg"/>
+      <itunes:author>France Inter</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>Episode,10,:,La,communication,chez,les,grands,singes</itunes:keywords>
+      <itunes:subtitle>Episode 10 : La communication chez les grands singes</itunes:subtitle>
+      <itunes:summary>durée : 00:10:49 - Olma - Vous êtes-vous déjà demandé ce que se racontent les singes entre eux ?</itunes:summary>
+      <itunes:duration>00:10:49</itunes:duration>
+      <googleplay:block>yes</googleplay:block>
+    </item>
+    <item>
+      <title>Episode 5 : Dans la peau de l’arbre</title>
+      <link>https://www.radiofrance.fr/franceinter/podcasts/olma/episode-5-dans-la-peau-de-l-arbre-4545246</link>
+      <description>durée : 00:12:24 - Olma - Est-ce que les arbres sont sensibles ? Est ce qu'ils ressentent des émotions, par exemple ? Avec la botaniste Catherine Lenne.</description>
+      <author>podcast@radiofrance.com (Radio France)</author>
+      <category>Kids & Family</category>
+      <enclosure url="https://rf.proxycast.org/10ef4605-44bc-4485-bb87-96a452315737/21770-01.12.2021-ITEMA_22850640-2021F41789E0038-21.mp3" length="11942747" type="audio/mpeg"/>
+      <guid isPermaLink="false">36092bc7-4815-48dc-a7eb-5977a80f814c</guid>
+      <pubDate>Wed, 01 Dec 2021 09:00:04 +0100</pubDate>
+      <podcastRF:businessReference>41789</podcastRF:businessReference>
+      <podcastRF:magnetothequeID>2021F41789E0038</podcastRF:magnetothequeID>
+      <itunes:title>Episode 5 : Dans la peau de l’arbre</itunes:title>
+      <itunes:image href="https://www.radiofrance.fr/s3/cruiser-production/2021/11/3abd8250-1f8f-4faf-be0d-e4fab33915be/1400x1400_olma-arbres-1800x1800-format-carre.jpg"/>
+      <itunes:author>France Inter</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>Episode,5,:,Dans,la,peau,de,l’arbre</itunes:keywords>
+      <itunes:subtitle>Episode 5 : Dans la peau de l’arbre</itunes:subtitle>
+      <itunes:summary>durée : 00:12:24 - Olma - Est-ce que les arbres sont sensibles ? Est ce qu'ils ressentent des émotions, par exemple ? Avec la botaniste Catherine Lenne.</itunes:summary>
+      <itunes:duration>00:12:24</itunes:duration>
+      <googleplay:block>yes</googleplay:block>
+    </item>
+    <item>
+      <title>Episode 4 : La vie d’un arbre</title>
+      <link>https://www.radiofrance.fr/franceinter/podcasts/olma/episode-4-la-vie-d-un-arbre-8604011</link>
+      <description>durée : 00:08:10 - Olma - Sais-tu comment on calcule l’âge d’un arbre ? Avec la botaniste Catherine Lenne.</description>
+      <author>podcast@radiofrance.com (Radio France)</author>
+      <category>Kids & Family</category>
+      <enclosure url="https://rf.proxycast.org/9e43f488-0c79-4197-9d16-793cd1b41c85/21770-01.12.2021-ITEMA_22850640-2021F41789E0037-21.mp3" length="7884678" type="audio/mpeg"/>
+      <guid isPermaLink="false">aa6c8009-1db9-49b7-b915-9399c4118b13</guid>
+      <pubDate>Wed, 01 Dec 2021 09:00:03 +0100</pubDate>
+      <podcastRF:businessReference>41789</podcastRF:businessReference>
+      <podcastRF:magnetothequeID>2021F41789E0037</podcastRF:magnetothequeID>
+      <itunes:title>Episode 4 : La vie d’un arbre</itunes:title>
+      <itunes:image href="https://www.radiofrance.fr/s3/cruiser-production/2021/11/3efbb026-1cd4-4c30-a234-12bdcaa41f25/1400x1400_fi-olma-s2-1400.jpg"/>
+      <itunes:author>France Inter</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>Episode,4,:,La,vie,d’un,arbre</itunes:keywords>
+      <itunes:subtitle>Episode 4 : La vie d’un arbre</itunes:subtitle>
+      <itunes:summary>durée : 00:08:10 - Olma - Sais-tu comment on calcule l’âge d’un arbre ? Avec la botaniste Catherine Lenne.</itunes:summary>
+      <itunes:duration>00:08:10</itunes:duration>
+      <googleplay:block>yes</googleplay:block>
+    </item>
+    <item>
+      <title>Episode 3 : La forêt et les hommes</title>
+      <link>https://www.radiofrance.fr/franceinter/podcasts/olma/episode-3-la-foret-et-les-hommes-9475330</link>
+      <description>durée : 00:12:24 - Olma - Comment les hommes et les arbres cohabitent-ils au cœur de la forêt tropicale? Avec l'écologue Marie-Ange Ngo-Bieng.</description>
+      <author>podcast@radiofrance.com (Radio France)</author>
+      <category>Kids & Family</category>
+      <enclosure url="https://rf.proxycast.org/02a4605a-e60a-45b3-b3fe-827acff045fc/21770-01.12.2021-ITEMA_22850640-2021F41789E0036-21.mp3" length="11936454" type="audio/mpeg"/>
+      <guid isPermaLink="false">62964c02-16b1-46ec-90bd-b45fd39212f9</guid>
+      <pubDate>Wed, 01 Dec 2021 09:00:02 +0100</pubDate>
+      <podcastRF:businessReference>41789</podcastRF:businessReference>
+      <podcastRF:magnetothequeID>2021F41789E0036</podcastRF:magnetothequeID>
+      <itunes:title>Episode 3 : La forêt et les hommes</itunes:title>
+      <itunes:image href="https://www.radiofrance.fr/s3/cruiser-production/2021/11/3efbb026-1cd4-4c30-a234-12bdcaa41f25/1400x1400_fi-olma-s2-1400.jpg"/>
+      <itunes:author>France Inter</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>Episode,3,:,La,forêt,et,les,hommes</itunes:keywords>
+      <itunes:subtitle>Episode 3 : La forêt et les hommes</itunes:subtitle>
+      <itunes:summary>durée : 00:12:24 - Olma - Comment les hommes et les arbres cohabitent-ils au cœur de la forêt tropicale? Avec l'écologue Marie-Ange Ngo-Bieng.</itunes:summary>
+      <itunes:duration>00:12:24</itunes:duration>
+      <googleplay:block>yes</googleplay:block>
+    </item>
+    <item>
+      <title>Episode 2 : Au cœur de la forêt du Congo</title>
+      <link>https://www.radiofrance.fr/franceinter/podcasts/olma/episode-2-au-coeur-de-la-foret-du-congo-8302820</link>
+      <description>durée : 00:12:30 - Olma - C’est le moment pour Mathieu et Olma de découvrir l’endroit où ils vont vivre, en pleine forêt tropicale, pendant un an. Avec le botaniste Patrick Blanc.</description>
+      <author>podcast@radiofrance.com (Radio France)</author>
+      <category>Kids & Family</category>
+      <enclosure url="https://rf.proxycast.org/19c7136a-54b9-4b24-ace7-1097497f5c9a/21770-01.12.2021-ITEMA_22850640-2021F41789E0035-21.mp3" length="12038106" type="audio/mpeg"/>
+      <guid isPermaLink="false">890d2c53-a67a-48d4-b609-d8997a418f7a</guid>
+      <pubDate>Wed, 01 Dec 2021 09:00:01 +0100</pubDate>
+      <podcastRF:businessReference>41789</podcastRF:businessReference>
+      <podcastRF:magnetothequeID>2021F41789E0035</podcastRF:magnetothequeID>
+      <itunes:title>Episode 2 : Au cœur de la forêt du Congo</itunes:title>
+      <itunes:image href="https://www.radiofrance.fr/s3/cruiser-production/2021/11/3efbb026-1cd4-4c30-a234-12bdcaa41f25/1400x1400_fi-olma-s2-1400.jpg"/>
+      <itunes:author>France Inter</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>Episode,2,:,Au,cœur,de,la,forêt,du,Congo</itunes:keywords>
+      <itunes:subtitle>Episode 2 : Au cœur de la forêt du Congo</itunes:subtitle>
+      <itunes:summary>durée : 00:12:30 - Olma - C’est le moment pour Mathieu et Olma de découvrir l’endroit où ils vont vivre, en pleine forêt tropicale, pendant un an. Avec le botaniste Patrick Blanc.</itunes:summary>
+      <itunes:duration>00:12:30</itunes:duration>
+      <googleplay:block>yes</googleplay:block>
+    </item>
+    <item>
+      <title>Episode 1 : Opération Canopée</title>
+      <link>https://www.radiofrance.fr/franceinter/podcasts/olma/episode-1-operation-canopee-6949196</link>
+      <description>durée : 00:06:35 - Olma - Après une saison au Svalbard, les aventures de Mathieu, Philippine et Olma reprennent dans un tout autre décor…. La forêt tropicale du bassin du Congo, au cœur de l’Afrique !</description>
+      <author>podcast@radiofrance.com (Radio France)</author>
+      <category>Kids & Family</category>
+      <enclosure url="https://rf.proxycast.org/6fb0c056-ad2a-4df2-b42c-a4b7e3311547/21770-01.12.2021-ITEMA_22850640-2021F41789E0034-21.mp3" length="6358479" type="audio/mpeg"/>
+      <guid isPermaLink="false">fe835fe7-32e7-4f51-af6f-9e270f63e9c4</guid>
+      <pubDate>Wed, 01 Dec 2021 09:00:00 +0100</pubDate>
+      <podcastRF:businessReference>41789</podcastRF:businessReference>
+      <podcastRF:magnetothequeID>2021F41789E0034</podcastRF:magnetothequeID>
+      <itunes:title>Episode 1 : Opération Canopée</itunes:title>
+      <itunes:image href="https://www.radiofrance.fr/s3/cruiser-production/2021/11/3efbb026-1cd4-4c30-a234-12bdcaa41f25/1400x1400_fi-olma-s2-1400.jpg"/>
+      <itunes:author>France Inter</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>Episode,1,:,Opération,Canopée</itunes:keywords>
+      <itunes:subtitle>Episode 1 : Opération Canopée</itunes:subtitle>
+      <itunes:summary>durée : 00:06:35 - Olma - Après une saison au Svalbard, les aventures de Mathieu, Philippine et Olma reprennent dans un tout autre décor…. La forêt tropicale du bassin du Congo, au cœur de l’Afrique !</itunes:summary>
+      <itunes:duration>00:06:35</itunes:duration>
+      <googleplay:block>yes</googleplay:block>
+    </item>
+   </channel>
+</rss>
