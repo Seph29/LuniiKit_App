@@ -53,7 +53,6 @@ namespace LuniiKit
             foreach (string dirs in fixdirs)
             {
                 if (Directory.Exists(dirs))
-
                 {
                     Directory.Delete(dirs, true);
                 }
@@ -92,9 +91,11 @@ namespace LuniiKit
         }
         private void Idriver_Click(object sender, RoutedEventArgs e)
         {
-            if (Environment.Is64BitOperatingSystem == true)
-            {
-                ProcessStartInfo process = new ProcessStartInfo("dpinst64.exe")
+            string processToStart = Environment.Is64BitOperatingSystem
+                ? "dpinst64.exe"
+                : "dpinst32.exe";
+
+            ProcessStartInfo process = new ProcessStartInfo(processToStart)
                 {
                     WorkingDirectory = @"driver",
                     UseShellExecute = true,
@@ -102,17 +103,6 @@ namespace LuniiKit
                 };
                 Process.Start(process);
             }
-            else
-            {
-                ProcessStartInfo process = new ProcessStartInfo("dpinst32.exe")
-                {
-                    WorkingDirectory = @"driver",
-                    UseShellExecute = true,
-                    Verb = "runas"
-                };
-                Process.Start(process);
-            }
-        }
         private void Studio1_Click(object sender, RoutedEventArgs e)
         {
             {
