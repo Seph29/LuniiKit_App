@@ -14,7 +14,7 @@ namespace LuniiKit
         public MainWindow()
         {
             InitializeComponent();
-            WinSparkle.win_sparkle_set_appcast_url("https://raw.githubusercontent.com/Seph29/LuniiKit_App/master/docs/update_zip.ver");
+            WinSparkle.win_sparkle_set_appcast_url("https://raw.githubusercontent.com/Seph29/LuniiKit_App/master/docs/update.ver");
             WinSparkle.win_sparkle_init();
             StartApp();
         }
@@ -220,6 +220,7 @@ if %jver% LSS 110000 (
 )");
             }
             SW.WriteLine(@"IF EXIST %DOT_STUDIO%\db\official.json del %DOT_STUDIO%\db\official.json");
+            SW.WriteLine(@"IF EXIST %STUDIO_DB_OFFICIAL% del %STUDIO_DB_OFFICIAL%");
             if (Properties.Settings.Default.eraselog == true)
             {
                 SW.WriteLine(@"echo Suppression des logs");
@@ -290,6 +291,7 @@ if %jver% LSS 110000 (
 )");
             }
             SW.WriteLine(@"IF EXIST %DOT_STUDIO%\db\official.json del %DOT_STUDIO%\db\official.json");
+            SW.WriteLine(@"IF EXIST %STUDIO_DB_OFFICIAL% del %STUDIO_DB_OFFICIAL%");
             if (Properties.Settings.Default.eraselog == true)
             {
                 SW.WriteLine(@"echo Suppression des logs");
