@@ -18,6 +18,8 @@ namespace LuniiKit
             WinSparkle.win_sparkle_init();
             StartApp();
         }
+
+        private string SpgFolderPath => Path.Combine(Directory.GetCurrentDirectory(), "spg");
         private void StartApp()
         {
             Properties.Settings.Default.folderstudio = false;
@@ -387,9 +389,7 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
         }
         private void OpenFolderSPG(object sender, RoutedEventArgs e)
         {
-            string path = Directory.GetCurrentDirectory();
-            string spgfolder = path + "\\spg";
-            Process.Start("explorer.exe", spgfolder);
+            Process.Start("explorer.exe", SpgFolderPath);
         }
         private void OpenSTUdioFolder(object sender, RoutedEventArgs e)
         {
@@ -461,9 +461,7 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
         private void OpenSPG(object sender, RoutedEventArgs e)
         {
             System.Windows.Forms.FolderBrowserDialog folderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            string path = Directory.GetCurrentDirectory();
-            string spgfolder = path + "\\spg";
-            folderDialog.SelectedPath = spgfolder;
+            folderDialog.SelectedPath = SpgFolderPath;
             MessageBoxResult result = CustomMessageBox.ShowYesNoCancel(Application.Current.MainWindow, "Vous voulez utiliser :", "Studio Pack Generator", "Un dossier", "Une URL", "Annuler", MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
             {
@@ -475,38 +473,32 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
                 else
                 {
                     string spath = folderDialog.SelectedPath;
-                    var dialog = new InputBox();
-                    dialog.LabelResponseTextBox2.Visibility = Visibility.Hidden;
-                    dialog.ResponseTextBox2.Visibility = Visibility.Hidden;
-                    dialog.ResponseTextBox2.Margin = new Thickness(5, 2, 5, 0);
-                    dialog.ResponseTextBox.Margin = new Thickness(5, 0, 5, 0);
-                    dialog.LabelResponseTextBox.Margin = new Thickness(0, 0, 0, 0);
-                    dialog.InputOk.Margin = new Thickness(0, -10, 0, 0);
+                    var dialog = new InputBox(InputBoxMode.Folder);
+                    
                     if (dialog.ShowDialog() == true)
                     {
-                        Process process = new Process();
-                        process.StartInfo.FileName = spgfolder + "\\studio-pack-generator-x86_64-windows.exe";
-                        process.StartInfo.Arguments = dialog.ResponseText + " " + "\"" + spath + "";
-                        process.Start();
-                        process.WaitForExit();
-                        CustomMessageBox.Show(Application.Current.MainWindow, "Done !");
+                        LaunchSPG(spath, dialog.Options);
                     }
                 }
             }
             else if (result == MessageBoxResult.No)
             {
-                var dialog = new InputBox();
+                var dialog = new InputBox(InputBoxMode.Url);
                 if (dialog.ShowDialog() == true)
                 {
+                    LaunchSPG(dialog.Url, dialog.Options);
+                }
+            }
+        }
+
+        private void LaunchSPG(string pathOrUrl, string arguments)
+                {
                     Process process = new Process();
-                    process.StartInfo.FileName = spgfolder + "\\studio-pack-generator-x86_64-windows.exe";
-                    process.StartInfo.Arguments = dialog.ResponseText + " " + dialog.ResponseText2;
+            process.StartInfo.FileName = SpgFolderPath + "\\studio-pack-generator-x86_64-windows.exe";
+            process.StartInfo.Arguments = arguments + " " + pathOrUrl;
                     process.Start();
                     process.WaitForExit();
                     CustomMessageBox.Show(Application.Current.MainWindow, "Done !");
-
-                }
-            }
         }
     }
 }

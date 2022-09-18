@@ -5,14 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LuniiKit"
         mc:Ignorable="d"
-        Title="Options de lancement" Height="129" Width="300" Topmost="True" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="SingleBorderWindow" Icon="/Images/spg.png">
-    <Grid>
+        Title="Options de lancement" SizeToContent="Height" Width="300" Topmost="True" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="SingleBorderWindow" Icon="/Images/spg.png">
+    <StackPanel>
         <StackPanel>
-            <Label x:Name="LabelResponseTextBox" Content="Options:" Margin="0,2,230,0" FontSize="10" VerticalAlignment="Top" />
-            <Label x:Name="LabelResponseTextBox2" Content="Url:" Margin="80,-23,5,0" FontSize="10" VerticalAlignment="Top" />
-            <TextBox x:Name="ResponseTextBox" Margin="5,2,205,0" PreviewKeyDown="OKButton_Click" />
-            <TextBox x:Name="ResponseTextBox2" Margin="80,-22,5,0" PreviewKeyDown="OKButton_Click" />
-            <Button x:Name="InputOk" Content="OK" Click="OKButton_Click" Width="200" Margin="0,10,0,0" />
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,5">
+                <Label Width="55" x:Name="LabelResponseTextBox" Content="Options:" FontSize="10"/>
+                <Button Click="Help_Click" Width="25" Height="25">
+                    <Image ToolTip="Options" Source="/Images/help.png" Stretch="UniformToFill"/>
+                </Button>
+                <TextBox x:Name="OptionsTextBox" PreviewKeyDown="OKButton_Click" Width="200" >
+                </TextBox>
+            </StackPanel>
+            <StackPanel x:Name="UrlSection" Orientation="Horizontal" Margin="0,5,0,5">
+                <Label Width="80" x:Name="LabelResponseTextBox2" Content="Url:" FontSize="10" />
+                <TextBox x:Name="UrlTextBox" PreviewKeyDown="OKButton_Click" Width="200"  />
+            </StackPanel>
+            
+            <Button x:Name="InputOk" Content="OK" Click="OKButton_Click" Width="100" Margin="10,10,10,10" />
         </StackPanel>
-    </Grid>
+    </StackPanel>
 </Window>
