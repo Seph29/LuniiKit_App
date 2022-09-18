@@ -14,7 +14,7 @@ namespace LuniiKit
         public MainWindow()
         {
             InitializeComponent();
-            WinSparkle.win_sparkle_set_appcast_url("https://raw.githubusercontent.com/Seph29/LuniiKit_App/master/docs/update_zip.ver");
+            WinSparkle.win_sparkle_set_appcast_url("https://raw.githubusercontent.com/Seph29/LuniiKit_App/master/docs/update.ver");
             WinSparkle.win_sparkle_init();
             StartApp();
         }
