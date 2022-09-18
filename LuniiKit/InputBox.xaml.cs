@@ -1,26 +1,30 @@
-﻿using System.Windows;
+﻿using System.Diagnostics;
+using System.Windows;
 using System.Windows.Input;
-
 
 namespace LuniiKit
 {
+    public enum InputBoxMode
+    {
+        Url,
+        Folder
+    }
+
     public partial class InputBox : Window
     {
-        public InputBox()
+        public InputBox(InputBoxMode mode)
         {
             InitializeComponent();
+            if (mode == InputBoxMode.Folder)
+            {
+                this.UrlSection.Visibility = Visibility.Collapsed;
+            }
         }
-        public string ResponseText
-        {
-            get { return ResponseTextBox.Text; }
-            set { ResponseTextBox.Text = value; }
-        }
-        public string ResponseText2
-        {
-            get { return ResponseTextBox2.Text; }
-            set { ResponseTextBox2.Text = value; }
-        }
-        private void OKButton_Click(object sender, RoutedEventArgs e)
+
+        public string Options => OptionsTextBox.Text;
+
+        public string Url => UrlTextBox.Text;
+		private void OKButton_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
         }
@@ -32,8 +36,11 @@ namespace LuniiKit
                 DialogResult = true;
                 e.Handled = true;
             }
+        }
 
+        private void Help_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://github.com/jersou/studio-pack-generator#usage");
         }
     }
-
 }
