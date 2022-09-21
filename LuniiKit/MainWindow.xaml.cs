@@ -42,6 +42,7 @@ namespace LuniiKit
                 Spg.IsEnabled = true;
                 Properties.Settings.Default.folderspg = true;
             }
+
             string luniiadminPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lunii-admin_windows_amd64.exe");
             if (File.Exists(luniiadminPath))
             {
@@ -381,22 +382,15 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             if (!string.IsNullOrEmpty(Properties.Settings.Default.library))
             {
                 Process.Start("explorer.exe", Properties.Settings.Default.library);
+                return;
             }
-            else
-            {
-                if (Properties.Settings.Default.studioportable == true)
-                {
-                    string path = Directory.GetCurrentDirectory();
-                    string studiofolder = path + "\\.studio\\library";
-                    Process.Start("explorer.exe", studiofolder);
-                }
-                else
-                {
-                    string path = Environment.GetEnvironmentVariable("USERPROFILE");
-                    string studiofolder = path + "\\.studio\\library";
-                    Process.Start("explorer.exe", studiofolder);
-                }
-            }
+
+            var path = Properties.Settings.Default.studioportable
+                 ? Directory.GetCurrentDirectory()
+                 : Environment.GetEnvironmentVariable("USERPROFILE");
+
+            var studioFolder = Path.Combine(path, ".studio", "library");
+            Process.Start("explorer.exe", studioFolder);
         }
         public static void CopyAll(DirectoryInfo source, DirectoryInfo target)
         {
