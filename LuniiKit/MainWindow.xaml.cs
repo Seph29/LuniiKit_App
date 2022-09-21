@@ -20,6 +20,8 @@ namespace LuniiKit
         }
 
         private string SpgFolderPath => Path.Combine(Directory.GetCurrentDirectory(), "spg");
+        private const string StudioBatFileName = "STUdio.bat";
+
         private void StartApp()
         {
             Properties.Settings.Default.folderstudio = false;
@@ -63,9 +65,9 @@ namespace LuniiKit
             e.Cancel = true;
             if (CustomMessageBox.ShowYesNo(Application.Current.MainWindow, "Voulez vous quitter LuniiKit?", "Quitter", "Oui", "Non", MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                if (File.Exists("STUdio.bat"))
+                if (File.Exists(StudioBatFileName))
                 {
-                    File.Delete("STUdio.bat");
+                    File.Delete(StudioBatFileName);
                 }
                 WinSparkle.win_sparkle_cleanup();
                 Environment.Exit(0);
@@ -106,7 +108,7 @@ namespace LuniiKit
         private void Studio1_Click(object sender, RoutedEventArgs e)
         {
             {
-                StreamWriter SW = new StreamWriter("STudio.bat");
+                StreamWriter SW = new StreamWriter(StudioBatFileName);
                 SW.WriteLine(@"@echo off
 mode con cols=120 lines=30
 ""%__APPDIR__%chcp.com"" 850>nul
@@ -166,12 +168,12 @@ copy %STUDIO_PATH%\agent\studio-metadata-%version_LUNII%-jar-with-dependencies.j
                 }
                 SW.Flush();
                 SW.Close();
-                Process.Start("STudio.bat");
+                Process.Start(StudioBatFileName);
             }
         }
         private void Studio2_Click(object sender, RoutedEventArgs e)
         {
-            StreamWriter SW = new StreamWriter("STudio.bat");
+            StreamWriter SW = new StreamWriter(StudioBatFileName);
             SW.WriteLine(@"@echo off");
             SW.WriteLine(@"set STUDIO_HOST=" + Properties.Settings.Default.confhost);
             SW.WriteLine(@"set STUDIO_PORT=" + Properties.Settings.Default.confport);
@@ -238,11 +240,11 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             }
             SW.Flush();
             SW.Close();
-            Process.Start("STudio.bat");
+            Process.Start(StudioBatFileName);
         }
         private void Studio3_Click(object sender, RoutedEventArgs e)
         {
-            StreamWriter SW = new StreamWriter("STudio.bat");
+            StreamWriter SW = new StreamWriter(StudioBatFileName);
             SW.WriteLine(@"@echo off");
             SW.WriteLine(@"set STUDIO_HOST=" + Properties.Settings.Default.confhost);
             SW.WriteLine(@"set STUDIO_PORT=" + Properties.Settings.Default.confport);
@@ -309,7 +311,7 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             }
             SW.Flush();
             SW.Close();
-            Process.Start("STudio.bat");
+            Process.Start(StudioBatFileName);
         }
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
