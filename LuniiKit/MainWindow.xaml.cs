@@ -34,10 +34,8 @@ namespace LuniiKit
             {
                 Studio3.IsEnabled = true;
             }
-            string nompartiel2 = "spg";
-            DirectoryInfo rechercherepertoire2 = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
-            FileSystemInfo[] fichieretrepertoire2 = rechercherepertoire2.GetFileSystemInfos(nompartiel2);
-            foreach (FileSystemInfo fichiertrouve2 in fichieretrepertoire2)
+            
+            if (Directory.Exists(SpgFolderPath))
             {
                 Spg.IsEnabled = true;
                 Properties.Settings.Default.folderspg = true;
