@@ -350,27 +350,12 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
         }
         private void FolderChoice(object sender, RoutedEventArgs e)
         {
-            if (Properties.Settings.Default.studioportable == true)
-            {
-                string nompartiel = ".studio";
-                DirectoryInfo rechercherepertoire = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
-                FileSystemInfo[] fichieretrepertoire = rechercherepertoire.GetFileSystemInfos(nompartiel);
-                foreach (FileSystemInfo fichiertrouve in fichieretrepertoire)
-                {
-                    Properties.Settings.Default.folderstudio = true;
-                }
-            }
-            else
-            {
-                string nompartiel = ".studio";
-                DirectoryInfo rechercherepertoire = new DirectoryInfo(Environment.GetEnvironmentVariable("USERPROFILE"));
-                FileSystemInfo[] fichieretrepertoire = rechercherepertoire.GetFileSystemInfos(nompartiel);
-                foreach (FileSystemInfo fichiertrouve in fichieretrepertoire)
-                {
-                    Properties.Settings.Default.folderstudio = true;
-                }
+            string path = Properties.Settings.Default.studioportable
+                ? Directory.GetCurrentDirectory()
+                : Environment.GetEnvironmentVariable("USERPROFILE");
 
-            }
+            Properties.Settings.Default.folderstudio = Directory.Exists(Path.Combine(path, ".studio"));
+           
             ContextMenu cm = FindResource("Choixfolder") as ContextMenu;
             cm.PlacementTarget = sender as Button;
             cm.IsOpen = true;
