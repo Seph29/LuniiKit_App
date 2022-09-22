@@ -32,16 +32,25 @@
                          Text="{Binding Path=nlogs, Source={x:Static properties:Settings.Default}}" 
                          TextChanged="Nombrelogs_TextChanged" />
                 <Label Content="Official Db :" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="92" Margin="1,72,0,0"/>
-                <TextBox x:Name="Offdb" HorizontalAlignment="Left" Margin="84,76,0,0" VerticalAlignment="Top" Width="262" Height="22" Text="{Binding Path=offdb, Source={x:Static properties:Settings.Default}}" ToolTip="{Binding Path=offdb, Source={x:Static properties:Settings.Default}}"/>
+                <TextBox x:Name="Offdb" HorizontalAlignment="Left" Margin="84,76,0,0" VerticalAlignment="Top" Width="262" Height="22"
+                         Text="{Binding Path=offdb, Source={x:Static properties:Settings.Default}, UpdateSourceTrigger=PropertyChanged}" 
+                         ToolTip="{Binding Path=offdb, Source={x:Static properties:Settings.Default}}" />
                 <Button x:Name="Offselect" Content="..." Margin="349,76,0,0" VerticalAlignment="Top" Click="offselect" HorizontalAlignment="Left" Width="25" Height="22"/>
                 <Label Content="Unofficial Db :" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="92" Margin="1,97,0,0"/>
-                <TextBox x:Name="Unoffdb" HorizontalAlignment="Left" Margin="84,101,0,0" VerticalAlignment="Top" Width="262" Height="22" Text="{Binding Path=unoffdb, Source={x:Static properties:Settings.Default}}" ToolTip="{Binding Path=unoffdb, Source={x:Static properties:Settings.Default}}"/>
+                <TextBox x:Name="Unoffdb" HorizontalAlignment="Left" Margin="84,101,0,0" VerticalAlignment="Top" Width="262" Height="22" 
+                         Text="{Binding Path=unoffdb, Source={x:Static properties:Settings.Default}, UpdateSourceTrigger=PropertyChanged}"
+                         ToolTip="{Binding Path=unoffdb, Source={x:Static properties:Settings.Default}}"/>
                 <Button x:Name="Unoffselect" Content="..." Margin="349,101,0,0" VerticalAlignment="Top" Click="unoffselect" HorizontalAlignment="Left" Width="25" Height="22"/>
                 <Label Content="Library :" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="92" Margin="1,122,0,0"/>
-                <TextBox x:Name="Library" HorizontalAlignment="Left" Margin="84,126,0,0" VerticalAlignment="Top" Width="262" Height="22" Text="{Binding Path=library, Source={x:Static properties:Settings.Default}}" ToolTip="{Binding Path=library, Source={x:Static properties:Settings.Default}}"/>
-                <Button x:Name="Libraryselect" Content="..." Margin="349,126,0,0" VerticalAlignment="Top" Click="libraryselect" HorizontalAlignment="Left" Width="25" Height="22"/>
+                <TextBox x:Name="Library" HorizontalAlignment="Left" Margin="84,126,0,0" VerticalAlignment="Top" Width="262" Height="22" 
+                         Text="{Binding Path=library, Source={x:Static properties:Settings.Default}, UpdateSourceTrigger=PropertyChanged}" 
+                         ToolTip="{Binding Path=library, Source={x:Static properties:Settings.Default}}"/>
+                <Button x:Name="Libraryselect" Content="..." Margin="349,126,0,0" 
+                        VerticalAlignment="Top" Click="libraryselect" HorizontalAlignment="Left" Width="25" Height="22"/>
                 <Label Content="Tmp folder :" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="92" Margin="1,147,0,0"/>
-                <TextBox x:Name="Tmpfolder" HorizontalAlignment="Left" Margin="84,151,0,0" VerticalAlignment="Top" Width="262" Height="22" Text="{Binding tmp, Source={x:Static properties:Settings.Default}}" ToolTip="{Binding tmp, Source={x:Static properties:Settings.Default}}"/>
+                <TextBox x:Name="Tmpfolder" HorizontalAlignment="Left" Margin="84,151,0,0" VerticalAlignment="Top" Width="262" Height="22" 
+                         Text="{Binding tmp, Source={x:Static properties:Settings.Default}, UpdateSourceTrigger=PropertyChanged}" 
+                         ToolTip="{Binding tmp, Source={x:Static properties:Settings.Default}}"/>
                 <Button x:Name="Tmpselect" Content="..." Margin="349,151,0,0" VerticalAlignment="Top" Click="tmpselect" HorizontalAlignment="Left" Width="25" Height="22"/>
             </Grid>
         </GroupBox>

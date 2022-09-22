@@ -20,6 +20,8 @@ namespace LuniiKit
         }
 
         private string SpgFolderPath => Path.Combine(Directory.GetCurrentDirectory(), "spg");
+        private const string StudioBatFileName = "STUdio.bat";
+
         private void StartApp()
         {
             Properties.Settings.Default.folderstudio = false;
@@ -34,14 +36,13 @@ namespace LuniiKit
             {
                 Studio3.IsEnabled = true;
             }
-            string nompartiel2 = "spg";
-            DirectoryInfo rechercherepertoire2 = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
-            FileSystemInfo[] fichieretrepertoire2 = rechercherepertoire2.GetFileSystemInfos(nompartiel2);
-            foreach (FileSystemInfo fichiertrouve2 in fichieretrepertoire2)
+            
+            if (Directory.Exists(SpgFolderPath))
             {
                 Spg.IsEnabled = true;
                 Properties.Settings.Default.folderspg = true;
             }
+
             string luniiadminPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lunii-admin_windows_amd64.exe");
             if (File.Exists(luniiadminPath))
             {
@@ -65,9 +66,9 @@ namespace LuniiKit
             e.Cancel = true;
             if (CustomMessageBox.ShowYesNo(Application.Current.MainWindow, "Voulez vous quitter LuniiKit?", "Quitter", "Oui", "Non", MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                if (File.Exists("STUdio.bat"))
+                if (File.Exists(StudioBatFileName))
                 {
-                    File.Delete("STUdio.bat");
+                    File.Delete(StudioBatFileName);
                 }
                 WinSparkle.win_sparkle_cleanup();
                 Environment.Exit(0);
@@ -108,7 +109,7 @@ namespace LuniiKit
         private void Studio1_Click(object sender, RoutedEventArgs e)
         {
             {
-                StreamWriter SW = new StreamWriter("STudio.bat");
+                StreamWriter SW = new StreamWriter(StudioBatFileName);
                 SW.WriteLine(@"@echo off
 mode con cols=120 lines=30
 ""%__APPDIR__%chcp.com"" 850>nul
@@ -168,12 +169,12 @@ copy %STUDIO_PATH%\agent\studio-metadata-%version_LUNII%-jar-with-dependencies.j
                 }
                 SW.Flush();
                 SW.Close();
-                Process.Start("STudio.bat");
+                Process.Start(StudioBatFileName);
             }
         }
         private void Studio2_Click(object sender, RoutedEventArgs e)
         {
-            StreamWriter SW = new StreamWriter("STudio.bat");
+            StreamWriter SW = new StreamWriter(StudioBatFileName);
             SW.WriteLine(@"@echo off");
             SW.WriteLine(@"set STUDIO_HOST=" + Properties.Settings.Default.confhost);
             SW.WriteLine(@"set STUDIO_PORT=" + Properties.Settings.Default.confport);
@@ -240,11 +241,11 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             }
             SW.Flush();
             SW.Close();
-            Process.Start("STudio.bat");
+            Process.Start(StudioBatFileName);
         }
         private void Studio3_Click(object sender, RoutedEventArgs e)
         {
-            StreamWriter SW = new StreamWriter("STudio.bat");
+            StreamWriter SW = new StreamWriter(StudioBatFileName);
             SW.WriteLine(@"@echo off");
             SW.WriteLine(@"set STUDIO_HOST=" + Properties.Settings.Default.confhost);
             SW.WriteLine(@"set STUDIO_PORT=" + Properties.Settings.Default.confport);
@@ -311,7 +312,7 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             }
             SW.Flush();
             SW.Close();
-            Process.Start("STudio.bat");
+            Process.Start(StudioBatFileName);
         }
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
@@ -350,27 +351,12 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
         }
         private void FolderChoice(object sender, RoutedEventArgs e)
         {
-            if (Properties.Settings.Default.studioportable == true)
-            {
-                string nompartiel = ".studio";
-                DirectoryInfo rechercherepertoire = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
-                FileSystemInfo[] fichieretrepertoire = rechercherepertoire.GetFileSystemInfos(nompartiel);
-                foreach (FileSystemInfo fichiertrouve in fichieretrepertoire)
-                {
-                    Properties.Settings.Default.folderstudio = true;
-                }
-            }
-            else
-            {
-                string nompartiel = ".studio";
-                DirectoryInfo rechercherepertoire = new DirectoryInfo(Environment.GetEnvironmentVariable("USERPROFILE"));
-                FileSystemInfo[] fichieretrepertoire = rechercherepertoire.GetFileSystemInfos(nompartiel);
-                foreach (FileSystemInfo fichiertrouve in fichieretrepertoire)
-                {
-                    Properties.Settings.Default.folderstudio = true;
-                }
+            string path = Properties.Settings.Default.studioportable
+                ? Directory.GetCurrentDirectory()
+                : Environment.GetEnvironmentVariable("USERPROFILE");
 
-            }
+            Properties.Settings.Default.folderstudio = Directory.Exists(Path.Combine(path, ".studio"));
+           
             ContextMenu cm = FindResource("Choixfolder") as ContextMenu;
             cm.PlacementTarget = sender as Button;
             cm.IsOpen = true;
@@ -396,22 +382,15 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             if (!string.IsNullOrEmpty(Properties.Settings.Default.library))
             {
                 Process.Start("explorer.exe", Properties.Settings.Default.library);
+                return;
             }
-            else
-            {
-                if (Properties.Settings.Default.studioportable == true)
-                {
-                    string path = Directory.GetCurrentDirectory();
-                    string studiofolder = path + "\\.studio\\library";
-                    Process.Start("explorer.exe", studiofolder);
-                }
-                else
-                {
-                    string path = Environment.GetEnvironmentVariable("USERPROFILE");
-                    string studiofolder = path + "\\.studio\\library";
-                    Process.Start("explorer.exe", studiofolder);
-                }
-            }
+
+            var path = Properties.Settings.Default.studioportable
+                 ? Directory.GetCurrentDirectory()
+                 : Environment.GetEnvironmentVariable("USERPROFILE");
+
+            var studioFolder = Path.Combine(path, ".studio", "library");
+            Process.Start("explorer.exe", studioFolder);
         }
         public static void CopyAll(DirectoryInfo source, DirectoryInfo target)
         {
