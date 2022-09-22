@@ -55,11 +55,26 @@ Visual Studio 2022
 
 - Améliorations par royto
 
-## Contributeur
-
-- Royto
-
 Liste des versions : [Cliquer pour afficher](https://github.com/Seph29/LuniiKit_App/tags)
+
+## Contributeurs
+
+Un grand merci aux contributeurs suivants:
+
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+	<tr>
+		<td align="center">
+			<a href="https://github.com/royto">
+				<img src="https://avatars.githubusercontent.com/u/6990995?v=4" width="80" alt=""/>
+				<br /><sub><b>royto</b></sub>
+			</a>
+		</td>
+	</tr>
+</table>
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
 
 ## License
 
