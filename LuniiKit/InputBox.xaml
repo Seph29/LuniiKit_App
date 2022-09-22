@@ -9,18 +9,18 @@
     <StackPanel>
         <StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,10,0,5">
-                <Label Width="55" x:Name="LabelResponseTextBox" Content="Options:" FontSize="10"/>
-                <Button Click="Help_Click" Width="25" Height="25">
+                <Label Width="56" x:Name="LabelResponseTextBox" Content="Options:" FontSize="10"/>
+                <TextBox x:Name="OptionsTextBox" PreviewKeyDown="OKButton_Click" Width="196" >
+                </TextBox>
+                <Button Click="Help_Click" Width="25" Height="25" Margin="2,0,0,0">
                     <Image ToolTip="Options" Source="/Images/help.png" Stretch="UniformToFill"/>
                 </Button>
-                <TextBox x:Name="OptionsTextBox" PreviewKeyDown="OKButton_Click" Width="200" >
-                </TextBox>
             </StackPanel>
             <StackPanel x:Name="UrlSection" Orientation="Horizontal" Margin="0,5,0,5">
-                <Label Width="80" x:Name="LabelResponseTextBox2" Content="Url:" FontSize="10" />
-                <TextBox x:Name="UrlTextBox" PreviewKeyDown="OKButton_Click" Width="200"  />
+                <Label Width="56" x:Name="LabelResponseTextBox2" Content="Url:" FontSize="10" />
+                <TextBox x:Name="UrlTextBox" PreviewKeyDown="OKButton_Click" Width="223"  />
             </StackPanel>
-            
+
             <Button x:Name="InputOk" Content="OK" Click="OKButton_Click" Width="100" Margin="10,10,10,10" />
         </StackPanel>
     </StackPanel>
