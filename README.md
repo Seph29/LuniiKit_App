@@ -18,7 +18,7 @@ Mon code est sûrement moche mais fonctionnel 😜
 
 ## Pour commencer
 
-vous pouvez telecharger le Package complet ici : [LuniiKit 2.2.7](https://github.com/Seph29/LuniiKit_App/releases/tag/2.2.7)
+vous pouvez telecharger le Package complet ici : [LuniiKit 2.2.8](https://github.com/Seph29/LuniiKit_App/releases/tag/2.2.8)
 
 Vous pouvez aussi générer la solution vous-même via le code source et faire votre propre package en respectant la stucture
 ![screeenshot](https://i.imgur.com/wKJd5qn.png)
