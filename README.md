@@ -18,7 +18,7 @@ Mon code est sûrement moche mais fonctionnel 😜
 
 ## Pour commencer
 
-vous pouvez telecharger le Package complet ici : [LuniiKit 2.2.8](https://github.com/Seph29/LuniiKit_App/releases/tag/2.2.8)
+vous pouvez telecharger le Package complet ici : [LuniiKit 2.2.9](https://github.com/Seph29/LuniiKit_App/releases/tag/2.2.9)
 
 Vous pouvez aussi générer la solution vous-même via le code source et faire votre propre package en respectant la stucture
 ![screeenshot](https://i.imgur.com/wKJd5qn.png)
@@ -37,7 +37,6 @@ Vous pouvez aussi générer la solution vous-même via le code source et faire v
   * studio-web-ui-0.4.3-SNAPSHOT.jar
   * Lunii-Admin
 
-
 La version SNAPSHOT est optionnelle, si elle n'existe pas dans le dossier le bouton est desactivé.
 
 ![screeenshot](https://i.imgur.com/oMG3SMA.png)
@@ -48,8 +47,8 @@ Visual Studio 2022
 
 ## Versions
 
-- **Dernière version stable :** 2.2.8
-- **Dernière version :** 2.2.8
+- **Dernière version stable :** 2.2.9
+- **Dernière version :** 2.2.9
 
 ## Changelog
 

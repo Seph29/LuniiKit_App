@@ -30,6 +30,42 @@ namespace LuniiKit
 
         private void StartApp()
         {
+            using (Process process = new Process())
+            {
+                process.StartInfo.WorkingDirectory = @"C:\Windows\Sysnative\";
+                process.StartInfo.FileName = "cmd";
+                process.StartInfo.Arguments = "/C pnputil -e | findstr Lunii";
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.Start();
+
+                StreamReader reader = process.StandardOutput;
+                string outputpnputil = reader.ReadToEnd();
+                if (outputpnputil == "")
+                {
+                    MessageBoxResult result = CustomMessageBox.ShowYesNo("Le driver Lunii semble absent de votre PC, voulez vous l'installer ?", "Detection du driver Lunii", "Installer", "Annuler", MessageBoxImage.Exclamation);
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        string processToStart = Environment.Is64BitOperatingSystem
+                            ? "dpinst64.exe"
+                            : "dpinst32.exe";
+
+                        ProcessStartInfo processdriver = new ProcessStartInfo(processToStart)
+                        {
+                            WorkingDirectory = @"driver",
+                            UseShellExecute = true,
+                            Verb = "runas"
+                        };
+                        Process.Start(processdriver);
+                    }
+                }
+                else
+                {
+                    Idriver.Visibility = Visibility.Hidden;
+                }
+                process.WaitForExit();
+            }
             Properties.Settings.Default.folderstudio = false;
             Properties.Settings.Default.folderspg = false;
             Closing += MainWindow_Closing;
@@ -40,9 +76,17 @@ namespace LuniiKit
             FileSystemInfo[] fichieretrepertoire = rechercherepertoire.GetFileSystemInfos("*" + nompartiel);
             foreach (FileSystemInfo fichiertrouve in fichieretrepertoire)
             {
-                Studio3.IsEnabled = true;
+                Studio3.Visibility = Visibility.Visible;
             }
-            
+
+            string nompartiel2 = "0.3.1";
+            DirectoryInfo rechercherepertoire2 = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
+            FileSystemInfo[] fichieretrepertoire2 = rechercherepertoire2.GetFileSystemInfos("*" + nompartiel2 + "*");
+            foreach (FileSystemInfo fichiertrouve2 in fichieretrepertoire2)
+            {
+                Studio1.IsEnabled = true;
+            }
+
             if (Directory.Exists(SpgFolderPath))
             {
                 Spg.IsEnabled = true;
@@ -182,12 +226,12 @@ copy %STUDIO_PATH%\agent\studio-metadata-%version_LUNII%-jar-with-dependencies.j
         {
             StreamWriter SW = new StreamWriter(StudioBatFileName);
             SW.WriteLine(@"@echo off");
-            SW.WriteLine(@"set STUDIO_HOST=" + Properties.Settings.Default.confhost);
-            SW.WriteLine(@"set STUDIO_PORT=" + Properties.Settings.Default.confport);
-            SW.WriteLine(@"set STUDIO_DB_OFFICIAL=" + Properties.Settings.Default.offdb);
-            SW.WriteLine(@"set STUDIO_DB_UNOFFICIAL=" + Properties.Settings.Default.unoffdb);
-            SW.WriteLine(@"set STUDIO_LIBRARY=" + Properties.Settings.Default.library);
-            SW.WriteLine(@"set STUDIO_TMPDIR=" + Properties.Settings.Default.tmp);
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.confhost))SW.WriteLine(@"set STUDIO_HOST=" + Properties.Settings.Default.confhost);
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.confport))SW.WriteLine(@"set STUDIO_PORT=" + Properties.Settings.Default.confport);
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.offdb))SW.WriteLine(@"set STUDIO_DB_OFFICIAL=" + Properties.Settings.Default.offdb);
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.unoffdb))SW.WriteLine(@"set STUDIO_DB_UNOFFICIAL=" + Properties.Settings.Default.unoffdb);
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.library))SW.WriteLine(@"set STUDIO_LIBRARY=" + Properties.Settings.Default.library);
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.tmp))SW.WriteLine(@"set STUDIO_TMPDIR=" + Properties.Settings.Default.tmp);
             SW.WriteLine(@"mode con cols=120 lines=30
 ""%__APPDIR__%chcp.com"" 850>nul
 color B");
@@ -218,8 +262,8 @@ if %jver% LSS 110000 (
   exit /b 1
 )");
             }
-            SW.WriteLine(@"IF EXIST %DOT_STUDIO%\db\official.json del %DOT_STUDIO%\db\official.json");
-            SW.WriteLine(@"IF EXIST %STUDIO_DB_OFFICIAL% del %STUDIO_DB_OFFICIAL%");
+            SW.WriteLine(@"IF EXIST ""%DOT_STUDIO%\db\official.json"" del ""%DOT_STUDIO%\db\official.json""");
+            SW.WriteLine(@"IF EXIST ""%STUDIO_DB_OFFICIAL%"" del ""%STUDIO_DB_OFFICIAL%""");
             if (Properties.Settings.Default.eraselog == true)
             {
                 SW.WriteLine(@"echo Suppression des logs");
@@ -231,8 +275,8 @@ if %jver% LSS 110000 (
             {
                 SW.WriteLine("");
             }
-            SW.WriteLine(@"if not exist %DOT_STUDIO%\db\* mkdir %DOT_STUDIO%\db
-if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
+            SW.WriteLine(@"if not exist ""%DOT_STUDIO%\db\*"" mkdir ""%DOT_STUDIO%\db""
+if not exist ""%DOT_STUDIO%\library\*"" mkdir ""%DOT_STUDIO%\library""");
             if (Properties.Settings.Default.studioportable == true)
             {
                 SW.WriteLine(@"java -Duser.home=%STUDIO_PATH% -Dvertx.disableDnsResolver=true -Dfile.encoding=UTF-8 ^
@@ -253,12 +297,12 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
         {
             StreamWriter SW = new StreamWriter(StudioBatFileName);
             SW.WriteLine(@"@echo off");
-            SW.WriteLine(@"set STUDIO_HOST=" + Properties.Settings.Default.confhost);
-            SW.WriteLine(@"set STUDIO_PORT=" + Properties.Settings.Default.confport);
-            SW.WriteLine(@"set STUDIO_DB_OFFICIAL=" + Properties.Settings.Default.offdb);
-            SW.WriteLine(@"set STUDIO_DB_UNOFFICIAL=" + Properties.Settings.Default.unoffdb);
-            SW.WriteLine(@"set STUDIO_LIBRARY=" + Properties.Settings.Default.library);
-            SW.WriteLine(@"set STUDIO_TMPDIR=" + Properties.Settings.Default.tmp);
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.confhost)) SW.WriteLine(@"set STUDIO_HOST=" + Properties.Settings.Default.confhost);
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.confport)) SW.WriteLine(@"set STUDIO_PORT=" + Properties.Settings.Default.confport);
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.offdb)) SW.WriteLine(@"set STUDIO_DB_OFFICIAL=" + Properties.Settings.Default.offdb);
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.unoffdb)) SW.WriteLine(@"set STUDIO_DB_UNOFFICIAL=" + Properties.Settings.Default.unoffdb);
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.library)) SW.WriteLine(@"set STUDIO_LIBRARY=" + Properties.Settings.Default.library);
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.tmp)) SW.WriteLine(@"set STUDIO_TMPDIR=" + Properties.Settings.Default.tmp);
             SW.WriteLine(@"mode con cols=120 lines=30
 ""%__APPDIR__%chcp.com"" 850>nul
 color D");
@@ -289,8 +333,8 @@ if %jver% LSS 110000 (
   exit /b 1
 )");
             }
-            SW.WriteLine(@"IF EXIST %DOT_STUDIO%\db\official.json del %DOT_STUDIO%\db\official.json");
-            SW.WriteLine(@"IF EXIST %STUDIO_DB_OFFICIAL% del %STUDIO_DB_OFFICIAL%");
+            SW.WriteLine(@"IF EXIST ""%DOT_STUDIO%\db\official.json"" del ""%DOT_STUDIO%\db\official.json""");
+            SW.WriteLine(@"IF EXIST ""%STUDIO_DB_OFFICIAL%"" del ""%STUDIO_DB_OFFICIAL%""");
             if (Properties.Settings.Default.eraselog == true)
             {
                 SW.WriteLine(@"echo Suppression des logs");
@@ -302,8 +346,8 @@ if %jver% LSS 110000 (
             {
                 SW.WriteLine("");
             }
-            SW.WriteLine(@"if not exist %DOT_STUDIO%\db\* mkdir %DOT_STUDIO%\db
-if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
+            SW.WriteLine(@"if not exist ""%DOT_STUDIO%\db\*"" mkdir ""%DOT_STUDIO%\db""
+if not exist ""%DOT_STUDIO%\library\*"" mkdir ""%DOT_STUDIO%\library""");
             if (Properties.Settings.Default.studioportable == true)
             {
                 SW.WriteLine(@"java -Duser.home=%STUDIO_PATH% -Dvertx.disableDnsResolver=true -Dfile.encoding=UTF-8 ^
@@ -477,13 +521,13 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
         }
 
         private void LaunchSPG(string pathOrUrl, string arguments)
-                {
-                    Process process = new Process();
+        {
+            Process process = new Process();
             process.StartInfo.FileName = SpgFolderPath + "\\studio-pack-generator-x86_64-windows.exe";
             process.StartInfo.Arguments = arguments + " " + pathOrUrl;
-                    process.Start();
-                    process.WaitForExit();
-                    CustomMessageBox.Show(Application.Current.MainWindow, "Done !");
+            process.Start();
+            process.WaitForExit();
+            CustomMessageBox.Show(Application.Current.MainWindow, "Done !");
         }
     }
 }
