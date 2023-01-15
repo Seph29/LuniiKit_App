@@ -7,11 +7,11 @@ using System.Windows;
 // Les informations générales relatives à un assembly dépendent de
 // l'ensemble d'attributs suivant. Pour modifier les informations
 // associées à un assembly.
-[assembly: AssemblyTitle("LuniiKit")]
+[assembly: AssemblyTitle("InullKit")]
 [assembly: AssemblyDescription("Toolbox pour STUdio et Lunii")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("LuniiKit")]
-[assembly: AssemblyProduct("LuniiKit")]
+[assembly: AssemblyCompany("iinul-team")]
+[assembly: AssemblyProduct("InullKit Toolbox")]
 [assembly: AssemblyCopyright("Seph29  © 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -51,8 +51,7 @@ using System.Windows;
 // Vous pouvez spécifier toutes les valeurs ou indiquer les numéros de build et de révision par défaut
 // en utilisant '*', comme indiqué ci-dessous :
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.2.9")]
-[assembly: AssemblyFileVersion("2.2.9")]
+[assembly: AssemblyVersion("2.3.0")]
+[assembly: AssemblyFileVersion("2.3.0")]
 [assembly: NeutralResourcesLanguage("fr")]
-[assembly: CLSCompliant(true)]
 [assembly: Guid("9afa748d-d52b-4cc2-8540-a353b895f9db")]

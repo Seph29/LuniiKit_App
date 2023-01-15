@@ -1,27 +1,82 @@
-﻿<Window x:Class="LuniiKit.InputBox"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:LuniiKit"
-        mc:Ignorable="d"
-        Title="Options de lancement" SizeToContent="Height" Width="300" Topmost="True" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="SingleBorderWindow" Icon="/Images/spg.png">
+﻿<controls:AdonisWindow
+    x:Class="InullKit.InputBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
+    xmlns:controls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:InullKit"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Options de lancement"
+    Width="300"
+    Icon="/Images/spg.png"
+    ResizeMode="NoResize"
+    SizeToContent="Height"
+    Topmost="True"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="SingleBorderWindow"
+    mc:Ignorable="d">
     <StackPanel>
         <StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="0,10,0,5">
-                <Label Width="56" x:Name="LabelResponseTextBox" Content="Options:" FontSize="10"/>
-                <TextBox x:Name="OptionsTextBox" PreviewKeyDown="OKButton_Click" Width="196" >
-                </TextBox>
-                <Button Click="Help_Click" Width="25" Height="25" Margin="2,0,0,0">
-                    <Image ToolTip="Options" Source="/Images/help.png" Stretch="UniformToFill"/>
+            <StackPanel Margin="5,10,0,0" Orientation="Horizontal">
+                <Label
+                    x:Name="LabelResponseTextBox"
+                    Width="56"
+                    VerticalContentAlignment="Center"
+                    Content="Options:"
+                    FontSize="10" />
+                <TextBox
+                    x:Name="OptionsTextBox"
+                    Width="200"
+                    PreviewKeyDown="OKButtoninputbox_Click" />
+                <Button
+                    Width="25"
+                    Height="25"
+                    Margin="2,0,0,0"
+                    Click="Help_Click">
+                    <Grid>
+                        <Canvas>
+                            <Image
+                                Canvas.Left="-11"
+                                Canvas.Top="-11"
+                                Width="22"
+                                Height="22"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                ClipToBounds="True"
+                                RenderOptions.BitmapScalingMode="HighQuality"
+                                RenderOptions.EdgeMode="Aliased"
+                                Source="/Images/help.png"
+                                Stretch="UniformToFill"
+                                ToolTip="Options" />
+                        </Canvas>
+                    </Grid>
                 </Button>
             </StackPanel>
-            <StackPanel x:Name="UrlSection" Orientation="Horizontal" Margin="0,5,0,5">
-                <Label Width="56" x:Name="LabelResponseTextBox2" Content="Url:" FontSize="10" />
-                <TextBox x:Name="UrlTextBox" PreviewKeyDown="OKButton_Click" Width="223"  />
+            <StackPanel
+                x:Name="UrlSection"
+                Margin="5,5,0,0"
+                Orientation="Horizontal">
+                <Label
+                    x:Name="LabelResponseTextBox2"
+                    Width="56"
+                    VerticalContentAlignment="Center"
+                    Content="Url:"
+                    FontSize="10" />
+                <TextBox
+                    x:Name="UrlTextBox"
+                    Width="227"
+                    PreviewKeyDown="OKButtoninputbox_Click" />
+            </StackPanel>
+            <StackPanel>
+                <Button
+                    x:Name="InputOk"
+                    Width="100"
+                    Margin="0,5"
+                    Click="OKButtoninputbox_Click"
+                    Content="OK" />
             </StackPanel>
 
-            <Button x:Name="InputOk" Content="OK" Click="OKButton_Click" Width="100" Margin="10,10,10,10" />
         </StackPanel>
     </StackPanel>
-</Window>
+</controls:AdonisWindow>

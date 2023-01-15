@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="LuniiKit.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="InullKit.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="confhost" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Roaming="true" Type="System.String" Scope="User">
@@ -21,7 +21,7 @@
       <Value Profile="(Default)">0.4.2</Value>
     </Setting>
     <Setting Name="studio3ver" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">0.4.3-SNAPSHOT</Value>
+      <Value Profile="(Default)">1.0.1</Value>
     </Setting>
     <Setting Name="nlogs" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Roaming="true" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">3</Value>

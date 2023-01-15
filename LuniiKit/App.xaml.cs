@@ -5,7 +5,7 @@ using System.Threading;
 using System.Windows;
 using WPFCustomMessageBox;
 
-namespace LuniiKit
+namespace InullKit
 {
     /// <summary>
     /// Logique d'interaction pour App.xaml
@@ -20,7 +20,7 @@ namespace LuniiKit
             _mutex = new System.Threading.Mutex(true, mutexId, out bool createdNew);
             if (!createdNew)
             {
-                CustomMessageBox.Show(Application.Current.MainWindow, "Une instance de LuniiKit est déjà en cours d'exécution.", "LuniiKit", MessageBoxButton.OK, MessageBoxImage.Error);
+                CustomMessageBox.Show(Application.Current.MainWindow, "Une instance de InullKit est déjà en cours d'exécution.", "InullKit", MessageBoxButton.OK, MessageBoxImage.Error);
                 Current.Shutdown();
             }
             else Exit += CloseMutexHandler;
