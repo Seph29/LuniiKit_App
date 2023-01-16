@@ -19,7 +19,7 @@
             InitializeComponent();
             if (mode == InputBoxMode.Folder)
             {
-                this.UrlSection.Visibility = Visibility.Collapsed;
+                UrlSection.Visibility = Visibility.Collapsed;
             }
         }
 

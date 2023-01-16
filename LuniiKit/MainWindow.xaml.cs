@@ -10,6 +10,8 @@
     using System.Windows.Forms;
     using AdonisUI.Controls;
 
+    using InullKit.Properties;
+
     using Updater;
 
     using WPFCustomMessageBox;
@@ -20,27 +22,28 @@
     using MessageBoxImage = System.Windows.MessageBoxImage;
     using MessageBoxResult = System.Windows.MessageBoxResult;
 
-
     public partial class MainWindow : AdonisWindow
     {
         public MainWindow()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 #if ZIP
             WinSparkle.win_sparkle_set_appcast_url(
-                "https://raw.githubusercontent.com/iinul-team/InullKit_App/master/docs/update_zip.ver");
+                "https://raw.githubusercontent.com/Seph29/LuniiKit_App/master/docs/update_zip.ver");
 #elif ZIP_LITE
             WinSparkle.win_sparkle_set_appcast_url(
-                "https://raw.githubusercontent.com/iinul-team/InullKit_App/master/docs/update_zip_lite.ver");
+                "https://raw.githubusercontent.com/Seph29/LuniiKit_App/master/docs/update_zip_lite.ver");
 #elif EXE
             WinSparkle.win_sparkle_set_appcast_url(
-                "https://raw.githubusercontent.com/iinul-team/InullKit_App/master/docs/update.ver");
+                "https://raw.githubusercontent.com/Seph29/LuniiKit_App/master/docs/update.ver");
 #else
             WinSparkle.win_sparkle_set_appcast_url(
                 "https://raw.githubusercontent.com/iinul-team/InullKit_App/master/docs/test.ver");
 #endif
-            this.StartApp();
+            StartApp();
         }
+
+        private static Settings Settings => Settings.Default;
 
         private string SpgFolderPath => Path.Combine(Directory.GetCurrentDirectory(), "spg");
 
@@ -84,7 +87,7 @@
                 }
                 else
                 {
-                    this.Idriver.Visibility = Visibility.Hidden;
+                    Idriver.Visibility = Visibility.Hidden;
                 }
 
                 process.WaitForExit();
@@ -104,7 +107,7 @@
                     Regex regex = new Regex(@"\D+");
                     if (int.Parse(string.Join(string.Empty, regex.Split(input))) > 110000)
                     {
-                        this.Ijava.Visibility = Visibility.Hidden;
+                        Ijava.Visibility = Visibility.Hidden;
                     }
 
                     process.WaitForExit();
@@ -116,25 +119,25 @@
                 WinSparkle.win_sparkle_init();
             }
 
-            Properties.Settings.Default.folderstudio = false;
-            Properties.Settings.Default.folderspg = false;
-            this.Closing += this.MainWindow_Closing;
-            this.Vertext.IsDocumentEnabled = true;
-            this.Vertext.Document.Blocks.FirstBlock.Margin = new Thickness(0);
-            string nompartiel = Properties.Settings.Default.studio1ver;
+            Settings.folderstudio = false;
+            Settings.folderspg = false;
+            Closing += MainWindow_Closing;
+            Vertext.IsDocumentEnabled = true;
+            Vertext.Document.Blocks.FirstBlock.Margin = new Thickness(0);
+            string nompartiel = Settings.studio1ver;
             DirectoryInfo rechercherepertoire = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
             FileSystemInfo[] fichieretrepertoire = rechercherepertoire.GetFileSystemInfos("*" + nompartiel + "*");
             foreach (FileSystemInfo fichiertrouve in fichieretrepertoire)
             {
-                this.Studio1.Visibility = Visibility.Visible;
+                Studio1.Visibility = Visibility.Visible;
             }
 
-            string nompartiel2 = Properties.Settings.Default.studio2ver;
+            string nompartiel2 = Settings.studio2ver;
             DirectoryInfo rechercherepertoire2 = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
             FileSystemInfo[] fichieretrepertoire2 = rechercherepertoire2.GetFileSystemInfos("*" + nompartiel2 + "*");
             foreach (FileSystemInfo fichiertrouve2 in fichieretrepertoire2)
             {
-                this.Studio2.Visibility = Visibility.Visible;
+                Studio2.Visibility = Visibility.Visible;
             }
 
             string nompartiel3 = "quarkus";
@@ -142,13 +145,13 @@
             FileSystemInfo[] fichieretrepertoire3 = rechercherepertoire3.GetFileSystemInfos("*" + nompartiel3 + "*");
             foreach (FileSystemInfo fichiertrouve3 in fichieretrepertoire3)
             {
-                this.Studio3.IsEnabled = true;
+                Studio3.IsEnabled = true;
             }
 
-            if (Directory.Exists(this.SpgFolderPath))
+            if (Directory.Exists(SpgFolderPath))
             {
-                this.Spg.IsEnabled = true;
-                Properties.Settings.Default.folderspg = true;
+                Spg.IsEnabled = true;
+                Settings.folderspg = true;
             }
 
             string luniiadminPath = Path.Combine(
@@ -156,11 +159,11 @@
                 "lunii-admin_windows_amd64.exe");
             if (File.Exists(luniiadminPath))
             {
-                this.Luniiadmin.IsEnabled = true;
+                Luniiadmin.IsEnabled = true;
             }
 
-            this.Vertext.Document.Blocks.Clear();
-            this.Vertext.Document.Blocks.Add(
+            Vertext.Document.Blocks.Clear();
+            Vertext.Document.Blocks.Add(
                 new Paragraph(
                     new Run(
                         "InullKit Version : " + FileVersionInfo
@@ -200,7 +203,7 @@
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ContextMenu cm = this.FindResource("JavaInstallButton") as ContextMenu;
+            ContextMenu cm = FindResource("JavaInstallButton") as ContextMenu;
             cm.PlacementTarget = sender as Button;
             cm.IsOpen = true;
         }
@@ -238,9 +241,9 @@
 mode con cols=120 lines=30
 ""%__APPDIR__%chcp.com"" 850>nul
 color 9");
-                sw.WriteLine(@"title STUdio " + Properties.Settings.Default.studio1ver);
-                sw.WriteLine(@"set version_LUNII=" + Properties.Settings.Default.studio1ver);
-                if (Properties.Settings.Default.studioportable == true)
+                sw.WriteLine(@"title STUdio " + Settings.studio1ver);
+                sw.WriteLine(@"set version_LUNII=" + Settings.studio1ver);
+                if (Settings.studioportable == true)
                 {
                     sw.WriteLine(@"set STUDIO_PATH=%~dps0
 set DOT_STUDIO=%~dps0.studio
@@ -266,16 +269,16 @@ if %jver% LSS 110000 (
 )");
                 }
 
-                sw.WriteLine(@"IF EXIST %DOT_STUDIO%\db\official.json del %DOT_STUDIO%\db\official.json");
-                if (Properties.Settings.Default.eraselog == true)
+                if (Settings.eraseOfficial == true)
+                {
+                    sw.WriteLine(@"IF EXIST %DOT_STUDIO%\db\official.json del %DOT_STUDIO%\db\official.json");
+                }
+
+                if (Settings.eraselog == true)
                 {
                     sw.WriteLine(@"echo Suppression des logs");
-                    sw.Write(@"for /f ""skip=" + Properties.Settings.Default.nlogs);
-                    sw.Write(@" delims="" %%A in ('dir /a:-d /b /o:-d /t:c *.log ^2^>nul') do if exist ""%%~fA"" del ""%%~fA""");
-                    sw.WriteLine(string.Empty);
-                }
-                else
-                {
+                    sw.Write(@"for /f ""skip=" + Settings.nlogs);
+                    sw.Write(@" delims="" %%A in ('dir /a:-d /b /o:-d /t:c log\STUdio-%version_LUNII%\*.log ^2^>nul') do if exist ""%STUDIO_PATH%log\STUdio-%version_LUNII%\%%A"" del ""%STUDIO_PATH%log\STUdio-%version_LUNII%\%%A""");
                     sw.WriteLine(string.Empty);
                 }
 
@@ -285,7 +288,7 @@ if not exist %DOT_STUDIO%\agent\* mkdir %DOT_STUDIO%\agent
 
 copy %STUDIO_PATH%\agent\studio-agent-%version_LUNII%-jar-with-dependencies.jar %DOT_STUDIO%\agent\studio-agent.jar
 copy %STUDIO_PATH%\agent\studio-metadata-%version_LUNII%-jar-with-dependencies.jar %DOT_STUDIO%\agent\studio-metadata.jar");
-                if (Properties.Settings.Default.studioportable == true)
+                if (Settings.studioportable == true)
                 {
                     sw.WriteLine(@"java -Duser.home=%STUDIO_PATH% -Dvertx.disableDnsResolver=true -Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager -Dvertx.logger-delegate-factory-class-name=io.vertx.core.logging.Log4j2LogDelegateFactory -Dfile.encoding=UTF-8 -cp %STUDIO_PATH%/studio-web-ui-%version_LUNII%.jar;%STUDIO_PATH%/lib-%version_LUNII%/*;. io.vertx.core.Launcher run studio.webui.MainVerticle");
                 }
@@ -304,42 +307,46 @@ copy %STUDIO_PATH%\agent\studio-metadata-%version_LUNII%-jar-with-dependencies.j
         {
             StreamWriter sw = new StreamWriter(StudioBatFileName);
             sw.WriteLine(@"@echo off");
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.confhost))
+            if (!string.IsNullOrEmpty(Settings.confhost))
             {
-                sw.WriteLine(@"set STUDIO_HOST=" + Properties.Settings.Default.confhost);
+                sw.WriteLine(@"set STUDIO_HOST=" + Settings.confhost);
             }
 
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.confport))
+            if (!string.IsNullOrEmpty(Settings.confport))
             {
-                sw.WriteLine(@"set STUDIO_PORT=" + Properties.Settings.Default.confport);
+                sw.WriteLine(@"set STUDIO_PORT=" + Settings.confport);
             }
 
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.offdb))
+            if (!string.IsNullOrEmpty(Settings.offdb))
             {
-                sw.WriteLine(@"set STUDIO_DB_OFFICIAL=" + Properties.Settings.Default.offdb);
+                sw.WriteLine(@"set STUDIO_DB_OFFICIAL=" + Settings.offdb);
             }
 
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.unoffdb))
+            if (!string.IsNullOrEmpty(Settings.unoffdb))
             {
-                sw.WriteLine(@"set STUDIO_DB_UNOFFICIAL=" + Properties.Settings.Default.unoffdb);
+                sw.WriteLine(@"set STUDIO_DB_UNOFFICIAL=" + Settings.unoffdb);
             }
 
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.library))
+            if (!string.IsNullOrEmpty(Settings.library))
             {
-                sw.WriteLine(@"set STUDIO_LIBRARY=" + Properties.Settings.Default.library);
+                sw.WriteLine(@"set STUDIO_LIBRARY=" + Settings.library);
             }
 
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.tmp))
+            if (!string.IsNullOrEmpty(Settings.tmp))
             {
-                sw.WriteLine(@"set STUDIO_TMPDIR=" + Properties.Settings.Default.tmp);
+                sw.WriteLine(@"set STUDIO_TMPDIR=" + Settings.tmp);
             }
 
             sw.WriteLine(@"mode con cols=120 lines=30
 ""%__APPDIR__%chcp.com"" 850>nul
 color B");
-            sw.WriteLine(@"title STUdio " + Properties.Settings.Default.studio2ver);
-            sw.WriteLine(@"set version_LUNII=" + Properties.Settings.Default.studio2ver);
-            if (Properties.Settings.Default.studioportable == true)
+            sw.WriteLine(@"title STUdio " + Settings.studio2ver);
+            sw.WriteLine(@"set version_LUNII=" + Settings.studio2ver);
+            if (Settings.autoopenweb == false)
+            {
+                sw.WriteLine(@"set STUDIO_OPEN_BROWSER=false");
+            }
+            if (Settings.studioportable == true)
             {
                 sw.WriteLine(@"set STUDIO_PATH=%~dps0
 set DOT_STUDIO=%~dps0.studio
@@ -365,23 +372,23 @@ if %jver% LSS 110000 (
 )");
             }
 
-            sw.WriteLine(@"IF EXIST %DOT_STUDIO%\db\official.json del %DOT_STUDIO%\db\official.json");
-            sw.WriteLine(@"IF EXIST ""%STUDIO_DB_OFFICIAL%"" del ""%STUDIO_DB_OFFICIAL%""");
-            if (Properties.Settings.Default.eraselog == true)
+            if (Settings.eraseOfficial == true)
+            {
+                sw.WriteLine(@"IF EXIST %DOT_STUDIO%\db\official.json del %DOT_STUDIO%\db\official.json");
+                sw.WriteLine(@"IF EXIST ""%STUDIO_DB_OFFICIAL%"" del ""%STUDIO_DB_OFFICIAL%""");
+            }
+
+            if (Settings.eraselog == true)
             {
                 sw.WriteLine(@"echo Suppression des logs");
-                sw.Write(@"for /f ""skip=" + Properties.Settings.Default.nlogs);
-                sw.Write(@" delims="" %%A in ('dir /a:-d /b /o:-d /t:c *.log ^2^>nul') do if exist ""%%~fA"" del ""%%~fA""");
-                sw.WriteLine(string.Empty);
-            }
-            else
-            {
+                sw.Write(@"for /f ""skip=" + Settings.nlogs);
+                sw.Write(@" delims="" %%A in ('dir /a:-d /b /o:-d /t:c log\STUdio-%version_LUNII%\*.log ^2^>nul') do if exist ""%STUDIO_PATH%log\STUdio-%version_LUNII%\%%A"" del ""%STUDIO_PATH%log\STUdio-%version_LUNII%\%%A""");
                 sw.WriteLine(string.Empty);
             }
 
             sw.WriteLine(@"if not exist %DOT_STUDIO%\db\* mkdir %DOT_STUDIO%\db
 if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
-            if (Properties.Settings.Default.studioportable == true)
+            if (Settings.studioportable == true)
             {
                 sw.WriteLine(@"java -Duser.home=%STUDIO_PATH% -Dvertx.disableDnsResolver=true -Dfile.encoding=UTF-8 ^
  -cp %STUDIO_PATH%/studio-web-ui-%version_LUNII%.jar;%STUDIO_PATH%/lib-%version_LUNII%/*;. ^
@@ -403,42 +410,46 @@ if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
         {
             StreamWriter sw = new StreamWriter(StudioBatFileName);
             sw.WriteLine(@"@echo off");
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.confhost))
+            if (!string.IsNullOrEmpty(Settings.confhost))
             {
-                sw.WriteLine(@"set STUDIO_HOST=" + Properties.Settings.Default.confhost);
+                sw.WriteLine(@"set STUDIO_HOST=" + Settings.confhost);
             }
 
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.confport))
+            if (!string.IsNullOrEmpty(Settings.confport))
             {
-                sw.WriteLine(@"set STUDIO_PORT=" + Properties.Settings.Default.confport);
+                sw.WriteLine(@"set STUDIO_PORT=" + Settings.confport);
             }
 
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.offdb))
+            if (!string.IsNullOrEmpty(Settings.offdb))
             {
-                sw.WriteLine(@"set STUDIO_DB_OFFICIAL=" + Properties.Settings.Default.offdb);
+                sw.WriteLine(@"set STUDIO_DB_OFFICIAL=" + Settings.offdb);
             }
 
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.unoffdb))
+            if (!string.IsNullOrEmpty(Settings.unoffdb))
             {
-                sw.WriteLine(@"set STUDIO_DB_UNOFFICIAL=" + Properties.Settings.Default.unoffdb);
+                sw.WriteLine(@"set STUDIO_DB_UNOFFICIAL=" + Settings.unoffdb);
             }
 
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.library))
+            if (!string.IsNullOrEmpty(Settings.library))
             {
-                sw.WriteLine(@"set STUDIO_LIBRARY=" + Properties.Settings.Default.library);
+                sw.WriteLine(@"set STUDIO_LIBRARY=" + Settings.library);
             }
 
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.tmp))
+            if (!string.IsNullOrEmpty(Settings.tmp))
             {
-                sw.WriteLine(@"set STUDIO_TMPDIR=" + Properties.Settings.Default.tmp);
+                sw.WriteLine(@"set STUDIO_TMPDIR=" + Settings.tmp);
             }
 
             sw.WriteLine(@"mode con cols=120 lines=30
 ""%__APPDIR__%chcp.com"" 850>nul
 color D");
-            sw.WriteLine(@"title STUdio " + Properties.Settings.Default.studio3ver);
-            sw.WriteLine(@"set version_LUNII=" + Properties.Settings.Default.studio3ver);
-            if (Properties.Settings.Default.studioportable == true)
+            sw.WriteLine(@"title STUdio " + Settings.studio3ver);
+            sw.WriteLine(@"set version_LUNII=" + Settings.studio3ver);
+            if (Settings.autoopenweb == false)
+            {
+                sw.WriteLine(@"set STUDIO_OPEN_BROWSER=false");
+            }
+            if (Settings.studioportable == true)
             {
                 sw.WriteLine(@"set STUDIO_PATH=%~dps0
 set STUDIO_HOME=%~dps0.studio
@@ -464,11 +475,15 @@ if %jver% LSS 110000 (
 )");
             }
 
-            sw.WriteLine(@"IF EXIST %STUDIO_HOME%\db\official.json del %STUDIO_HOME%\db\official.json");
-            sw.WriteLine(@"IF EXIST ""%STUDIO_DB_OFFICIAL%"" del ""%STUDIO_DB_OFFICIAL%""");
+            if (Settings.eraseOfficial == true)
+            {
+                sw.WriteLine(@"IF EXIST %DOT_STUDIO%\db\official.json del %DOT_STUDIO%\db\official.json");
+                sw.WriteLine(@"IF EXIST ""%STUDIO_DB_OFFICIAL%"" del ""%STUDIO_DB_OFFICIAL%""");
+            }
+
             sw.WriteLine(@"if not exist %STUDIO_HOME%\db\* mkdir %STUDIO_HOME%\db
 if not exist %STUDIO_HOME%\library\* mkdir %STUDIO_HOME%\library");
-            sw.WriteLine(@"java %* -Duser.home=%STUDIO_HOME% -Dquarkus.log.file.path=%STUDIO_PATH%\studio.log -jar %STUDIO_PATH%\quarkus-run.jar");
+            sw.WriteLine(@"java %* -Duser.home=%STUDIO_HOME% -Dquarkus.log.file.path=log\STUdio-" + Settings.studio3ver + "\\studio.log -Dquarkus.http.limits.max-body-size=2G -jar %STUDIO_PATH%\\quarkus-run.jar");
 
             sw.Flush();
             sw.Close();
@@ -513,20 +528,31 @@ if not exist %STUDIO_HOME%\library\* mkdir %STUDIO_HOME%\library");
 
         private void Githubchoix(object sender, RoutedEventArgs e)
         {
-            ContextMenu cm = this.FindResource("Github") as ContextMenu;
+            ContextMenu cm = FindResource("Github") as ContextMenu;
             cm.PlacementTarget = sender as Button;
             cm.IsOpen = true;
         }
 
+        public string logpath;
         private void FolderChoice(object sender, RoutedEventArgs e)
         {
-            string path = Properties.Settings.Default.studioportable
+            string path = Settings.studioportable
                               ? Directory.GetCurrentDirectory()
                               : Environment.GetEnvironmentVariable("USERPROFILE");
 
-            Properties.Settings.Default.folderstudio = Directory.Exists(Path.Combine(path, ".studio"));
+            Settings.folderstudio = Directory.Exists(Path.Combine(path, ".studio"));
 
-            ContextMenu cm = this.FindResource("Choixfolder") as ContextMenu;
+            logpath = Directory.GetCurrentDirectory() + "\\log";
+            if (Directory.Exists(logpath))
+            {
+                Settings.folderlog = true;
+            }
+            else
+            {
+                Settings.folderlog = false;
+            }
+
+            ContextMenu cm = FindResource("Choixfolder") as ContextMenu;
             cm.PlacementTarget = sender as Button;
             cm.IsOpen = true;
         }
@@ -547,18 +573,23 @@ if not exist %STUDIO_HOME%\library\* mkdir %STUDIO_HOME%\library");
 
         private void OpenFolderSPG(object sender, RoutedEventArgs e)
         {
-            Process.Start("explorer.exe", this.SpgFolderPath);
+            Process.Start("explorer.exe", SpgFolderPath);
+        }
+
+        private void OpenFolderLog(object sender, RoutedEventArgs e)
+        {
+                Process.Start("explorer.exe", logpath);
         }
 
         private void OpenSTUdioFolder(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.library))
+            if (!string.IsNullOrEmpty(Settings.library))
             {
-                Process.Start("explorer.exe", Properties.Settings.Default.library);
+                Process.Start("explorer.exe", Settings.library);
                 return;
             }
 
-            var path = Properties.Settings.Default.studioportable
+            var path = Settings.studioportable
                            ? Directory.GetCurrentDirectory()
                            : Environment.GetEnvironmentVariable("USERPROFILE");
 
@@ -616,7 +647,7 @@ if not exist %STUDIO_HOME%\library\* mkdir %STUDIO_HOME%\library");
         private void OpenSPG(object sender, RoutedEventArgs e)
         {
             FolderBrowserDialog folderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            folderDialog.SelectedPath = this.SpgFolderPath;
+            folderDialog.SelectedPath = SpgFolderPath;
             MessageBoxResult result = CustomMessageBox.ShowYesNoCancel(
                 Application.Current.MainWindow,
                 "Vous voulez utiliser :",
@@ -639,7 +670,7 @@ if not exist %STUDIO_HOME%\library\* mkdir %STUDIO_HOME%\library");
 
                     if (dialog.ShowDialog() == true)
                     {
-                        this.LaunchSPG(spath, dialog.Options);
+                        LaunchSPG(spath, dialog.Options);
                     }
                 }
             }
@@ -648,7 +679,7 @@ if not exist %STUDIO_HOME%\library\* mkdir %STUDIO_HOME%\library");
                 var dialog = new InputBox(InputBoxMode.Url);
                 if (dialog.ShowDialog() == true)
                 {
-                    this.LaunchSPG(dialog.Url, dialog.Options);
+                    LaunchSPG(dialog.Url, dialog.Options);
                 }
             }
         }
@@ -656,7 +687,7 @@ if not exist %STUDIO_HOME%\library\* mkdir %STUDIO_HOME%\library");
         private void LaunchSPG(string pathOrUrl, string arguments)
         {
             Process process = new Process();
-            process.StartInfo.FileName = this.SpgFolderPath + "\\studio-pack-generator-x86_64-windows.exe";
+            process.StartInfo.FileName = SpgFolderPath + "\\studio-pack-generator-x86_64-windows.exe";
             process.StartInfo.Arguments = arguments + " " + pathOrUrl;
             process.Start();
             process.WaitForExit();

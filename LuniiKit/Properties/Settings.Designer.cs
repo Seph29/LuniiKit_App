@@ -102,7 +102,7 @@ namespace InullKit.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(Bluegrams.Application.PortableJsonSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1.0.1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1.0.2")]
         public string studio3ver {
             get {
                 return ((string)(this["studio3ver"]));
@@ -218,6 +218,34 @@ namespace InullKit.Properties {
             }
             set {
                 this["tmp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(Bluegrams.Application.PortableJsonSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        public bool eraseOfficial {
+            get {
+                return ((bool)(this["eraseOfficial"]));
+            }
+            set {
+                this["eraseOfficial"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(Bluegrams.Application.PortableJsonSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        public bool folderlog {
+            get {
+                return ((bool)(this["folderlog"]));
+            }
+            set {
+                this["folderlog"] = value;
             }
         }
     }

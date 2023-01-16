@@ -32,16 +32,6 @@
 
         private void CheckConfig()
         {
-            if (string.IsNullOrEmpty(Settings.confhost))
-            {
-                Chost.Text = "localhost";
-            }
-
-            if (string.IsNullOrEmpty(Settings.confport))
-            {
-                Cport.Text = "8080";
-            }
-
             string path = Settings.studioportable
                               ? Directory.GetCurrentDirectory()
                               : Environment.GetEnvironmentVariable("USERPROFILE");
@@ -139,7 +129,7 @@
 
         private void libraryselect(object sender, RoutedEventArgs e)
         {
-            FolderBrowserDialog folderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            FolderBrowserDialog folderDialog = new FolderBrowserDialog();
             folderDialog.Description = "Choisir le dossier de votre librairie";
             if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
             {
@@ -153,7 +143,7 @@
 
         private void tmpselect(object sender, RoutedEventArgs e)
         {
-            FolderBrowserDialog folderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            FolderBrowserDialog folderDialog = new FolderBrowserDialog();
             folderDialog.Description = "Choisir le dossier temporaire";
             if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
             {

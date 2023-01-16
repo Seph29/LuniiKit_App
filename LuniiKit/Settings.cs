@@ -11,9 +11,9 @@
         public Settings() {
             // // Pour ajouter des gestionnaires d'événements afin d'enregistrer et de modifier les paramètres, supprimez les marques de commentaire des lignes ci-dessous :
             //
-            // this.SettingChanging += this.SettingChangingEventHandler;
+            // SettingChanging += SettingChangingEventHandler;
             //
-            // this.SettingsSaving += this.SettingsSavingEventHandler;
+            // SettingsSaving += SettingsSavingEventHandler;
             //
         }
         

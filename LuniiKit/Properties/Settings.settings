@@ -21,7 +21,7 @@
       <Value Profile="(Default)">0.4.2</Value>
     </Setting>
     <Setting Name="studio3ver" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">1.0.1</Value>
+      <Value Profile="(Default)">1.0.2</Value>
     </Setting>
     <Setting Name="nlogs" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Roaming="true" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">3</Value>
@@ -46,6 +46,12 @@
     </Setting>
     <Setting Name="tmp" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="eraseOfficial" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="folderlog" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

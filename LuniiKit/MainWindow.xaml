@@ -66,6 +66,17 @@
                 </MenuItem.Icon>
             </MenuItem>
             <MenuItem
+                Click="OpenFolderLog"
+                Header="Ouvrir le dossier des logs"
+                IsEnabled="{Binding Path=folderlog, Source={x:Static properties:Settings.Default}}">
+                <MenuItem.Icon>
+                    <Image
+                        RenderOptions.BitmapScalingMode="HighQuality"
+                        RenderOptions.EdgeMode="Aliased"
+                        Source="/Images/log.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem
                 Click="OpenFolderSPG"
                 Header="Ouvrir le dossier de l'application Studio Pack Generator"
                 IsEnabled="{Binding Path=folderspg, Source={x:Static properties:Settings.Default}}">

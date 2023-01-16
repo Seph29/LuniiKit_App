@@ -434,6 +434,9 @@
   <ItemGroup>
     <Resource Include="Images\logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\log.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Sajidur78.StrongNamer.0.2.8\build\Sajidur78.StrongNamer.targets" Condition="Exists('..\packages\Sajidur78.StrongNamer.0.2.8\build\Sajidur78.StrongNamer.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

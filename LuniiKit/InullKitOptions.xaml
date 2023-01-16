@@ -11,15 +11,12 @@
     xmlns:properties="clr-namespace:InullKit.Properties"
     Title="Options"
     Width="420"
-    Height="370"
+    Height="400"
     Icon="/Images/icon.png"
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
     WindowStyle="SingleBorderWindow"
     mc:Ignorable="d">
-    <Window.Style>
-        <Style BasedOn="{StaticResource {x:Type Window}}" TargetType="Window" />
-    </Window.Style>
     <controls:AdonisWindow.TitleBarBackground>
         <LinearGradientBrush StartPoint="0.6,0" EndPoint="0.9,1">
             <GradientStop Offset="0.1" Color="#3DBAC1" />
@@ -32,8 +29,8 @@
         </Grid.ColumnDefinitions>
         <GroupBox
             Width="410"
-            Height="224"
-            Margin="5,5,5,0"
+            Height="253"
+            Margin="5,4,5,0"
             VerticalAlignment="Top"
             Header="Configuration STUdio">
             <Grid>
@@ -123,10 +120,20 @@
                     Text="{Binding Path=nlogs, Source={x:Static properties:Settings.Default}}"
                     TextChanged="Nombrelogs_TextChanged"
                     TextWrapping="Wrap" />
+                <CheckBox
+                    x:Name="EraseOfficial"
+                    Width="366"
+                    Height="16"
+                    Margin="6,77,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="Suppression auto du fichier official.json au lancement de STUdio"
+                    IsChecked="{Binding Path=eraseOfficial, Source={x:Static properties:Settings.Default}}"
+                    ToolTip="Active ou désactive la suppression automatique du fichier official.json" />
                 <Label
                     Width="92"
-                    Height="15"
-                    Margin="1,79,0,0"
+                    Height="14"
+                    Margin="1,109,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Content="Official Db :" />
@@ -134,7 +141,7 @@
                     x:Name="Offdb"
                     Width="262"
                     Height="22"
-                    Margin="84,76,0,0"
+                    Margin="84,105,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Text="{Binding Path=offdb, Source={x:Static properties:Settings.Default}, UpdateSourceTrigger=PropertyChanged}"
@@ -143,15 +150,15 @@
                     x:Name="Offselect"
                     Width="25"
                     Height="22"
-                    Margin="359,-1,0,0"
+                    Margin="359,105,0,0"
                     HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
+                    VerticalAlignment="Top"
                     Click="offselect"
                     Content="..." />
                 <Label
                     Width="92"
                     Height="16"
-                    Margin="1,104,0,0"
+                    Margin="1,134,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Content="Unofficial Db :" />
@@ -159,7 +166,7 @@
                     x:Name="Unoffdb"
                     Width="262"
                     Height="22"
-                    Margin="84,101,0,0"
+                    Margin="84,131,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Text="{Binding Path=unoffdb, Source={x:Static properties:Settings.Default}, UpdateSourceTrigger=PropertyChanged}"
@@ -168,7 +175,7 @@
                     x:Name="Unoffselect"
                     Width="25"
                     Height="22"
-                    Margin="359,101,0,0"
+                    Margin="359,131,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Click="unoffselect"
@@ -176,7 +183,7 @@
                 <Label
                     Width="92"
                     Height="16"
-                    Margin="1,129,0,0"
+                    Margin="1,159,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Content="Library :" />
@@ -184,7 +191,7 @@
                     x:Name="Library"
                     Width="262"
                     Height="22"
-                    Margin="84,126,0,0"
+                    Margin="84,156,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Text="{Binding Path=library, Source={x:Static properties:Settings.Default}, UpdateSourceTrigger=PropertyChanged}"
@@ -193,7 +200,7 @@
                     x:Name="Libraryselect"
                     Width="25"
                     Height="22"
-                    Margin="359,126,0,0"
+                    Margin="359,156,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Click="libraryselect"
@@ -201,7 +208,7 @@
                 <Label
                     Width="92"
                     Height="19"
-                    Margin="1,154,0,0"
+                    Margin="1,184,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Content="Tmp folder :" />
@@ -209,7 +216,7 @@
                     x:Name="Tmpfolder"
                     Width="262"
                     Height="22"
-                    Margin="84,151,0,0"
+                    Margin="84,181,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Text="{Binding tmp, Source={x:Static properties:Settings.Default}, UpdateSourceTrigger=PropertyChanged}"
@@ -218,7 +225,7 @@
                     x:Name="Tmpselect"
                     Width="25"
                     Height="22"
-                    Margin="359,151,0,0"
+                    Margin="359,181,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Click="tmpselect"
@@ -228,14 +235,14 @@
         <GroupBox
             Width="410"
             Height="67"
-            Margin="0,232,0,0"
+            Margin="0,258,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Header="InullKit" />
         <Button
             x:Name="Ok"
             Height="26"
-            Margin="190,305,190,0"
+            Margin="190,331,190,0"
             VerticalAlignment="Top"
             Click="Ok_Click"
             Content="OK" />
@@ -243,7 +250,7 @@
             x:Name="Update"
             Width="172"
             Height="26"
-            Margin="0,267,0,0"
+            Margin="0,293,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Click="CheckUpdate"
