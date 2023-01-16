@@ -177,7 +177,7 @@ set PATH=%STUDIO_PATH%jre11\bin;%PATH%");
                 else
                 {
                     SW.WriteLine(@"set STUDIO_PATH=%~dps0
-set DOT_STUDIO=""%UserProfile%\.studio""
+set DOT_STUDIO=%UserProfile%\.studio
 PATH %PATH%;%JAVA_HOME%\bin\
 java -version 1>nul 2>nul || (
    echo Java n'est pas detecte sur votre OS
@@ -193,7 +193,12 @@ if %jver% LSS 110000 (
   exit /b 1
 )");
                 }
-                SW.WriteLine(@"IF EXIST %DOT_STUDIO%\db\official.json del %DOT_STUDIO%\db\official.json");
+
+                if (Properties.Settings.Default.eraseOfficial == true)
+                {
+                    SW.WriteLine(@"IF EXIST %DOT_STUDIO%\db\official.json del %DOT_STUDIO%\db\official.json");
+                }
+
                 if (Properties.Settings.Default.eraselog == true)
                 {
                     SW.WriteLine(@"echo Suppression des logs");
@@ -248,7 +253,7 @@ set PATH=%STUDIO_PATH%jre11\bin;%PATH%");
             else
             {
                 SW.WriteLine(@"set STUDIO_PATH=%~dps0
-set DOT_STUDIO=""%UserProfile%\.studio""
+set DOT_STUDIO=%UserProfile%\.studio
 PATH %PATH%;%JAVA_HOME%\bin\
 java -version 1>nul 2>nul || (
    echo Java n'est pas detecte sur votre OS
@@ -264,8 +269,13 @@ if %jver% LSS 110000 (
   exit /b 1
 )");
             }
-            SW.WriteLine(@"IF EXIST ""%DOT_STUDIO%\db\official.json"" del ""%DOT_STUDIO%\db\official.json""");
-            SW.WriteLine(@"IF EXIST ""%STUDIO_DB_OFFICIAL%"" del ""%STUDIO_DB_OFFICIAL%""");
+
+            if (Properties.Settings.Default.eraseOfficial == true)
+            {
+                SW.WriteLine(@"IF EXIST %DOT_STUDIO%\db\official.json del %DOT_STUDIO%\db\official.json");
+                SW.WriteLine(@"IF EXIST ""%STUDIO_DB_OFFICIAL%"" del ""%STUDIO_DB_OFFICIAL%""");
+            }
+
             if (Properties.Settings.Default.eraselog == true)
             {
                 SW.WriteLine(@"echo Suppression des logs");
@@ -277,18 +287,18 @@ if %jver% LSS 110000 (
             {
                 SW.WriteLine("");
             }
-            SW.WriteLine(@"if not exist ""%DOT_STUDIO%\db\*"" mkdir ""%DOT_STUDIO%\db""
-if not exist ""%DOT_STUDIO%\library\*"" mkdir ""%DOT_STUDIO%\library""");
+            SW.WriteLine(@"if not exist %DOT_STUDIO%\db\* mkdir %DOT_STUDIO%\db
+if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             if (Properties.Settings.Default.studioportable == true)
             {
                 SW.WriteLine(@"java -Duser.home=%STUDIO_PATH% -Dvertx.disableDnsResolver=true -Dfile.encoding=UTF-8 ^
- -cp ""%STUDIO_PATH%/studio-web-ui-%version_LUNII%.jar"";""%STUDIO_PATH%/lib-%version_LUNII%/*"";. ^
+ -cp %STUDIO_PATH%/studio-web-ui-%version_LUNII%.jar;%STUDIO_PATH%/lib-%version_LUNII%/*;. ^
  io.vertx.core.Launcher run studio.webui.MainVerticle");
             }
             else
             {
                 SW.WriteLine(@"java -Dvertx.disableDnsResolver=true -Dfile.encoding=UTF-8 ^
- -cp ""%STUDIO_PATH%/studio-web-ui-%version_LUNII%.jar"";""%STUDIO_PATH%/lib-%version_LUNII%/*"";. ^
+ -cp %STUDIO_PATH%/studio-web-ui-%version_LUNII%.jar;%STUDIO_PATH%/lib-%version_LUNII%/*;. ^
  io.vertx.core.Launcher run studio.webui.MainVerticle");
             }
             SW.Flush();
@@ -319,7 +329,7 @@ set PATH=%STUDIO_PATH%jre11\bin;%PATH%");
             else
             {
                 SW.WriteLine(@"set STUDIO_PATH=%~dps0
-set DOT_STUDIO=""%UserProfile%\.studio""
+set DOT_STUDIO=%UserProfile%\.studio
 PATH %PATH%;%JAVA_HOME%\bin\
 java -version 1>nul 2>nul || (
    echo Java n'est pas detecte sur votre OS
@@ -335,8 +345,13 @@ if %jver% LSS 110000 (
   exit /b 1
 )");
             }
-            SW.WriteLine(@"IF EXIST ""%DOT_STUDIO%\db\official.json"" del ""%DOT_STUDIO%\db\official.json""");
-            SW.WriteLine(@"IF EXIST ""%STUDIO_DB_OFFICIAL%"" del ""%STUDIO_DB_OFFICIAL%""");
+
+            if (Properties.Settings.Default.eraseOfficial == true)
+            {
+                SW.WriteLine(@"IF EXIST %DOT_STUDIO%\db\official.json del %DOT_STUDIO%\db\official.json");
+                SW.WriteLine(@"IF EXIST ""%STUDIO_DB_OFFICIAL%"" del ""%STUDIO_DB_OFFICIAL%""");
+            }
+
             if (Properties.Settings.Default.eraselog == true)
             {
                 SW.WriteLine(@"echo Suppression des logs");
@@ -348,18 +363,18 @@ if %jver% LSS 110000 (
             {
                 SW.WriteLine("");
             }
-            SW.WriteLine(@"if not exist ""%DOT_STUDIO%\db\*"" mkdir ""%DOT_STUDIO%\db""
-if not exist ""%DOT_STUDIO%\library\*"" mkdir ""%DOT_STUDIO%\library""");
+            SW.WriteLine(@"if not exist %DOT_STUDIO%\db\* mkdir %DOT_STUDIO%\db
+if not exist %DOT_STUDIO%\library\* mkdir %DOT_STUDIO%\library");
             if (Properties.Settings.Default.studioportable == true)
             {
                 SW.WriteLine(@"java -Duser.home=%STUDIO_PATH% -Dvertx.disableDnsResolver=true -Dfile.encoding=UTF-8 ^
- -cp ""%STUDIO_PATH%/studio-web-ui-%version_LUNII%.jar"";""%STUDIO_PATH%/lib-%version_LUNII%/*"";. ^
+ -cp %STUDIO_PATH%/studio-web-ui-%version_LUNII%.jar;%STUDIO_PATH%/lib-%version_LUNII%/*;. ^
  io.vertx.core.Launcher run studio.webui.MainVerticle");
             }
             else
             {
                 SW.WriteLine(@"java -Dvertx.disableDnsResolver=true -Dfile.encoding=UTF-8 ^
- -cp ""%STUDIO_PATH%/studio-web-ui-%version_LUNII%.jar"";""%STUDIO_PATH%/lib-%version_LUNII%/*"";. ^
+ -cp %STUDIO_PATH%/studio-web-ui-%version_LUNII%.jar;%STUDIO_PATH%/lib-%version_LUNII%/*;. ^
  io.vertx.core.Launcher run studio.webui.MainVerticle");
             }
             SW.Flush();

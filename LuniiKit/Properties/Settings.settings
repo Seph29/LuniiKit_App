@@ -47,5 +47,8 @@
     <Setting Name="tmp" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="eraseOfficial" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
