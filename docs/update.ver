@@ -8,7 +8,7 @@
             <sparkle:releaseNotesLink>
                 https://seph29.github.io/LuniiKit_App/changelog.html
             </sparkle:releaseNotesLink>
-            <enclosure url="https://github.com/Seph29/LuniiKit_App/releases/download/2.3.0/LuniiKit-Setup-2.3.0.exe"
+            <enclosure url="https://github.com/Seph29/LuniiKit_App/releases/download/2.3.0/InullKit-Setup-2.3.0.exe"
                        sparkle:version="2.3.0"
                        length="0"
                        type="application/octet-stream" />
