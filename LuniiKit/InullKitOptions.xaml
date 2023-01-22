@@ -1,0 +1,260 @@
+﻿<controls:AdonisWindow
+    x:Class="InullKit.InullKitOptions"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
+    xmlns:controls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:extensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+    xmlns:local="clr-namespace:InullKit"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:properties="clr-namespace:InullKit.Properties"
+    Title="Options"
+    Width="420"
+    Height="400"
+    Icon="/Images/icon.png"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="SingleBorderWindow"
+    mc:Ignorable="d">
+    <controls:AdonisWindow.TitleBarBackground>
+        <LinearGradientBrush StartPoint="0.6,0" EndPoint="0.9,1">
+            <GradientStop Offset="0.1" Color="#3DBAC1" />
+            <GradientStop Offset="1" Color="#fbd22e" />
+        </LinearGradientBrush>
+    </controls:AdonisWindow.TitleBarBackground>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <GroupBox
+            Width="410"
+            Height="253"
+            Margin="5,4,5,0"
+            VerticalAlignment="Top"
+            Header="Configuration STUdio">
+            <Grid>
+                <CheckBox
+                    x:Name="Isport"
+                    Width="185"
+                    Height="16"
+                    Margin="6,6,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Click="Isport_Click"
+                    Content="STUdio version portable"
+                    IsChecked="{Binding Path=studioportable, Source={x:Static properties:Settings.Default}}"
+                    ToolTip="Utiliser STUdio en mode portable ou non" />
+                <CheckBox
+                    x:Name="Autoopen"
+                    Width="185"
+                    Height="16"
+                    Margin="6,30,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="Auto open browser"
+                    IsChecked="{Binding autoopenweb, Source={x:Static properties:Settings.Default}}"
+                    ToolTip="Ouverture automatique du navigateur au lancement de STUdio" />
+                <Label
+                    Width="39"
+                    Height="16"
+                    Margin="191,6,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="Host :" />
+                <TextBox
+                    x:Name="Chost"
+                    Width="146"
+                    Height="22"
+                    Margin="238,3,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    extensions:WatermarkExtension.Watermark="localhost"
+                    Text="{Binding Path=confhost, Source={x:Static properties:Settings.Default}}"
+                    TextWrapping="Wrap" />
+                <Label
+                    Width="40"
+                    Height="16"
+                    Margin="191,30,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="Port :" />
+                <TextBox
+                    x:Name="Cport"
+                    Width="146"
+                    Height="22"
+                    Margin="238,27,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    extensions:WatermarkExtension.Watermark="8080"
+                    Text="{Binding Path=confport, Source={x:Static properties:Settings.Default}}"
+                    TextWrapping="Wrap" />
+                <CheckBox
+                    x:Name="Eraselog"
+                    Width="180"
+                    Height="16"
+                    Margin="6,53,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="Suppression auto des logs"
+                    IsChecked="{Binding Path=eraselog, Source={x:Static properties:Settings.Default}}"
+                    ToolTip="Active ou désactive la suppression automatique des logs" />
+                <Label
+                    x:Name="Eraselogtext"
+                    Width="155"
+                    Height="16"
+                    Margin="191,53,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="Nombre de logs conservés"
+                    IsEnabled="{Binding ElementName=Eraselog, Path=IsChecked}" />
+                <TextBox
+                    x:Name="Nombrelogs"
+                    Width="25"
+                    Height="22"
+                    Margin="359,51,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="{Binding ElementName=Eraselog, Path=IsChecked}"
+                    MaxLength="2"
+                    Text="{Binding Path=nlogs, Source={x:Static properties:Settings.Default}}"
+                    TextChanged="Nombrelogs_TextChanged"
+                    TextWrapping="Wrap" />
+                <CheckBox
+                    x:Name="EraseOfficial"
+                    Width="366"
+                    Height="16"
+                    Margin="6,77,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="Suppression auto du fichier official.json au lancement de STUdio"
+                    IsChecked="{Binding Path=eraseOfficial, Source={x:Static properties:Settings.Default}}"
+                    ToolTip="Active ou désactive la suppression automatique du fichier official.json" />
+                <Label
+                    Width="92"
+                    Height="14"
+                    Margin="1,109,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="Official Db :" />
+                <TextBox
+                    x:Name="Offdb"
+                    Width="262"
+                    Height="22"
+                    Margin="84,105,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Text="{Binding Path=offdb, Source={x:Static properties:Settings.Default}, UpdateSourceTrigger=PropertyChanged}"
+                    ToolTip="{Binding Path=offdb, Source={x:Static properties:Settings.Default}}" />
+                <Button
+                    x:Name="Offselect"
+                    Width="25"
+                    Height="22"
+                    Margin="359,105,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Click="offselect"
+                    Content="..." />
+                <Label
+                    Width="92"
+                    Height="16"
+                    Margin="1,134,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="Unofficial Db :" />
+                <TextBox
+                    x:Name="Unoffdb"
+                    Width="262"
+                    Height="22"
+                    Margin="84,131,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Text="{Binding Path=unoffdb, Source={x:Static properties:Settings.Default}, UpdateSourceTrigger=PropertyChanged}"
+                    ToolTip="{Binding Path=unoffdb, Source={x:Static properties:Settings.Default}}" />
+                <Button
+                    x:Name="Unoffselect"
+                    Width="25"
+                    Height="22"
+                    Margin="359,131,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Click="unoffselect"
+                    Content="..." />
+                <Label
+                    Width="92"
+                    Height="16"
+                    Margin="1,159,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="Library :" />
+                <TextBox
+                    x:Name="Library"
+                    Width="262"
+                    Height="22"
+                    Margin="84,156,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Text="{Binding Path=library, Source={x:Static properties:Settings.Default}, UpdateSourceTrigger=PropertyChanged}"
+                    ToolTip="{Binding Path=library, Source={x:Static properties:Settings.Default}}" />
+                <Button
+                    x:Name="Libraryselect"
+                    Width="25"
+                    Height="22"
+                    Margin="359,156,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Click="libraryselect"
+                    Content="..." />
+                <Label
+                    Width="92"
+                    Height="19"
+                    Margin="1,184,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="Tmp folder :" />
+                <TextBox
+                    x:Name="Tmpfolder"
+                    Width="262"
+                    Height="22"
+                    Margin="84,181,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Text="{Binding tmp, Source={x:Static properties:Settings.Default}, UpdateSourceTrigger=PropertyChanged}"
+                    ToolTip="{Binding tmp, Source={x:Static properties:Settings.Default}}" />
+                <Button
+                    x:Name="Tmpselect"
+                    Width="25"
+                    Height="22"
+                    Margin="359,181,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Click="tmpselect"
+                    Content="..." />
+            </Grid>
+        </GroupBox>
+        <GroupBox
+            Width="410"
+            Height="67"
+            Margin="0,258,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Header="InullKit" />
+        <Button
+            x:Name="Ok"
+            Height="26"
+            Margin="190,331,190,0"
+            VerticalAlignment="Top"
+            Click="Ok_Click"
+            Content="OK" />
+        <Button
+            x:Name="Update"
+            Width="172"
+            Height="26"
+            Margin="0,293,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Click="CheckUpdate"
+            Content="Rechercher les mises à jour"
+            ToolTip="Update" />
+    </Grid>
+</controls:AdonisWindow>

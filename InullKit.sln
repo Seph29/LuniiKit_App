@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32414.318
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuniiKit", "LuniiKit\LuniiKit.csproj", "{474EB47C-35BC-47FC-8219-5B1B5E5E16BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InullKit", "LuniiKit\InullKit.csproj", "{474EB47C-35BC-47FC-8219-5B1B5E5E16BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
