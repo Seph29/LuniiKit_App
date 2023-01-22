@@ -16,8 +16,6 @@ namespace LuniiKit
             InitializeComponent();
 #if ZIP
             WinSparkle.win_sparkle_set_appcast_url("https://raw.githubusercontent.com/Seph29/LuniiKit_App/master/docs/update_zip.ver");
-#elif ZIP_LITE
-            WinSparkle.win_sparkle_set_appcast_url("https://raw.githubusercontent.com/Seph29/LuniiKit_App/master/docs/update_zip_lite.ver");
 #elif EXE
             WinSparkle.win_sparkle_set_appcast_url("https://raw.githubusercontent.com/Seph29/LuniiKit_App/master/docs/update.ver");
 #else
