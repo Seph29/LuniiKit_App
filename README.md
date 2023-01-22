@@ -19,7 +19,6 @@ Mon code est sûrement moche mais fonctionnel 😜
 vous pouvez telecharger le Package complet ici : [LuniiKit 2.3.0](https://github.com/Seph29/LuniiKit_App/releases/tag/2.3.0)
 
 Vous pouvez aussi générer la solution vous-même via le code source et faire votre propre package en respectant la stucture
-![screeenshot](https://i.imgur.com/wKJd5qn.png)
 
 * Folder
   * agent (studio 0.3.1)
