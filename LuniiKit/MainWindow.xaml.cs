@@ -497,7 +497,7 @@ if not exist %STUDIO_HOME%\library\* mkdir %STUDIO_HOME%\library");
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            Process.Start("https://github.com/iinul-team/LuniiKit_App");
+            Process.Start("https://github.com/iinul-team/InullKit_App");
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
