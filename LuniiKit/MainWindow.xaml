@@ -491,5 +491,4 @@
             </StackPanel>
         </Button>
     </Grid>
-
 </controls:AdonisWindow>

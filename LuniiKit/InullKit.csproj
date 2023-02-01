@@ -313,9 +313,6 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="Wpf.Ui, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WPF-UI.2.0.3\lib\net48\Wpf.Ui.dll</HintPath>
-    </Reference>
     <Reference Include="WPFCustomMessageBox, Version=1.1.3.29043, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WPFCustomMessageBox.thabse.1.1.3\lib\WPFCustomMessageBox.dll</HintPath>
     </Reference>

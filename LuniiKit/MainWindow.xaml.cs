@@ -9,13 +9,9 @@
     using System.Windows.Documents;
     using System.Windows.Forms;
     using AdonisUI.Controls;
-
     using InullKit.Properties;
-
     using Updater;
-
     using WPFCustomMessageBox;
-
     using Application = System.Windows.Application;
     using Button = System.Windows.Controls.Button;
     using ContextMenu = System.Windows.Controls.ContextMenu;
@@ -51,7 +47,6 @@
 
         private void StartApp()
         {
-            
             using (Process process = new Process())
             {
                 process.StartInfo.WorkingDirectory = @"C:\Windows\Sysnative\";
@@ -77,11 +72,11 @@
                         string processToStart = Environment.Is64BitOperatingSystem ? "dpinst64.exe" : "dpinst32.exe";
 
                         ProcessStartInfo processdriver = new ProcessStartInfo(processToStart)
-                                                             {
-                                                                 WorkingDirectory = @"driver",
-                                                                 UseShellExecute = true,
-                                                                 Verb = "runas"
-                                                             };
+                        {
+                            WorkingDirectory = @"driver",
+                            UseShellExecute = true,
+                            Verb = "runas"
+                        };
                         Process.Start(processdriver);
                     }
                 }
@@ -227,9 +222,11 @@
             string processToStart = Environment.Is64BitOperatingSystem ? "dpinst64.exe" : "dpinst32.exe";
 
             ProcessStartInfo process = new ProcessStartInfo(processToStart)
-                                           {
-                                               WorkingDirectory = @"driver", UseShellExecute = true, Verb = "runas"
-                                           };
+            {
+                WorkingDirectory = @"driver",
+                UseShellExecute = true,
+                Verb = "runas"
+            };
             Process.Start(process);
         }
 
@@ -250,7 +247,7 @@ set DOT_STUDIO=%~dps0.studio
 set PATH=%STUDIO_PATH%jre11\bin;%PATH%");
                 }
                 else
-                { 
+                {
                     sw.WriteLine(@"set STUDIO_PATH=%~dps0
 set DOT_STUDIO=%UserProfile%\.studio
 PATH %PATH%;%JAVA_HOME%\bin\
@@ -534,6 +531,7 @@ if not exist %STUDIO_HOME%\library\* mkdir %STUDIO_HOME%\library");
         }
 
         public string logpath;
+
         private void FolderChoice(object sender, RoutedEventArgs e)
         {
             string path = Settings.studioportable
@@ -578,7 +576,7 @@ if not exist %STUDIO_HOME%\library\* mkdir %STUDIO_HOME%\library");
 
         private void OpenFolderLog(object sender, RoutedEventArgs e)
         {
-                Process.Start("explorer.exe", logpath);
+            Process.Start("explorer.exe", logpath);
         }
 
         private void OpenSTUdioFolder(object sender, RoutedEventArgs e)

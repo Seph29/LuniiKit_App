@@ -76,7 +76,6 @@
                     Click="OKButtoninputbox_Click"
                     Content="OK" />
             </StackPanel>
-
         </StackPanel>
     </StackPanel>
 </controls:AdonisWindow>

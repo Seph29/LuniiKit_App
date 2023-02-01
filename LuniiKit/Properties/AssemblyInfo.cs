@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Resources;
 using System.Runtime.InteropServices;
 using System.Windows;
@@ -30,7 +29,6 @@ using System.Windows;
 
 //[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.Satellite)]
 
-
 [assembly: ThemeInfo(
     ResourceDictionaryLocation.None, //où se trouvent les dictionnaires de ressources spécifiques à un thème
                                      //(utilisé si une ressource est introuvable dans la page,
@@ -39,7 +37,6 @@ using System.Windows;
                                               //(utilisé si une ressource est introuvable dans la page,
                                               // dans l'application ou dans l'un des dictionnaires de ressources spécifiques à un thème)
 )]
-
 
 // Les informations de version pour un assembly se composent des quatre valeurs suivantes :
 //
@@ -51,7 +48,7 @@ using System.Windows;
 // Vous pouvez spécifier toutes les valeurs ou indiquer les numéros de build et de révision par défaut
 // en utilisant '*', comme indiqué ci-dessous :
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.3.1.1")]
-[assembly: AssemblyFileVersion("2.3.1.1")]
+[assembly: AssemblyVersion("2.3.1.2")]
+[assembly: AssemblyFileVersion("2.3.1.2")]
 [assembly: NeutralResourcesLanguage("fr")]
 [assembly: Guid("9afa748d-d52b-4cc2-8540-a353b895f9db")]
