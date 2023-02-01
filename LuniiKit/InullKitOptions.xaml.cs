@@ -6,13 +6,9 @@
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Forms;
-
     using AdonisUI.Controls;
-
     using InullKit.Properties;
-
     using WPFCustomMessageBox;
-
     using Application = System.Windows.Application;
     using MessageBoxImage = System.Windows.MessageBoxImage;
     using MessageBoxResult = System.Windows.MessageBoxResult;
@@ -169,7 +165,6 @@
 
         private void Autoopen_Checked(object sender, RoutedEventArgs e)
         {
-
         }
     }
 }

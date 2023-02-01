@@ -1,12 +1,9 @@
-﻿using System;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
-using System.Threading;
-using System.Windows;
-using WPFCustomMessageBox;
-
-namespace InullKit
+﻿namespace InullKit
 {
+    using System;
+    using System.Windows;
+    using WPFCustomMessageBox;
+
     /// <summary>
     /// Logique d'interaction pour App.xaml
     /// </summary>
@@ -26,6 +23,7 @@ namespace InullKit
             else Exit += CloseMutexHandler;
             base.OnStartup(e);
         }
+
         protected virtual void CloseMutexHandler(object sender, EventArgs e)
         {
             _mutex?.Close();

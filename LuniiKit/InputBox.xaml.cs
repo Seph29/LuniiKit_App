@@ -3,7 +3,6 @@
     using System.Diagnostics;
     using System.Windows;
     using System.Windows.Input;
-
     using AdonisUI.Controls;
 
     public enum InputBoxMode
@@ -44,11 +43,6 @@
         private void Help_Click(object sender, RoutedEventArgs e)
         {
             Process.Start("https://github.com/jersou/studio-pack-generator#usage");
-        }
-
-        private void OKButton_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

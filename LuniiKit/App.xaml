@@ -2,14 +2,13 @@
     x:Class="InullKit.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:InullKit"
-    StartupUri="MainWindow.xaml"
-    xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI">
+    xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
+    StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/AdonisUI;component/ColorSchemes/Light.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/AdonisUI.ClassicTheme;component/Resources.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/AdonisUI;component/ColorSchemes/Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/AdonisUI.ClassicTheme;component/Resources.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <Color x:Key="{x:Static adonisUi:Colors.AccentColor}">#3dbac1</Color>
         </ResourceDictionary>
