@@ -84,7 +84,7 @@ Ce projet est sous licence ``GPL-3.0 License`` - voir le fichier [LICENSE](LICEN
 
 [studio 1.0.2](https://github.com/kairoh/studio) est distribué par Kairoh sous licence : *Mozilla Public License 2.0*. Les termes de la licence se trouvent dans le fichier [LICENSE](https://github.com/kairoh/studio/blob/master/LICENSE.md).
 
-[SPG](https://github.com/jersou/studio-pack-generator) est distribué par jersou sous : licence *MIT License*. Les termes de la licence se trouvent dans le fichier [LICENSE](https://github.com/jersou/studio-pack-generator/blob/main/LICENSE).
+[SPG](https://github.com/jersou/studio-pack-generator) est distribué par jersou sous licence : *MIT License*. Les termes de la licence se trouvent dans le fichier [LICENSE](https://github.com/jersou/studio-pack-generator/blob/main/LICENSE).
 
 [Lunii-Admin](https://github.com/olup/lunii-admin) est distribué par olup.
 
