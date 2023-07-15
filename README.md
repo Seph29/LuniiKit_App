@@ -76,4 +76,4 @@ Un grand merci aux contributeurs suivants:
 
 ## License
 
-Ce projet est sous licence ``GPL-3.0 License`` - voir le fichier [LICENSE.md](LICENSE.md) pour plus d'informations
+Ce projet est sous licence ``GPL-3.0 License`` - voir le fichier [LICENSE](LICENSE) pour plus d'informations
