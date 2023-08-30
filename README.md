@@ -1,7 +1,7 @@
 # InullKit
-[![forthebadge](https://forthebadge.com/images/badges/made-with-c-sharp.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/0-percent-optimized.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+[![forthebadge](https://raw.githubusercontent.com/BraveUX/for-the-badge/master/src/images/badges/made-with-c-sharp.svg)](https://forthebadge.com)[![forthebadge](https://raw.githubusercontent.com/BraveUX/for-the-badge/master/src/images/badges/0-percent-optimized.svg)](https://forthebadge.com)[![forthebadge](https://raw.githubusercontent.com/BraveUX/for-the-badge/master/src/images/badges/built-with-love.svg)](https://forthebadge.com)
 
-[![forthebadge](https://forthebadge.com/images/badges/works-on-my-machine.svg)](https://forthebadge.com)
+[![forthebadge](https://raw.githubusercontent.com/BraveUX/for-the-badge/master/src/images/badges/works-on-my-machine.svg)](https://forthebadge.com)
 
 Ma 1re application sur un langage que je ne maîtrise pas du tout !
 InullKit est un launcher pour le logiciel STUdio, il permet aussi d'installer le driver lunii nécessaire a son fonctionnement et Java (via winget).
