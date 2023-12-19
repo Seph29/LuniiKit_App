@@ -1,0 +1,19 @@
+﻿<UserControl
+    x:Class="InullKit.Images.Snow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:svg1="clr-namespace:SVGImage.SVG;assembly=DotNetProjects.SVGImage"
+    Width="20"
+    Height="20">
+    <Canvas>
+        <svg1:SVGImage  
+                        Width="20"
+                        Height="20"
+                        OverrideColor="LightBlue"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        SizeType="SizeToContent"
+                        Source="/InullKit;component/Images/snow1.svg" />
+
+    </Canvas>
+</UserControl>

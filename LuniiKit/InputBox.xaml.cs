@@ -1,9 +1,9 @@
 ﻿namespace InullKit
 {
+    using AdonisUI.Controls;
     using System.Diagnostics;
     using System.Windows;
     using System.Windows.Input;
-    using AdonisUI.Controls;
 
     public enum InputBoxMode
     {
@@ -26,6 +26,11 @@
 
         public string Url => UrlTextBox.Text;
 
+        private void Help_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://github.com/jersou/studio-pack-generator#usage");
+        }
+
         private void OKButtoninputbox_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
@@ -38,11 +43,6 @@
                 DialogResult = true;
                 e.Handled = true;
             }
-        }
-
-        private void Help_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("https://github.com/jersou/studio-pack-generator#usage");
         }
     }
 }

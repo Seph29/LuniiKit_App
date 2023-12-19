@@ -7,9 +7,10 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:InullKit"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:svg1="clr-namespace:SVGImage.SVG;assembly=DotNetProjects.SVGImage"
     Title="Options de lancement"
     Width="300"
-    Icon="/Images/spg.png"
+    Icon="/Images/old/spg.png"
     ResizeMode="NoResize"
     SizeToContent="Height"
     Topmost="True"
@@ -36,19 +37,15 @@
                     Click="Help_Click">
                     <Grid>
                         <Canvas>
-                            <Image
-                                Canvas.Left="-11"
-                                Canvas.Top="-11"
-                                Width="22"
-                                Height="22"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                ClipToBounds="True"
-                                RenderOptions.BitmapScalingMode="HighQuality"
-                                RenderOptions.EdgeMode="Aliased"
-                                Source="/Images/help.png"
-                                Stretch="UniformToFill"
-                                ToolTip="Options" />
+                            <svg1:SVGImage
+                        Canvas.Left="-15"
+                        Canvas.Top="-15"
+                        Width="30"
+                        Height="30"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        SizeType="SizeToContent"
+                        Source="/InullKit;component/Images/help.svg" />
                         </Canvas>
                     </Grid>
                 </Button>

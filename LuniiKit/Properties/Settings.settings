@@ -18,7 +18,7 @@
       <Value Profile="(Default)">0.3.1</Value>
     </Setting>
     <Setting Name="studio2ver" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">0.4.2</Value>
+      <Value Profile="(Default)">0.5.1</Value>
     </Setting>
     <Setting Name="studio3ver" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Type="System.String" Scope="Application">
       <Value Profile="(Default)">1.0.2</Value>
@@ -52,6 +52,15 @@
     </Setting>
     <Setting Name="folderlog" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="LancerSPG" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="mount" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="activmount" Provider="Bluegrams.Application.PortableJsonSettingsProvider" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

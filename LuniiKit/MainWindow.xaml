@@ -9,6 +9,7 @@
     xmlns:local="clr-namespace:InullKit"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:properties="clr-namespace:InullKit.Properties"
+    xmlns:svg1="clr-namespace:SVGImage.SVG;assembly=DotNetProjects.SVGImage"
     Title="InullKit Toolbox"
     Width="300"
     Height="302"
@@ -19,10 +20,11 @@
     UseLayoutRounding="True"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
+
     <controls:AdonisWindow.TitleBarBackground>
         <LinearGradientBrush StartPoint="0.6,0" EndPoint="0.9,1">
-            <GradientStop Offset="0.1" Color="#3DBAC1" />
-            <GradientStop Offset="1" Color="#fbd22e" />
+            <GradientStop Offset="0.1" Color="#a6c2d5" />
+            <GradientStop Offset="1" Color="WhiteSmoke" />
         </LinearGradientBrush>
     </controls:AdonisWindow.TitleBarBackground>
 
@@ -30,28 +32,19 @@
         <ContextMenu x:Key="JavaInstallButton">
             <MenuItem Click="Jdk11_Click" Header="JDK 11">
                 <MenuItem.Icon>
-                    <Image
-                        RenderOptions.BitmapScalingMode="HighQuality"
-                        RenderOptions.EdgeMode="Aliased"
-                        Source="/Images/winget.png" />
+                    <svg1:SVGImage Source="/InullKit;component/Images/winget.svg" />
                 </MenuItem.Icon>
             </MenuItem>
             <MenuItem Click="Jdk17_Click" Header="JDK 17">
                 <MenuItem.Icon>
-                    <Image
-                        RenderOptions.BitmapScalingMode="HighQuality"
-                        RenderOptions.EdgeMode="Aliased"
-                        Source="/Images/winget.png" />
+                    <svg1:SVGImage Source="/InullKit;component/Images/winget.svg" />
                 </MenuItem.Icon>
             </MenuItem>
         </ContextMenu>
         <ContextMenu x:Key="Choixfolder">
             <MenuItem Click="OpenFolder" Header="Ouvrir le dossier de l'application InullKit">
                 <MenuItem.Icon>
-                    <Image
-                        RenderOptions.BitmapScalingMode="HighQuality"
-                        RenderOptions.EdgeMode="Aliased"
-                        Source="/Images/folder.png" />
+                    <svg1:SVGImage Source="/InullKit;component/Images/folder.svg" />
                 </MenuItem.Icon>
             </MenuItem>
             <MenuItem
@@ -59,10 +52,7 @@
                 Header="Ouvrir le dossier library de STUdio"
                 IsEnabled="{Binding Path=folderstudio, Source={x:Static properties:Settings.Default}}">
                 <MenuItem.Icon>
-                    <Image
-                        RenderOptions.BitmapScalingMode="HighQuality"
-                        RenderOptions.EdgeMode="Aliased"
-                        Source="/Images/lib.png" />
+                    <svg1:SVGImage Source="/InullKit;component/Images/lib-folder.svg" />
                 </MenuItem.Icon>
             </MenuItem>
             <MenuItem
@@ -70,21 +60,44 @@
                 Header="Ouvrir le dossier des logs"
                 IsEnabled="{Binding Path=folderlog, Source={x:Static properties:Settings.Default}}">
                 <MenuItem.Icon>
-                    <Image
-                        RenderOptions.BitmapScalingMode="HighQuality"
-                        RenderOptions.EdgeMode="Aliased"
-                        Source="/Images/log.png" />
+                    <svg1:SVGImage Source="/InullKit;component/Images/logs.svg" />
                 </MenuItem.Icon>
             </MenuItem>
+
+            <!--<MenuItem
+                Header="Poster un log"
+                IsEnabled="{Binding Path=folderlog, Source={x:Static properties:Settings.Default}}">
+                <MenuItem.Icon>
+                    <svg1:SVGImage Source="/InullKit;component/Images/logs.svg" />
+                </MenuItem.Icon>
+            </MenuItem>-->
+
             <MenuItem
                 Click="OpenFolderSPG"
                 Header="Ouvrir le dossier de l'application Studio Pack Generator"
                 IsEnabled="{Binding Path=folderspg, Source={x:Static properties:Settings.Default}}">
                 <MenuItem.Icon>
-                    <Image
-                        RenderOptions.BitmapScalingMode="HighQuality"
-                        RenderOptions.EdgeMode="Aliased"
-                        Source="/Images/spg.png" />
+                    <svg1:SVGImage Source="/InullKit;component/Images/spg.svg" />
+                </MenuItem.Icon>
+            </MenuItem>
+        </ContextMenu>
+        <ContextMenu x:Key="ChoixPackApp">
+            <MenuItem
+                Name="LancerSPG"
+                Click="OpenSPG"
+                Header="Créer un pack avec SPG"
+                IsEnabled="{Binding Path=LancerSPG, Source={x:Static properties:Settings.Default}}">
+                <MenuItem.Icon>
+                    <svg1:SVGImage Source="/InullKit;component/Images/spg.svg" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem
+                Name="LancerLuniiBuilder"
+                Click="Luniibuilder_Click"
+                Header="Créer un pack avec Lunii Admin Builder"
+                IsEnabled="True">
+                <MenuItem.Icon>
+                    <svg1:SVGImage Source="/InullKit;component/Images/link.svg" />
                 </MenuItem.Icon>
             </MenuItem>
         </ContextMenu>
@@ -129,9 +142,26 @@
                         Source="/Images/logo_github.png" />
                 </MenuItem.Icon>
             </MenuItem>
+            <MenuItem Click="Button_Click_9" Header="NSV/studio-pack-checker">
+                <MenuItem.Icon>
+                    <Image
+                        RenderOptions.BitmapScalingMode="HighQuality"
+                        RenderOptions.EdgeMode="Aliased"
+                        Source="/Images/logo_github.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Click="Button_Click_10" Header="DantSu/studio">
+                <MenuItem.Icon>
+                    <Image
+                        RenderOptions.BitmapScalingMode="HighQuality"
+                        RenderOptions.EdgeMode="Aliased"
+                        Source="/Images/logo_github.png" />
+                </MenuItem.Icon>
+            </MenuItem>
         </ContextMenu>
     </Window.Resources>
     <Grid>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="0*" />
             <RowDefinition />
@@ -140,6 +170,14 @@
             <ColumnDefinition Width="105*" />
             <ColumnDefinition Width="155*" />
         </Grid.ColumnDefinitions>
+        <Canvas x:Name="canvas" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <Image
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Source="/Images/snow.png" Canvas.Left="-3" Canvas.Top="111" Panel.ZIndex="1" Height="197" Width="308" />
+        </Canvas>
         <Image
             Grid.Row="1"
             Width="103"
@@ -147,9 +185,10 @@
             Margin="0,11,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Source="/Images/logo.png" />
+            Source="/Images/logo_noel.png" />
+
         <Button
-            Name="Studio2"
+            Name="Studio3"
             Grid.Row="1"
             Grid.Column="1"
             Width="152"
@@ -157,23 +196,25 @@
             Margin="19,35,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            d:Visibility="Visible"
             extensions:CornerRadiusExtension.CornerRadius="5"
             extensions:CursorSpotlightExtension.BackgroundBrush="#3DBAC1"
             extensions:CursorSpotlightExtension.BorderBrush="#fbd22e"
             extensions:CursorSpotlightExtension.RelativeSpotlightSize="1"
-            Click="Studio2_Click"
+            Click="Studio3_Click"
             Visibility="Hidden">
             <TextBlock>
-                <Run Text="STUdio" /> <Run Text="{Binding Path=studio2ver, Mode=OneWay, Source={x:Static properties:Settings.Default}}" />
+                <Run Text="STUdio" /> <Run Text="{Binding Path=studio3ver, Mode=OneWay, Source={x:Static properties:Settings.Default}}" />
             </TextBlock>
             <Button.ToolTip>
                 <TextBlock>
-                    <Run Text="STUdio" /> <Run Text="{Binding Path=studio2ver, Mode=OneWay, Source={x:Static properties:Settings.Default}}" />
+                    <Run Text="STUdio" /> <Run Text="{Binding Path=studio3ver, Mode=OneWay, Source={x:Static properties:Settings.Default}}" />
                 </TextBlock>
             </Button.ToolTip>
         </Button>
+
         <Button
-            Name="Studio3"
+            Name="Studio2"
             Grid.Row="1"
             Grid.Column="1"
             Width="152"
@@ -185,17 +226,17 @@
             extensions:CursorSpotlightExtension.BackgroundBrush="#3DBAC1"
             extensions:CursorSpotlightExtension.BorderBrush="#fbd22e"
             extensions:CursorSpotlightExtension.RelativeSpotlightSize="1"
-            Click="Studio3_Click"
+            Click="Studio2_Click"
             FontFamily="Ubuntu"
             IsEnabled="False">
             <TextBlock>
                 <Run Text="STUdio" />
-                <Run Text="{Binding Path=studio3ver, Mode=OneWay, Source={x:Static properties:Settings.Default}}" />
+                <Run Text="{Binding Path=studio2ver, Mode=OneWay, Source={x:Static properties:Settings.Default}}" />
             </TextBlock>
             <Button.ToolTip>
                 <TextBlock>
                     <Run Text="STUdio" />
-                    <Run Text="{Binding Path=studio3ver, Mode=OneWay, Source={x:Static properties:Settings.Default}}" />
+                    <Run Text="{Binding Path=studio2ver, Mode=OneWay, Source={x:Static properties:Settings.Default}}" />
                 </TextBlock>
             </Button.ToolTip>
         </Button>
@@ -208,6 +249,7 @@
             Margin="19,65,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            d:Visibility="Visible"
             extensions:CornerRadiusExtension.CornerRadius="5"
             extensions:CursorSpotlightExtension.BackgroundBrush="#3DBAC1"
             extensions:CursorSpotlightExtension.BorderBrush="#fbd22e"
@@ -216,7 +258,8 @@
             FontFamily="Ubuntu"
             Visibility="Hidden">
             <TextBlock>
-                <Run Text="STUdio" /> <Run Text="{Binding Path=studio1ver, Mode=OneWay, Source={x:Static properties:Settings.Default}}" />
+                <Run Text="STUdio" />
+                <Run Text="{Binding Path=studio1ver, Mode=OneWay, Source={x:Static properties:Settings.Default}}" />
             </TextBlock>
             <Button.ToolTip>
                 <TextBlock>
@@ -237,11 +280,10 @@
             extensions:CursorSpotlightExtension.BackgroundBrush="#3DBAC1"
             extensions:CursorSpotlightExtension.BorderBrush="#fbd22e"
             extensions:CursorSpotlightExtension.RelativeSpotlightSize="1"
-            Click="Luniiadmin_Click"
-            Content="Lunii-admin"
+            Click="Luniiadminweb_Click"
+            Content="Lunii-admin-web"
             FontFamily="Ubuntu"
-            IsEnabled="False"
-            ToolTip="Lunii-admin" />
+            ToolTip="Lunii-admin-web" />
         <Button
             x:Name="Idriver"
             Grid.Row="1"
@@ -268,6 +310,7 @@
             Margin="19,160,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            d:Visibility="Visible"
             extensions:CornerRadiusExtension.CornerRadius="5"
             extensions:CursorSpotlightExtension.BackgroundBrush="#3DBAC1"
             extensions:CursorSpotlightExtension.BorderBrush="#fbd22e"
@@ -375,20 +418,17 @@
             Click="OpenWindow"
             ToolTip="Options">
             <StackPanel>
-                <Grid>
-                    <Canvas>
-                        <Image
-                            Canvas.Left="-15"
-                            Canvas.Top="-15"
-                            Width="30"
-                            Height="30"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            RenderOptions.BitmapScalingMode="HighQuality"
-                            RenderOptions.EdgeMode="Aliased"
-                            Source="/Images/options.png" />
-                    </Canvas>
-                </Grid>
+                <Canvas>
+                    <svg1:SVGImage
+                        Canvas.Left="-15"
+                        Canvas.Top="-15"
+                        Width="30"
+                        Height="30"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        SizeType="SizeToContent"
+                        Source="/InullKit;component/Images/settings.svg" />
+                </Canvas>
             </StackPanel>
         </Button>
         <Button
@@ -407,20 +447,17 @@
             Click="FolderChoice"
             ToolTip="Ouvrir le dossier ...">
             <StackPanel>
-                <Grid>
-                    <Canvas>
-                        <Image
-                            Canvas.Left="-15"
-                            Canvas.Top="-15"
-                            Width="30"
-                            Height="30"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            RenderOptions.BitmapScalingMode="HighQuality"
-                            RenderOptions.EdgeMode="Aliased"
-                            Source="/Images/folder.png" />
-                    </Canvas>
-                </Grid>
+                <Canvas>
+                    <svg1:SVGImage
+                        Canvas.Left="-15"
+                        Canvas.Top="-15"
+                        Width="30"
+                        Height="30"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        SizeType="SizeToContent"
+                        Source="/InullKit;component/Images/folder.svg" />
+                </Canvas>
             </StackPanel>
         </Button>
         <Button
@@ -439,25 +476,22 @@
             Click="USB_Copy"
             ToolTip="Copier InullKit vers une clé USB ou un autre dossier (Ne copie pas la librairie STUdio si vous êtes en mode non-portable.)">
             <StackPanel>
-                <Grid>
-                    <Canvas>
-                        <Image
-                            Canvas.Left="-15"
-                            Canvas.Top="-15"
-                            Width="30"
-                            Height="30"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            RenderOptions.BitmapScalingMode="HighQuality"
-                            RenderOptions.EdgeMode="Aliased"
-                            Source="/Images/usb.png" />
-                    </Canvas>
-                </Grid>
+                <Canvas>
+                    <svg1:SVGImage
+                        Canvas.Left="-15"
+                        Canvas.Top="-15"
+                        Width="30"
+                        Height="30"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        SizeType="SizeToContent"
+                        Source="/InullKit;component/Images/usb.svg" />
+                </Canvas>
             </StackPanel>
         </Button>
 
         <Button
-            x:Name="Spg"
+            x:Name="packApp"
             Grid.Row="1"
             Grid.Column="1"
             Grid.ColumnSpan="1"
@@ -470,24 +504,20 @@
             extensions:CursorSpotlightExtension.BackgroundBrush="#fbd22e"
             extensions:CursorSpotlightExtension.BorderBrush="#3DBAC1"
             extensions:CursorSpotlightExtension.RelativeSpotlightSize="1"
-            Click="OpenSPG"
-            IsEnabled="False"
-            ToolTip="Créer un pack avec Studio Pack Generator">
+            Click="SelectPackApp"
+            ToolTip="Créer un pack avec ...">
             <StackPanel>
-                <Grid>
-                    <Canvas>
-                        <Image
-                            Canvas.Left="-15"
-                            Canvas.Top="-15"
-                            Width="30"
-                            Height="30"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            RenderOptions.BitmapScalingMode="HighQuality"
-                            RenderOptions.EdgeMode="Aliased"
-                            Source="/Images/spg.png" />
-                    </Canvas>
-                </Grid>
+                <Canvas>
+                    <svg1:SVGImage
+                        Canvas.Left="-15"
+                        Canvas.Top="-15"
+                        Width="30"
+                        Height="30"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        SizeType="SizeToContent"
+                        Source="/InullKit;component/Images/package.svg" />
+                </Canvas>
             </StackPanel>
         </Button>
     </Grid>
