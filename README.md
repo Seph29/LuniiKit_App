@@ -1,7 +1,7 @@
 # InullKit
-[![forthebadge](https://forthebadge.com/images/badges/made-with-c-sharp.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/0-percent-optimized.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+[![forthebadge](https://raw.githubusercontent.com/BraveUX/for-the-badge/master/src/images/badges/made-with-c-sharp.svg)](https://forthebadge.com)[![forthebadge](https://raw.githubusercontent.com/BraveUX/for-the-badge/master/src/images/badges/0-percent-optimized.svg)](https://forthebadge.com)[![forthebadge](https://raw.githubusercontent.com/BraveUX/for-the-badge/master/src/images/badges/built-with-love.svg)](https://forthebadge.com)
 
-[![forthebadge](https://forthebadge.com/images/badges/works-on-my-machine.svg)](https://forthebadge.com)
+[![forthebadge](https://raw.githubusercontent.com/BraveUX/for-the-badge/master/src/images/badges/works-on-my-machine.svg)](https://forthebadge.com)
 
 Ma 1re application sur un langage que je ne maîtrise pas du tout !
 InullKit est un launcher pour le logiciel STUdio, il permet aussi d'installer le driver lunii nécessaire a son fonctionnement et Java (via winget).
@@ -76,4 +76,15 @@ Un grand merci aux contributeurs suivants:
 
 ## License
 
-Ce projet est sous licence ``GPL-3.0 License`` - voir le fichier [LICENSE.md](LICENSE.md) pour plus d'informations
+Ce projet est sous licence ``GPL-3.0 License`` - voir le fichier [LICENSE](LICENSE) pour plus d'informations
+
+[studio 0.3.1](https://github.com/marian-m12l/studio) est distribué par marian-m12l sous licence : *Mozilla Public License 2.0*. Les termes de la licence se trouvent dans le fichier [LICENSE](https://github.com/marian-m12l/studio/blob/master/LICENSE).
+
+[studio 0.4.2](https://github.com/kairoh/studio) est distribué par Kairoh sous licence : *Mozilla Public License 2.0*. Les termes de la licence se trouvent dans le fichier [LICENSE](https://github.com/kairoh/studio/blob/master/LICENSE.md).
+
+[studio 1.0.2](https://github.com/kairoh/studio) est distribué par Kairoh sous licence : *Mozilla Public License 2.0*. Les termes de la licence se trouvent dans le fichier [LICENSE](https://github.com/kairoh/studio/blob/master/LICENSE.md).
+
+[SPG](https://github.com/jersou/studio-pack-generator) est distribué par jersou sous licence : *MIT License*. Les termes de la licence se trouvent dans le fichier [LICENSE](https://github.com/jersou/studio-pack-generator/blob/main/LICENSE).
+
+[Lunii-Admin](https://github.com/olup/lunii-admin) est distribué par olup.
+
