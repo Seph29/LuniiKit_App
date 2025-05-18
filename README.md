@@ -74,7 +74,7 @@ project-folder/
 ## ⚙️ Installation
 
 1. Télécharger la dernière version ici :  
-   [📦 Version 2.3.1](https://github.com/Seph29/LuniiKit_App/releases/latest)
+   [📦 Version 2.4.2](https://github.com/Seph29/LuniiKit_App/releases/tag/2.4.2)
 2. Décompresser le package
 3. Lancer le fichier exécutable fourni
 
