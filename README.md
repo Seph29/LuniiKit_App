@@ -16,7 +16,7 @@
     <img src="https://img.shields.io/github/v/release/Seph29/LuniiKit_App?label=Version&style=for-the-badge" alt="Release"/>
     <img src="https://img.shields.io/github/downloads/Seph29/LuniiKit_App/total?label=Downloads&style=for-the-badge" alt="Downloads"/>
     <img src="https://img.shields.io/github/issues/Seph29/LuniiKit_App?label=Issues&style=for-the-badge" alt="Issues"/>
-    <img src="https://img.shields.io/github/stars/Seph29/LuniiKit_App?label=Stars&style=for-the-badge" alt="Stars"/>
+    <img src="https://img.shields.io/github/stars/Seph29/LuniiKit_App?style=for-the-badge" alt="Stars"/>
     <a href="https://discord.gg/jg9MjHBWQC"><img src="https://img.shields.io/discord/911349645752541244?label=Discord&logo=discord&style=for-the-badge&color=5865F2" alt="Discord"/></a>
 
   </p>
