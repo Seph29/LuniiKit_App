@@ -4,12 +4,12 @@
         <title>LuniiKit Update</title>
         <language>fr</language>
         <item>
-            <title>Version 2.3.1.2</title>
+            <title>Version 2.4.3</title>
             <sparkle:releaseNotesLink>
                 https://seph29.github.io/LuniiKit_App/changelog.html
             </sparkle:releaseNotesLink>
-            <enclosure url="https://github.com/Seph29/LuniiKit_App/releases/download/2.3.1.2/InullKit-2.3.1.2-full.zip"
-                       sparkle:version="2.3.1.2"
+            <enclosure url="https://github.com/Seph29/LuniiKit_App/releases/download/2.4.3/InullKit-2.4.3-full.zip"
+                       sparkle:version="2.4.3"
                        length="0"
                        type="application/octet-stream" />
         </item>
