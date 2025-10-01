@@ -55,20 +55,15 @@
 ```
 project-folder/
 │
-├── agent/           # STUdio 0.3.1
 ├── driver/          # Pilote Lunii (depuis Luniistore)
 ├── jre11/           # Java Runtime 11
-├── lib/             # Librairies STUdio 1.0.2
-├── app/             # Application STUdio 1.0.2
-├── quarkus/         # Framework STUdio 1.0.2
-├── lib-0.3.1/       # Librairies STUdio 0.3.1 (renommées)
-├── lib-0.4.2/       # Librairies STUdio 0.4.2 (renommées)
+├── lib-0.5.4/       # Librairies STUdio 0.5.4 (renommées)
+├── Lunii-Qt/
 ├── spg/             # Studio Pack Generator
 │
-├── quarkus-run.jar
-├── studio-web-ui-0.3.1.jar
-├── studio-web-ui-0.4.2.jar
-└── Lunii-Admin
+├── InullKit.exe
+├── studio-web-ui-0.5.4.jar
+└── WinSparkle.dll
 ```
 
 ---
