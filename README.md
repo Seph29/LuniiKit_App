@@ -76,7 +76,7 @@ project-folder/
 ## ⚙️ Installation
 
 1. Télécharger la dernière version ici :  
-   [📦 Version 2.4.2](https://github.com/Seph29/LuniiKit_App/releases/tag/2.4.2)
+   [📦 Version 2.4.3](https://github.com/Seph29/LuniiKit_App/releases/tag/2.4.3)
 2. Décompresser le package
 3. Lancer le fichier exécutable fourni
 
@@ -84,11 +84,10 @@ project-folder/
 
 ## 📈 Journal des modifications
 
-- Changement de nom : InullKit
-- Ajout du support STUdio 1.0.2
-- Suppression de la version 0.4.3
-- Amélioration de l’interface utilisateur
-- Ajout de l’option pour conserver `official.json`
+- mise à jour de STUdio de la 0.5.1 à la 0.5.4
+- Suppression de la version STUdio 1.0.2
+- mise à jour de spg (InullKit-2.4.3-full.zip)
+- Ajout de Lunii.Qt (InullKit-2.4.3-full.zip)
 
 📄 [Consulter toutes les versions](https://github.com/Seph29/LuniiKit_App/tags)
 
