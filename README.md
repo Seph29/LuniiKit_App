@@ -4,13 +4,13 @@
   <img src="https://forthebadge.com/images/badges/made-with-c-sharp.svg"/>
   <img src="https://forthebadge.com/images/badges/0-percent-optimized.svg"/>
   <img src="https://forthebadge.com/images/badges/built-with-love.svg"/>
-  <img src="https://forthebadge.com/images/badges/works-on-my-machine.svg"/>
+  <img src="https://forthebadge.com/api/badges/generate?panels=2&primaryLabel=WORKS+ON&secondaryLabel=MY+MACHINE&primaryBGColor=%23d24f49&primaryTextColor=%23FFFFFF&secondaryBGColor=%23a93734&secondaryTextColor=%23FFFFFF&primaryFontSize=12&primaryFontWeight=400&primaryLetterSpacing=2&primaryFontFamily=Roboto&primaryTextTransform=uppercase&secondaryFontSize=12&secondaryFontWeight=900&secondaryLetterSpacing=2&secondaryFontFamily=Roboto&secondaryTextTransform=uppercase"/>
 </p>
 
 <div align="center">
   <img src="https://i.imgur.com/Vzp4ZN7.png" alt="InullKit"/>
   <br />
-  <p><b>Launcher STUdio + Java + Pilote Lunii — Tout-en-un</b></p>
+  <p><b>Launcher STUdio + Java + Pilote Lunii + Lunii.Qt - Tout-en-un</b></p>
   <br />
   <p align="center">
     <img src="https://img.shields.io/github/v/release/Seph29/LuniiKit_App?label=Version&style=for-the-badge" alt="Release"/>
@@ -109,9 +109,9 @@ Projet sous licence **GPL-3.0** — voir le fichier [LICENSE](LICENSE)
 
 ### Licences tierces
 
-- [STUdio 0.3.1](https://github.com/marian-m12l/studio) — MPL 2.0  
-- [STUdio 0.4.2 / 1.0.2](https://github.com/kairoh/studio) — MPL 2.0  
-- [SPG](https://github.com/jersou/studio-pack-generator) — MIT  
+- [STUdio 0.3.1](https://github.com/marian-m12l/studio) - MPL 2.0  
+- [STUdio 0.4.2 / 1.0.2](https://github.com/kairoh/studio) - MPL 2.0  
+- [SPG](https://github.com/jersou/studio-pack-generator) - MIT  
 - [Lunii-Admin](https://github.com/olup/lunii-admin)
 
 ---
